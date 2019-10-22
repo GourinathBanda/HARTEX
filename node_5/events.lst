@@ -1,0 +1,100 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 1
+
+
+   1               		.file	"events.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	ED_Table
+  11               		.data
+  12               		.type	ED_Table, @object
+  13               		.size	ED_Table, 30
+  14               	ED_Table:
+  15 0000 01        		.byte	1
+  16 0001 02        		.byte	2
+  17 0002 0100 0000 		.long	1
+  18 0006 0100 0000 		.long	1
+  19 000a 02        		.byte	2
+  20 000b 00        		.byte	0
+  21 000c 01        		.byte	1
+  22 000d 00        		.byte	0
+  23 000e 00        		.byte	0
+  24 000f 01        		.byte	1
+  25 0010 02        		.byte	2
+  26 0011 0100 0000 		.long	1
+  27 0015 0100 0000 		.long	1
+  28 0019 04        		.byte	4
+  29 001a 00        		.byte	0
+  30 001b 00        		.byte	0
+  31 001c 00        		.byte	0
+  32 001d 00        		.byte	0
+  33               	.global	_10_mS_EVENT_Table
+  34               	.global	_10_mS_EVENT_Table
+  35               		.section .bss
+  36               		.type	_10_mS_EVENT_Table, @object
+  37               		.size	_10_mS_EVENT_Table, 0
+  38               	_10_mS_EVENT_Table:
+  39 0000 00        		.skip 1,0
+  40               	.global	SEC_EVENT_Table
+  41               	.global	SEC_EVENT_Table
+  42               		.type	SEC_EVENT_Table, @object
+  43               		.size	SEC_EVENT_Table, 1
+  44               	SEC_EVENT_Table:
+  45 0001 00        		.skip 1,0
+  46               	.global	MIN_EVENT_Table
+  47               	.global	MIN_EVENT_Table
+  48               		.type	MIN_EVENT_Table, @object
+  49               		.size	MIN_EVENT_Table, 0
+  50               	MIN_EVENT_Table:
+  51 0002 00        		.skip 1,0
+  52               	.global	HR_EVENT_Table
+  53               	.global	HR_EVENT_Table
+  54               		.type	HR_EVENT_Table, @object
+  55               		.size	HR_EVENT_Table, 0
+  56               	HR_EVENT_Table:
+  57 0003 00        		.skip 1,0
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 2
+
+
+  58               	.global	EXT_EVENT_Table
+  59               		.data
+  60               		.type	EXT_EVENT_Table, @object
+  61               		.size	EXT_EVENT_Table, 1
+  62               	EXT_EVENT_Table:
+  63 001e 01        		.byte	1
+  64               		.comm sourceBuf0,2,1
+  65               		.comm sourceBuf1,4,1
+  66               		.comm msgDestBuf6,4,1
+  67               		.comm msgDestBuf5,2,1
+  68               		.comm msgDestBuf2,4,1
+  69               	/* File "events.c": code    0 = 0x0000 (   0), prologues   0, epilogues   0 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 events.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:14     .data:00000000 ED_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:38     .bss:00000000 _10_mS_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:44     .bss:00000001 SEC_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:50     .bss:00000002 MIN_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:56     .bss:00000003 HR_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:62     .data:0000001e EXT_EVENT_Table
+                            *COM*:00000002 sourceBuf0
+                            *COM*:00000004 sourceBuf1
+                            *COM*:00000004 msgDestBuf6
+                            *COM*:00000002 msgDestBuf5
+                            *COM*:00000004 msgDestBuf2
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

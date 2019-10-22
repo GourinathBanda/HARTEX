@@ -1,0 +1,348 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 1
+
+
+   1               		.file	"ResourceManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	PI
+  11               		.data
+  12               		.type	PI, @object
+  13               		.size	PI, 1
+  14               	PI:
+  15 0000 FF        		.byte	-1
+  16               	.global	top
+  17               	.global	top
+  18               		.section .bss
+  19               		.type	top, @object
+  20               		.size	top, 1
+  21               	top:
+  22 0000 00        		.skip 1,0
+  23               	.global	PI_Table
+  24               		.data
+  25               		.type	PI_Table, @object
+  26               		.size	PI_Table, 34
+  27               	PI_Table:
+  28 0001 0000      		.word	0
+  29 0003 0100      		.word	1
+  30 0005 0300      		.word	3
+  31 0007 0700      		.word	7
+  32 0009 0F00      		.word	15
+  33 000b 1F00      		.word	31
+  34 000d 3F00      		.word	63
+  35 000f 7F00      		.word	127
+  36 0011 FF00      		.word	255
+  37 0013 FF01      		.word	511
+  38 0015 FF03      		.word	1023
+  39 0017 FF07      		.word	2047
+  40 0019 FF0F      		.word	4095
+  41 001b FF1F      		.word	8191
+  42 001d FF3F      		.word	16383
+  43 001f FF7F      		.word	32767
+  44 0021 FFFF      		.word	-1
+  45               		.text
+  46               	.global	lock
+  47               		.type	lock, @function
+  48               	lock:
+  49               	/* prologue: frame size=1 */
+  50 0000 CF93      		push r28
+  51 0002 DF93      		push r29
+  52 0004 CDB7      		in r28,__SP_L__
+  53 0006 DEB7      		in r29,__SP_H__
+  54 0008 2197      		sbiw r28,1
+  55 000a 0FB6      		in __tmp_reg__,__SREG__
+  56 000c F894      		cli
+  57 000e DEBF      		out __SP_H__,r29
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 2
+
+
+  58 0010 0FBE      		out __SREG__,__tmp_reg__
+  59 0012 CDBF      		out __SP_L__,r28
+  60               	/* prologue end (size=10) */
+  61 0014 8983      		std Y+1,r24
+  62               	/* #APP */
+  63 0016 0FB6      		in __tmp_reg__,__SREG__
+  64 0018 F894      		cli
+  65 001a 0F92      		push __tmp_reg__
+  66               		
+  67               	/* #NOAPP */
+  68 001c 8981      		ldd r24,Y+1
+  69 001e 9927      		clr r25
+  70 0020 F92F      		mov r31,r25
+  71 0022 E82F      		mov r30,r24
+  72 0024 E050      		subi r30,lo8(-(RCB))
+  73 0026 F040      		sbci r31,hi8(-(RCB))
+  74 0028 9081      		ld r25,Z
+  75 002a 8091 0000 		lds r24,PI
+  76 002e 9817      		cp r25,r24
+  77 0030 14F1      		brlt .L4
+  78 0032 8091 0000 		lds r24,PI
+  79 0036 0E94 0000 		call pushPiStack
+  80 003a 8981      		ldd r24,Y+1
+  81 003c 9927      		clr r25
+  82 003e F92F      		mov r31,r25
+  83 0040 E82F      		mov r30,r24
+  84 0042 E050      		subi r30,lo8(-(RCB))
+  85 0044 F040      		sbci r31,hi8(-(RCB))
+  86 0046 8081      		ld r24,Z
+  87 0048 8093 0000 		sts PI,r24
+  88 004c 8091 0000 		lds r24,PI
+  89 0050 282F      		mov r18,r24
+  90 0052 3327      		clr r19
+  91 0054 27FD      		sbrc r18,7
+  92 0056 3095      		com r19
+  93 0058 932F      		mov r25,r19
+  94 005a 822F      		mov r24,r18
+  95 005c 820F      		add r24,r18
+  96 005e 931F      		adc r25,r19
+  97 0060 F92F      		mov r31,r25
+  98 0062 E82F      		mov r30,r24
+  99 0064 E050      		subi r30,lo8(-(PI_Table+2))
+ 100 0066 F040      		sbci r31,hi8(-(PI_Table+2))
+ 101 0068 9091 0000 		lds r25,BTV
+ 102 006c 8081      		ld r24,Z
+ 103 006e 892B      		or r24,r25
+ 104 0070 8095      		com r24
+ 105 0072 8093 0000 		sts BTV,r24
+ 106               	.L4:
+ 107               	/* #APP */
+ 108 0076 0F90      		pop __tmp_reg__
+ 109 0078 0FBE      		out __SREG__,__tmp_reg__
+ 110               		
+ 111               	/* #NOAPP */
+ 112               	/* epilogue: frame size=1 */
+ 113 007a 2196      		adiw r28,1
+ 114 007c 0FB6      		in __tmp_reg__,__SREG__
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 3
+
+
+ 115 007e F894      		cli
+ 116 0080 DEBF      		out __SP_H__,r29
+ 117 0082 0FBE      		out __SREG__,__tmp_reg__
+ 118 0084 CDBF      		out __SP_L__,r28
+ 119 0086 DF91      		pop r29
+ 120 0088 CF91      		pop r28
+ 121 008a 0895      		ret
+ 122               	/* epilogue end (size=9) */
+ 123               	/* function lock size 79 (60) */
+ 124               		.size	lock, .-lock
+ 125               	.global	unlock
+ 126               		.type	unlock, @function
+ 127               	unlock:
+ 128               	/* prologue: frame size=1 */
+ 129 008c CF93      		push r28
+ 130 008e DF93      		push r29
+ 131 0090 CDB7      		in r28,__SP_L__
+ 132 0092 DEB7      		in r29,__SP_H__
+ 133 0094 2197      		sbiw r28,1
+ 134 0096 0FB6      		in __tmp_reg__,__SREG__
+ 135 0098 F894      		cli
+ 136 009a DEBF      		out __SP_H__,r29
+ 137 009c 0FBE      		out __SREG__,__tmp_reg__
+ 138 009e CDBF      		out __SP_L__,r28
+ 139               	/* prologue end (size=10) */
+ 140 00a0 8983      		std Y+1,r24
+ 141               	/* #APP */
+ 142 00a2 0FB6      		in __tmp_reg__,__SREG__
+ 143 00a4 F894      		cli
+ 144 00a6 0F92      		push __tmp_reg__
+ 145               		
+ 146               	/* #NOAPP */
+ 147 00a8 8981      		ldd r24,Y+1
+ 148 00aa 9927      		clr r25
+ 149 00ac F92F      		mov r31,r25
+ 150 00ae E82F      		mov r30,r24
+ 151 00b0 E050      		subi r30,lo8(-(RCB))
+ 152 00b2 F040      		sbci r31,hi8(-(RCB))
+ 153 00b4 9081      		ld r25,Z
+ 154 00b6 8091 0000 		lds r24,PI
+ 155 00ba 9817      		cp r25,r24
+ 156 00bc D9F4      		brne .L6
+ 157 00be 80E0      		ldi r24,lo8(PI)
+ 158 00c0 90E0      		ldi r25,hi8(PI)
+ 159 00c2 0E94 0000 		call popPiStack
+ 160 00c6 8091 0000 		lds r24,PI
+ 161 00ca 282F      		mov r18,r24
+ 162 00cc 3327      		clr r19
+ 163 00ce 27FD      		sbrc r18,7
+ 164 00d0 3095      		com r19
+ 165 00d2 932F      		mov r25,r19
+ 166 00d4 822F      		mov r24,r18
+ 167 00d6 820F      		add r24,r18
+ 168 00d8 931F      		adc r25,r19
+ 169 00da F92F      		mov r31,r25
+ 170 00dc E82F      		mov r30,r24
+ 171 00de E050      		subi r30,lo8(-(PI_Table+2))
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 4
+
+
+ 172 00e0 F040      		sbci r31,hi8(-(PI_Table+2))
+ 173 00e2 9091 0000 		lds r25,BTV
+ 174 00e6 8081      		ld r24,Z
+ 175 00e8 8923      		and r24,r25
+ 176 00ea 8095      		com r24
+ 177 00ec 8093 0000 		sts BTV,r24
+ 178 00f0 0E94 0000 		call preempt
+ 179               	.L6:
+ 180               	/* #APP */
+ 181 00f4 0F90      		pop __tmp_reg__
+ 182 00f6 0FBE      		out __SREG__,__tmp_reg__
+ 183               		
+ 184               	/* #NOAPP */
+ 185               	/* epilogue: frame size=1 */
+ 186 00f8 2196      		adiw r28,1
+ 187 00fa 0FB6      		in __tmp_reg__,__SREG__
+ 188 00fc F894      		cli
+ 189 00fe DEBF      		out __SP_H__,r29
+ 190 0100 0FBE      		out __SREG__,__tmp_reg__
+ 191 0102 CDBF      		out __SP_L__,r28
+ 192 0104 DF91      		pop r29
+ 193 0106 CF91      		pop r28
+ 194 0108 0895      		ret
+ 195               	/* epilogue end (size=9) */
+ 196               	/* function unlock size 72 (53) */
+ 197               		.size	unlock, .-unlock
+ 198               	.global	pushPiStack
+ 199               		.type	pushPiStack, @function
+ 200               	pushPiStack:
+ 201               	/* prologue: frame size=1 */
+ 202 010a CF93      		push r28
+ 203 010c DF93      		push r29
+ 204 010e CDB7      		in r28,__SP_L__
+ 205 0110 DEB7      		in r29,__SP_H__
+ 206 0112 2197      		sbiw r28,1
+ 207 0114 0FB6      		in __tmp_reg__,__SREG__
+ 208 0116 F894      		cli
+ 209 0118 DEBF      		out __SP_H__,r29
+ 210 011a 0FBE      		out __SREG__,__tmp_reg__
+ 211 011c CDBF      		out __SP_L__,r28
+ 212               	/* prologue end (size=10) */
+ 213 011e 8983      		std Y+1,r24
+ 214               	/* #APP */
+ 215 0120 0FB6      		in __tmp_reg__,__SREG__
+ 216 0122 F894      		cli
+ 217 0124 0F92      		push __tmp_reg__
+ 218               		
+ 219               	/* #NOAPP */
+ 220 0126 A0E0      		ldi r26,lo8(top)
+ 221 0128 B0E0      		ldi r27,hi8(top)
+ 222 012a 2C91      		ld r18,X
+ 223 012c 822F      		mov r24,r18
+ 224 012e 9927      		clr r25
+ 225 0130 F92F      		mov r31,r25
+ 226 0132 E82F      		mov r30,r24
+ 227 0134 E050      		subi r30,lo8(-(PI_Stack))
+ 228 0136 F040      		sbci r31,hi8(-(PI_Stack))
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 5
+
+
+ 229 0138 8981      		ldd r24,Y+1
+ 230 013a 8083      		st Z,r24
+ 231 013c 2F5F      		subi r18,lo8(-(1))
+ 232 013e 2C93      		st X,r18
+ 233               	/* #APP */
+ 234 0140 0F90      		pop __tmp_reg__
+ 235 0142 0FBE      		out __SREG__,__tmp_reg__
+ 236               		
+ 237               	/* #NOAPP */
+ 238               	/* epilogue: frame size=1 */
+ 239 0144 2196      		adiw r28,1
+ 240 0146 0FB6      		in __tmp_reg__,__SREG__
+ 241 0148 F894      		cli
+ 242 014a DEBF      		out __SP_H__,r29
+ 243 014c 0FBE      		out __SREG__,__tmp_reg__
+ 244 014e CDBF      		out __SP_L__,r28
+ 245 0150 DF91      		pop r29
+ 246 0152 CF91      		pop r28
+ 247 0154 0895      		ret
+ 248               	/* epilogue end (size=9) */
+ 249               	/* function pushPiStack size 47 (28) */
+ 250               		.size	pushPiStack, .-pushPiStack
+ 251               	.global	popPiStack
+ 252               		.type	popPiStack, @function
+ 253               	popPiStack:
+ 254               	/* prologue: frame size=2 */
+ 255 0156 CF93      		push r28
+ 256 0158 DF93      		push r29
+ 257 015a CDB7      		in r28,__SP_L__
+ 258 015c DEB7      		in r29,__SP_H__
+ 259 015e 2297      		sbiw r28,2
+ 260 0160 0FB6      		in __tmp_reg__,__SREG__
+ 261 0162 F894      		cli
+ 262 0164 DEBF      		out __SP_H__,r29
+ 263 0166 0FBE      		out __SREG__,__tmp_reg__
+ 264 0168 CDBF      		out __SP_L__,r28
+ 265               	/* prologue end (size=10) */
+ 266 016a 8983      		std Y+1,r24
+ 267 016c 9A83      		std Y+2,r25
+ 268               	/* #APP */
+ 269 016e 0FB6      		in __tmp_reg__,__SREG__
+ 270 0170 F894      		cli
+ 271 0172 0F92      		push __tmp_reg__
+ 272               		
+ 273               	/* #NOAPP */
+ 274 0174 A981      		ldd r26,Y+1
+ 275 0176 BA81      		ldd r27,Y+2
+ 276 0178 8091 0000 		lds r24,top
+ 277 017c 8150      		subi r24,lo8(-(-1))
+ 278 017e 8093 0000 		sts top,r24
+ 279 0182 9927      		clr r25
+ 280 0184 F92F      		mov r31,r25
+ 281 0186 E82F      		mov r30,r24
+ 282 0188 E050      		subi r30,lo8(-(PI_Stack))
+ 283 018a F040      		sbci r31,hi8(-(PI_Stack))
+ 284 018c 8081      		ld r24,Z
+ 285 018e 8C93      		st X,r24
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 6
+
+
+ 286               	/* #APP */
+ 287 0190 0F90      		pop __tmp_reg__
+ 288 0192 0FBE      		out __SREG__,__tmp_reg__
+ 289               		
+ 290               	/* #NOAPP */
+ 291               	/* epilogue: frame size=2 */
+ 292 0194 2296      		adiw r28,2
+ 293 0196 0FB6      		in __tmp_reg__,__SREG__
+ 294 0198 F894      		cli
+ 295 019a DEBF      		out __SP_H__,r29
+ 296 019c 0FBE      		out __SREG__,__tmp_reg__
+ 297 019e CDBF      		out __SP_L__,r28
+ 298 01a0 DF91      		pop r29
+ 299 01a2 CF91      		pop r28
+ 300 01a4 0895      		ret
+ 301               	/* epilogue end (size=9) */
+ 302               	/* function popPiStack size 49 (30) */
+ 303               		.size	popPiStack, .-popPiStack
+ 304               	/* File "../kernel_0_4/ResourceManager.c": code  247 = 0x00f7 ( 171), prologues  40, epilogues  36 
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ResourceManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:14     .data:00000000 PI
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:21     .bss:00000000 top
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:27     .data:00000001 PI_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:48     .text:00000000 lock
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:200    .text:0000010a pushPiStack
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:127    .text:0000008c unlock
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:253    .text:00000156 popPiStack
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+RCB
+BTV
+preempt
+PI_Stack

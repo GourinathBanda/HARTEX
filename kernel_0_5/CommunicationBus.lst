@@ -1,0 +1,336 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 1
+
+
+   1               		.file	"CommunicationBus.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.text
+  11               	.global	msg_signal_and_release
+  12               		.type	msg_signal_and_release, @function
+  13               	msg_signal_and_release:
+  14               	/* prologue: frame size=0 */
+  15               	/* prologue end (size=0) */
+  16               	/* #APP */
+  17 0000 0FB6      		in __tmp_reg__,__SREG__
+  18 0002 F894      		cli
+  19 0004 0F92      		push __tmp_reg__
+  20               		
+  21               	/* #NOAPP */
+  22 0006 E82F      		mov r30,r24
+  23 0008 FF27      		clr r31
+  24 000a EE0F      		add r30,r30
+  25 000c FF1F      		adc r31,r31
+  26 000e E050      		subi r30,lo8(-(MsgSCB))
+  27 0010 F040      		sbci r31,hi8(-(MsgSCB))
+  28 0012 8081      		ld r24,Z
+  29 0014 862B      		or r24,r22
+  30 0016 8083      		st Z,r24
+  31 0018 8181      		ldd r24,Z+1
+  32 001a 0E94 0000 		call release
+  33               	/* #APP */
+  34 001e 0F90      		pop __tmp_reg__
+  35 0020 0FBE      		out __SREG__,__tmp_reg__
+  36               		
+  37               	/* #NOAPP */
+  38               	/* epilogue: frame size=0 */
+  39 0022 0895      		ret
+  40               	/* epilogue end (size=1) */
+  41               	/* function msg_signal_and_release size 27 (26) */
+  42               		.size	msg_signal_and_release, .-msg_signal_and_release
+  43               	.global	msg_test_and_reset
+  44               		.type	msg_test_and_reset, @function
+  45               	msg_test_and_reset:
+  46               	/* prologue: frame size=0 */
+  47               	/* prologue end (size=0) */
+  48               	/* #APP */
+  49 0024 0FB6      		in __tmp_reg__,__SREG__
+  50 0026 F894      		cli
+  51 0028 0F92      		push __tmp_reg__
+  52               		
+  53               	/* #NOAPP */
+  54 002a A82F      		mov r26,r24
+  55 002c BB27      		clr r27
+  56 002e AA0F      		add r26,r26
+  57 0030 BB1F      		adc r27,r27
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 2
+
+
+  58 0032 A050      		subi r26,lo8(-(MsgSCB))
+  59 0034 B040      		sbci r27,hi8(-(MsgSCB))
+  60 0036 4C91      		ld r20,X
+  61 0038 242F      		mov r18,r20
+  62 003a 3327      		clr r19
+  63 003c 8091 0000 		lds r24,RT
+  64 0040 E82F      		mov r30,r24
+  65 0042 FF27      		clr r31
+  66 0044 EE0F      		add r30,r30
+  67 0046 FF1F      		adc r31,r31
+  68 0048 E050      		subi r30,lo8(-(bit_vect))
+  69 004a F040      		sbci r31,hi8(-(bit_vect))
+  70 004c 8081      		ld r24,Z
+  71 004e 9181      		ldd r25,Z+1
+  72 0050 2823      		and r18,r24
+  73 0052 3923      		and r19,r25
+  74 0054 232B      		or r18,r19
+  75 0056 89F0      		breq .L3
+  76 0058 8091 0000 		lds r24,RT
+  77 005c E82F      		mov r30,r24
+  78 005e FF27      		clr r31
+  79 0060 EE0F      		add r30,r30
+  80 0062 FF1F      		adc r31,r31
+  81 0064 E050      		subi r30,lo8(-(bit_vect))
+  82 0066 F040      		sbci r31,hi8(-(bit_vect))
+  83 0068 8081      		ld r24,Z
+  84 006a 8095      		com r24
+  85 006c 4823      		and r20,r24
+  86 006e 4C93      		st X,r20
+  87               	/* #APP */
+  88 0070 0F90      		pop __tmp_reg__
+  89 0072 0FBE      		out __SREG__,__tmp_reg__
+  90               		
+  91               	/* #NOAPP */
+  92 0074 81E0      		ldi r24,lo8(1)
+  93 0076 90E0      		ldi r25,hi8(1)
+  94 0078 0895      		ret
+  95               	.L3:
+  96               	/* #APP */
+  97 007a 0F90      		pop __tmp_reg__
+  98 007c 0FBE      		out __SREG__,__tmp_reg__
+  99               		
+ 100               	/* #NOAPP */
+ 101 007e 80E0      		ldi r24,lo8(0)
+ 102 0080 90E0      		ldi r25,hi8(0)
+ 103 0082 0895      		ret
+ 104               	/* epilogue: frame size=0 */
+ 105               	/* epilogue: noreturn */
+ 106               	/* epilogue end (size=0) */
+ 107               	/* function msg_test_and_reset size 61 (61) */
+ 108               		.size	msg_test_and_reset, .-msg_test_and_reset
+ 109               	.global	broadcast
+ 110               		.type	broadcast, @function
+ 111               	broadcast:
+ 112               	/* prologue: frame size=0 */
+ 113               	/* prologue end (size=0) */
+ 114               	/* #APP */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 3
+
+
+ 115 0084 0FB6      		in __tmp_reg__,__SREG__
+ 116 0086 F894      		cli
+ 117 0088 0F92      		push __tmp_reg__
+ 118               		
+ 119               	/* #NOAPP */
+ 120 008a E82F      		mov r30,r24
+ 121 008c FF27      		clr r31
+ 122 008e EE0F      		lsl r30
+ 123 0090 FF1F      		rol r31
+ 124 0092 EE0F      		lsl r30
+ 125 0094 FF1F      		rol r31
+ 126 0096 E050      		subi r30,lo8(-(MCB))
+ 127 0098 F040      		sbci r31,hi8(-(MCB))
+ 128 009a 6081      		ld r22,Z
+ 129 009c 0E94 0000 		call msg_signal_and_release
+ 130               	/* #APP */
+ 131 00a0 0F90      		pop __tmp_reg__
+ 132 00a2 0FBE      		out __SREG__,__tmp_reg__
+ 133               		
+ 134               	/* #NOAPP */
+ 135               	/* epilogue: frame size=0 */
+ 136 00a4 0895      		ret
+ 137               	/* epilogue end (size=1) */
+ 138               	/* function broadcast size 26 (25) */
+ 139               		.size	broadcast, .-broadcast
+ 140               	.global	receive
+ 141               		.type	receive, @function
+ 142               	receive:
+ 143               	/* prologue: frame size=0 */
+ 144 00a6 CF93      		push r28
+ 145               	/* prologue end (size=1) */
+ 146 00a8 C82F      		mov r28,r24
+ 147               	/* #APP */
+ 148 00aa 0FB6      		in __tmp_reg__,__SREG__
+ 149 00ac F894      		cli
+ 150 00ae 0F92      		push __tmp_reg__
+ 151               		
+ 152               	/* #NOAPP */
+ 153 00b0 0E94 0000 		call msg_test_and_reset
+ 154 00b4 8823      		tst r24
+ 155 00b6 E1F0      		breq .L7
+ 156 00b8 EC2F      		mov r30,r28
+ 157 00ba FF27      		clr r31
+ 158 00bc EE0F      		lsl r30
+ 159 00be FF1F      		rol r31
+ 160 00c0 EE0F      		lsl r30
+ 161 00c2 FF1F      		rol r31
+ 162 00c4 E050      		subi r30,lo8(-(MCB))
+ 163 00c6 F040      		sbci r31,hi8(-(MCB))
+ 164 00c8 8091 0000 		lds r24,RT
+ 165 00cc A82F      		mov r26,r24
+ 166 00ce BB27      		clr r27
+ 167 00d0 AA0F      		add r26,r26
+ 168 00d2 BB1F      		adc r27,r27
+ 169 00d4 A050      		subi r26,lo8(-(TCB))
+ 170 00d6 B040      		sbci r27,hi8(-(TCB))
+ 171 00d8 4381      		ldd r20,Z+3
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 4
+
+
+ 172 00da 6D91      		ld r22,X+
+ 173 00dc 7C91      		ld r23,X
+ 174 00de 8181      		ldd r24,Z+1
+ 175 00e0 9281      		ldd r25,Z+2
+ 176 00e2 0E94 0000 		call copy_message
+ 177               	/* #APP */
+ 178 00e6 0F90      		pop __tmp_reg__
+ 179 00e8 0FBE      		out __SREG__,__tmp_reg__
+ 180               		
+ 181               	/* #NOAPP */
+ 182 00ea 81E0      		ldi r24,lo8(1)
+ 183 00ec 90E0      		ldi r25,hi8(1)
+ 184 00ee 04C0      		rjmp .L6
+ 185               	.L7:
+ 186               	/* #APP */
+ 187 00f0 0F90      		pop __tmp_reg__
+ 188 00f2 0FBE      		out __SREG__,__tmp_reg__
+ 189               		
+ 190               	/* #NOAPP */
+ 191 00f4 80E0      		ldi r24,lo8(0)
+ 192 00f6 90E0      		ldi r25,hi8(0)
+ 193               	.L6:
+ 194               	/* epilogue: frame size=0 */
+ 195 00f8 CF91      		pop r28
+ 196 00fa 0895      		ret
+ 197               	/* epilogue end (size=2) */
+ 198               	/* function receive size 56 (53) */
+ 199               		.size	receive, .-receive
+ 200               	.global	getMsgSourceBuffer
+ 201               		.type	getMsgSourceBuffer, @function
+ 202               	getMsgSourceBuffer:
+ 203               	/* prologue: frame size=0 */
+ 204               	/* prologue end (size=0) */
+ 205 00fc E82F      		mov r30,r24
+ 206 00fe FF27      		clr r31
+ 207 0100 EE0F      		lsl r30
+ 208 0102 FF1F      		rol r31
+ 209 0104 EE0F      		lsl r30
+ 210 0106 FF1F      		rol r31
+ 211 0108 E050      		subi r30,lo8(-(MCB))
+ 212 010a F040      		sbci r31,hi8(-(MCB))
+ 213 010c 8181      		ldd r24,Z+1
+ 214 010e 9281      		ldd r25,Z+2
+ 215               	/* epilogue: frame size=0 */
+ 216 0110 0895      		ret
+ 217               	/* epilogue end (size=1) */
+ 218               	/* function getMsgSourceBuffer size 11 (10) */
+ 219               		.size	getMsgSourceBuffer, .-getMsgSourceBuffer
+ 220               	.global	getMsgDestinationBuffer
+ 221               		.type	getMsgDestinationBuffer, @function
+ 222               	getMsgDestinationBuffer:
+ 223               	/* prologue: frame size=0 */
+ 224               	/* prologue end (size=0) */
+ 225 0112 8091 0000 		lds r24,RT
+ 226 0116 E82F      		mov r30,r24
+ 227 0118 FF27      		clr r31
+ 228 011a EE0F      		add r30,r30
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 5
+
+
+ 229 011c FF1F      		adc r31,r31
+ 230 011e E050      		subi r30,lo8(-(TCB))
+ 231 0120 F040      		sbci r31,hi8(-(TCB))
+ 232 0122 8081      		ld r24,Z
+ 233 0124 9181      		ldd r25,Z+1
+ 234               	/* epilogue: frame size=0 */
+ 235 0126 0895      		ret
+ 236               	/* epilogue end (size=1) */
+ 237               	/* function getMsgDestinationBuffer size 11 (10) */
+ 238               		.size	getMsgDestinationBuffer, .-getMsgDestinationBuffer
+ 239               	.global	getMsgLength
+ 240               		.type	getMsgLength, @function
+ 241               	getMsgLength:
+ 242               	/* prologue: frame size=0 */
+ 243               	/* prologue end (size=0) */
+ 244 0128 E82F      		mov r30,r24
+ 245 012a FF27      		clr r31
+ 246 012c EE0F      		lsl r30
+ 247 012e FF1F      		rol r31
+ 248 0130 EE0F      		lsl r30
+ 249 0132 FF1F      		rol r31
+ 250 0134 E050      		subi r30,lo8(-(MCB))
+ 251 0136 F040      		sbci r31,hi8(-(MCB))
+ 252 0138 8381      		ldd r24,Z+3
+ 253 013a 9927      		clr r25
+ 254               	/* epilogue: frame size=0 */
+ 255 013c 0895      		ret
+ 256               	/* epilogue end (size=1) */
+ 257               	/* function getMsgLength size 11 (10) */
+ 258               		.size	getMsgLength, .-getMsgLength
+ 259               	.global	copy_message
+ 260               		.type	copy_message, @function
+ 261               	copy_message:
+ 262               	/* prologue: frame size=0 */
+ 263               	/* prologue end (size=0) */
+ 264 013e 282F      		mov r18,r24
+ 265 0140 392F      		mov r19,r25
+ 266 0142 4150      		subi r20,lo8(-(-1))
+ 267 0144 4F3F      		cpi r20,lo8(-1)
+ 268 0146 61F0      		breq .L18
+ 269               	.L16:
+ 270 0148 E42F      		mov r30,r20
+ 271 014a FF27      		clr r31
+ 272 014c B72F      		mov r27,r23
+ 273 014e A62F      		mov r26,r22
+ 274 0150 AE0F      		add r26,r30
+ 275 0152 BF1F      		adc r27,r31
+ 276 0154 E20F      		add r30,r18
+ 277 0156 F31F      		adc r31,r19
+ 278 0158 8081      		ld r24,Z
+ 279 015a 8C93      		st X,r24
+ 280 015c 4150      		subi r20,1
+ 281 015e A0F7      		brcc .L16
+ 282               	.L18:
+ 283 0160 0895      		ret
+ 284               	/* epilogue: frame size=0 */
+ 285               	/* epilogue: noreturn */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 6
+
+
+ 286               	/* epilogue end (size=0) */
+ 287               	/* function copy_message size 19 (19) */
+ 288               		.size	copy_message, .-copy_message
+ 289               	/* File "../kernel_0_5/CommunicationBus.c": code  222 = 0x00de ( 214), prologues   1, epilogues   7
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 CommunicationBus.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:13     .text:00000000 msg_signal_and_release
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:45     .text:00000024 msg_test_and_reset
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:111    .text:00000084 broadcast
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:142    .text:000000a6 receive
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:261    .text:0000013e copy_message
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:202    .text:000000fc getMsgSourceBuffer
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:222    .text:00000112 getMsgDestinationBuffer
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:241    .text:00000128 getMsgLength
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+MsgSCB
+release
+RT
+bit_vect
+MCB
+TCB

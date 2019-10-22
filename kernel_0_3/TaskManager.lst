@@ -1,0 +1,384 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 1
+
+
+   1               		.file	"TaskManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.text
+  11               	.global	preempt
+  12               		.type	preempt, @function
+  13               	preempt:
+  14               	/* prologue: frame size=0 */
+  15               	/* prologue end (size=0) */
+  16               	/* #APP */
+  17 0000 0FB6      		in __tmp_reg__,__SREG__
+  18 0002 F894      		cli
+  19 0004 0F92      		push __tmp_reg__
+  20               		
+  21               	/* #NOAPP */
+  22 0006 8091 0000 		lds r24,ATV
+  23 000a 9091 0000 		lds r25,BTV
+  24 000e 8923      		and r24,r25
+  25 0010 0E94 0000 		call find_msb
+  26 0014 982F      		mov r25,r24
+  27 0016 8091 0000 		lds r24,RT
+  28 001a 8F3F      		cpi r24,lo8(-1)
+  29 001c 09F4      		brne .+2
+  30 001e 60C0      		rjmp .L2
+  31 0020 8091 0000 		lds r24,RT
+  32 0024 8917      		cp r24,r25
+  33 0026 08F0      		brlo .+2
+  34 0028 69C0      		rjmp .L4
+  35               	/* #APP */
+  36 002a 0F92      		push R0
+  37 002c 1F92      		push R1
+  38 002e 2F92      		push R2
+  39 0030 3F92      		push R3
+  40 0032 4F92      		push R4
+  41 0034 5F92      		push R5
+  42 0036 6F92      		push R6
+  43 0038 7F92      		push R7
+  44 003a 8F92      		push R8
+  45 003c 9F92      		push R9
+  46 003e AF92      		push R10
+  47 0040 BF92      		push R11
+  48 0042 CF92      		push R12
+  49 0044 DF92      		push R13
+  50 0046 EF92      		push R14
+  51 0048 FF92      		push R15
+  52 004a 0F93      		push R16
+  53 004c 1F93      		push R17
+  54 004e 2F93      		push R18
+  55 0050 3F93      		push R19
+  56 0052 4F93      		push R20
+  57 0054 5F93      		push R21
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 2
+
+
+  58 0056 6F93      		push R22
+  59 0058 7F93      		push R23
+  60 005a 8F93      		push R24
+  61 005c 9F93      		push R25
+  62 005e AF93      		push R26
+  63 0060 BF93      		push R27
+  64 0062 CF93      		push R28
+  65 0064 DF93      		push R29
+  66 0066 EF93      		push R30
+  67 0068 FF93      		push R31
+  68 006a 0FB6      		in __tmp_reg__,__SREG__
+  69 006c 0F92      		push __tmp_reg__
+  70               		
+  71               	/* #NOAPP */
+  72 006e 8091 0000 		lds r24,RT
+  73               	/* #APP */
+  74 0072 8F93      		push r24
+  75               		
+  76               	/* #NOAPP */
+  77 0074 9093 0000 		sts RT,r25
+  78 0078 8091 0000 		lds r24,RT
+  79 007c E82F      		mov r30,r24
+  80 007e FF27      		clr r31
+  81 0080 EE0F      		add r30,r30
+  82 0082 FF1F      		adc r31,r31
+  83 0084 E050      		subi r30,lo8(-(start_task))
+  84 0086 F040      		sbci r31,hi8(-(start_task))
+  85 0088 0190      		ld __tmp_reg__,Z+
+  86 008a F081      		ld r31,Z
+  87 008c E02D      		mov r30,__tmp_reg__
+  88 008e 0995      		icall
+  89               	/* #APP */
+  90 0090 8F91      		pop r24
+  91               		
+  92               	/* #NOAPP */
+  93 0092 8093 0000 		sts RT,r24
+  94 0096 8091 0000 		lds r24,RT
+  95               	/* #APP */
+  96 009a 0F90      		pop __tmp_reg__
+  97 009c 0FBE      		out __SREG__,__tmp_reg__
+  98 009e FF91      		pop R31
+  99 00a0 EF91      		pop R30
+ 100 00a2 DF91      		pop R29
+ 101 00a4 CF91      		pop R28
+ 102 00a6 BF91      		pop R27
+ 103 00a8 AF91      		pop R26
+ 104 00aa 9F91      		pop R25
+ 105 00ac 8F91      		pop R24
+ 106 00ae 7F91      		pop R23
+ 107 00b0 6F91      		pop R22
+ 108 00b2 5F91      		pop R21
+ 109 00b4 4F91      		pop R20
+ 110 00b6 3F91      		pop R19
+ 111 00b8 2F91      		pop R18
+ 112 00ba 1F91      		pop R17
+ 113 00bc 0F91      		pop R16
+ 114 00be FF90      		pop R15
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 3
+
+
+ 115 00c0 EF90      		pop R14
+ 116 00c2 DF90      		pop R13
+ 117 00c4 CF90      		pop R12
+ 118 00c6 BF90      		pop R11
+ 119 00c8 AF90      		pop R10
+ 120 00ca 9F90      		pop R9
+ 121 00cc 8F90      		pop R8
+ 122 00ce 7F90      		pop R7
+ 123 00d0 6F90      		pop R6
+ 124 00d2 5F90      		pop R5
+ 125 00d4 4F90      		pop R4
+ 126 00d6 3F90      		pop R3
+ 127 00d8 2F90      		pop R2
+ 128 00da 1F90      		pop R1
+ 129 00dc 0F90      		pop R0
+ 130               		
+ 131               	/* #NOAPP */
+ 132 00de 0EC0      		rjmp .L4
+ 133               	.L2:
+ 134 00e0 9093 0000 		sts RT,r25
+ 135 00e4 8091 0000 		lds r24,RT
+ 136 00e8 E82F      		mov r30,r24
+ 137 00ea FF27      		clr r31
+ 138 00ec EE0F      		add r30,r30
+ 139 00ee FF1F      		adc r31,r31
+ 140 00f0 E050      		subi r30,lo8(-(start_task))
+ 141 00f2 F040      		sbci r31,hi8(-(start_task))
+ 142 00f4 0190      		ld __tmp_reg__,Z+
+ 143 00f6 F081      		ld r31,Z
+ 144 00f8 E02D      		mov r30,__tmp_reg__
+ 145 00fa 0995      		icall
+ 146               	.L4:
+ 147               	/* #APP */
+ 148 00fc 0F90      		pop __tmp_reg__
+ 149 00fe 0FBE      		out __SREG__,__tmp_reg__
+ 150               		
+ 151               	/* #NOAPP */
+ 152               	/* epilogue: frame size=0 */
+ 153 0100 0895      		ret
+ 154               	/* epilogue end (size=1) */
+ 155               	/* function preempt size 216 (215) */
+ 156               		.size	preempt, .-preempt
+ 157               	.global	schedule
+ 158               		.type	schedule, @function
+ 159               	schedule:
+ 160               	/* prologue: frame size=0 */
+ 161               	/* prologue end (size=0) */
+ 162               	/* #APP */
+ 163 0102 0FB6      		in __tmp_reg__,__SREG__
+ 164 0104 F894      		cli
+ 165 0106 0F92      		push __tmp_reg__
+ 166               		
+ 167               	/* #NOAPP */
+ 168 0108 8091 0000 		lds r24,ATV
+ 169 010c 0E94 0000 		call find_msb
+ 170 0110 8093 0000 		sts RT,r24
+ 171 0114 8091 0000 		lds r24,RT
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 4
+
+
+ 172 0118 E82F      		mov r30,r24
+ 173 011a FF27      		clr r31
+ 174 011c EE0F      		add r30,r30
+ 175 011e FF1F      		adc r31,r31
+ 176 0120 E050      		subi r30,lo8(-(start_task))
+ 177 0122 F040      		sbci r31,hi8(-(start_task))
+ 178 0124 0190      		ld __tmp_reg__,Z+
+ 179 0126 F081      		ld r31,Z
+ 180 0128 E02D      		mov r30,__tmp_reg__
+ 181 012a 0995      		icall
+ 182               	/* #APP */
+ 183 012c 0F90      		pop __tmp_reg__
+ 184 012e 0FBE      		out __SREG__,__tmp_reg__
+ 185               		
+ 186               	/* #NOAPP */
+ 187               	/* epilogue: frame size=0 */
+ 188 0130 0895      		ret
+ 189               	/* epilogue end (size=1) */
+ 190               	/* function schedule size 33 (32) */
+ 191               		.size	schedule, .-schedule
+ 192               	.global	release
+ 193               		.type	release, @function
+ 194               	release:
+ 195               	/* prologue: frame size=0 */
+ 196               	/* prologue end (size=0) */
+ 197 0132 982F      		mov r25,r24
+ 198               	/* #APP */
+ 199 0134 0FB6      		in __tmp_reg__,__SREG__
+ 200 0136 F894      		cli
+ 201 0138 0F92      		push __tmp_reg__
+ 202               		
+ 203               	/* #NOAPP */
+ 204 013a 8091 0000 		lds r24,ATV
+ 205 013e 892B      		or r24,r25
+ 206 0140 8093 0000 		sts ATV,r24
+ 207 0144 0E94 0000 		call preempt
+ 208               	/* #APP */
+ 209 0148 0F90      		pop __tmp_reg__
+ 210 014a 0FBE      		out __SREG__,__tmp_reg__
+ 211               		
+ 212               	/* #NOAPP */
+ 213               	/* epilogue: frame size=0 */
+ 214 014c 0895      		ret
+ 215               	/* epilogue end (size=1) */
+ 216               	/* function release size 23 (22) */
+ 217               		.size	release, .-release
+ 218               	.global	taskExit
+ 219               		.type	taskExit, @function
+ 220               	taskExit:
+ 221               	/* prologue: frame size=0 */
+ 222               	/* prologue end (size=0) */
+ 223               	/* #APP */
+ 224 014e F894      		cli
+ 225               	/* #NOAPP */
+ 226 0150 8091 0000 		lds r24,RT
+ 227 0154 E82F      		mov r30,r24
+ 228 0156 FF27      		clr r31
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 5
+
+
+ 229 0158 EE0F      		add r30,r30
+ 230 015a FF1F      		adc r31,r31
+ 231 015c E050      		subi r30,lo8(-(bit_vect))
+ 232 015e F040      		sbci r31,hi8(-(bit_vect))
+ 233 0160 9081      		ld r25,Z
+ 234 0162 9095      		com r25
+ 235 0164 8091 0000 		lds r24,ATV
+ 236 0168 8923      		and r24,r25
+ 237 016a 8093 0000 		sts ATV,r24
+ 238 016e 8FEF      		ldi r24,lo8(-1)
+ 239 0170 8093 0000 		sts RT,r24
+ 240               	/* epilogue: frame size=0 */
+ 241 0174 0895      		ret
+ 242               	/* epilogue end (size=1) */
+ 243               	/* function taskExit size 21 (20) */
+ 244               		.size	taskExit, .-taskExit
+ 245               	.global	kernelStartUp
+ 246               		.type	kernelStartUp, @function
+ 247               	kernelStartUp:
+ 248               	/* prologue: frame size=0 */
+ 249               	/* prologue end (size=0) */
+ 250               	/* #APP */
+ 251 0176 7894      		sei
+ 252               	/* #NOAPP */
+ 253 0178 1092 0000 		sts ATV,__zero_reg__
+ 254 017c 8FEF      		ldi r24,lo8(-1)
+ 255 017e 8093 0000 		sts BTV,r24
+ 256 0182 8093 0000 		sts RT,r24
+ 257               	.L19:
+ 258 0186 8091 0000 		lds r24,ATV
+ 259 018a 8823      		tst r24
+ 260 018c E1F3      		breq .L19
+ 261               	.L15:
+ 262 018e 0E94 0000 		call schedule
+ 263 0192 8091 0000 		lds r24,ATV
+ 264 0196 8823      		tst r24
+ 265 0198 D1F7      		brne .L15
+ 266 019a F5CF      		rjmp .L19
+ 267               	/* epilogue: frame size=0 */
+ 268               	/* epilogue: noreturn */
+ 269               	/* epilogue end (size=0) */
+ 270               	/* function kernelStartUp size 20 (20) */
+ 271               		.size	kernelStartUp, .-kernelStartUp
+ 272               	.global	find_msb
+ 273               		.type	find_msb, @function
+ 274               	find_msb:
+ 275               	/* prologue: frame size=0 */
+ 276               	/* prologue end (size=0) */
+ 277 019c 8031      		cpi r24,lo8(16)
+ 278 019e D8F0      		brlo .L21
+ 279 01a0 8034      		cpi r24,lo8(64)
+ 280 01a2 88F0      		brlo .L22
+ 281 01a4 282F      		mov r18,r24
+ 282 01a6 3327      		clr r19
+ 283 01a8 27FD      		sbrc r18,7
+ 284 01aa 3095      		com r19
+ 285 01ac 2095      		com r18
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 6
+
+
+ 286 01ae 3095      		com r19
+ 287 01b0 2227      		clr r18
+ 288 01b2 330F      		lsl r19
+ 289 01b4 221F      		rol r18
+ 290 01b6 3327      		clr r19
+ 291 01b8 87E0      		ldi r24,lo8(7)
+ 292 01ba 90E0      		ldi r25,hi8(7)
+ 293 01bc 821B      		sub r24,r18
+ 294 01be 930B      		sbc r25,r19
+ 295 01c0 282F      		mov r18,r24
+ 296 01c2 392F      		mov r19,r25
+ 297 01c4 19C0      		rjmp .L20
+ 298               	.L22:
+ 299 01c6 8032      		cpi r24,lo8(32)
+ 300 01c8 18F0      		brlo .L26
+ 301 01ca 25E0      		ldi r18,lo8(5)
+ 302 01cc 30E0      		ldi r19,hi8(5)
+ 303 01ce 14C0      		rjmp .L20
+ 304               	.L26:
+ 305 01d0 24E0      		ldi r18,lo8(4)
+ 306 01d2 30E0      		ldi r19,hi8(4)
+ 307 01d4 11C0      		rjmp .L20
+ 308               	.L21:
+ 309 01d6 8430      		cpi r24,lo8(4)
+ 310 01d8 40F0      		brlo .L29
+ 311 01da 8830      		cpi r24,lo8(8)
+ 312 01dc 18F0      		brlo .L30
+ 313 01de 23E0      		ldi r18,lo8(3)
+ 314 01e0 30E0      		ldi r19,hi8(3)
+ 315 01e2 0AC0      		rjmp .L20
+ 316               	.L30:
+ 317 01e4 22E0      		ldi r18,lo8(2)
+ 318 01e6 30E0      		ldi r19,hi8(2)
+ 319 01e8 07C0      		rjmp .L20
+ 320               	.L29:
+ 321 01ea 8230      		cpi r24,lo8(2)
+ 322 01ec 18F0      		brlo .L33
+ 323 01ee 21E0      		ldi r18,lo8(1)
+ 324 01f0 30E0      		ldi r19,hi8(1)
+ 325 01f2 02C0      		rjmp .L20
+ 326               	.L33:
+ 327 01f4 20E0      		ldi r18,lo8(0)
+ 328 01f6 30E0      		ldi r19,hi8(0)
+ 329               	.L20:
+ 330 01f8 932F      		mov r25,r19
+ 331 01fa 822F      		mov r24,r18
+ 332               	/* epilogue: frame size=0 */
+ 333 01fc 0895      		ret
+ 334               	/* epilogue end (size=1) */
+ 335               	/* function find_msb size 49 (48) */
+ 336               		.size	find_msb, .-find_msb
+ 337               		.comm ATV,1,1
+ 338               		.comm BTV,1,1
+ 339               		.comm RT,1,1
+ 340               	/* File "../kernel_0_3/TaskManager.c": code  362 = 0x016a ( 357), prologues   0, epilogues   5 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 TaskManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:13     .text:00000000 preempt
+                            *COM*:00000001 ATV
+                            *COM*:00000001 BTV
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:274    .text:0000019c find_msb
+                            *COM*:00000001 RT
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:159    .text:00000102 schedule
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:194    .text:00000132 release
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:220    .text:0000014e taskExit
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:247    .text:00000176 kernelStartUp
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+start_task
+bit_vect

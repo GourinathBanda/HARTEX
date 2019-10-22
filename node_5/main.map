@@ -1,0 +1,559 @@
+Archive member included because of file (symbol)
+
+C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+                              main.o (exit)
+C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+BTV                 0x1               ../kernel_0_5/TaskManager.o
+sourceBuf0          0x2               main.o
+msgDestBuf2         0x4               main.o
+PI_Stack            0x2               task.o
+ATV                 0x1               ../kernel_0_5/TaskManager.o
+msgDestBuf5         0x2               main.o
+RT                  0x1               ../kernel_0_5/TaskManager.o
+sourceBuf1          0x4               main.o
+msgDestBuf6         0x4               main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+LOAD main.o
+LOAD task.o
+LOAD message.o
+LOAD semaphore.o
+LOAD events.o
+LOAD ../kernel_0_5/global.o
+LOAD ../kernel_0_5/TaskManager.o
+LOAD ../kernel_0_5/ResourceManager.o
+LOAD ../kernel_0_5/IntegratedEventManager.o
+LOAD ../kernel_0_5/SynchronizationBus.o
+LOAD ../kernel_0_5/CommunicationBus.o
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\libc.a
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x944
+ *(.vectors)
+ .vectors       0x00000000       0x60 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+                0x00000060                __ctors_start = .
+ *(.ctors)
+                0x00000060                __ctors_end = .
+                0x00000060                __dtors_start = .
+ *(.dtors)
+                0x00000060                __dtors_end = .
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000060                . = ALIGN (0x2)
+ *(.init0)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000060        0xc C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+ *(.init3)
+ *(.init4)
+ .init4         0x0000006c       0x20 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                0x0000006c                __do_copy_data
+ .init4         0x0000008c       0x10 C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+                0x0000008c                __do_clear_bss
+ *(.init5)
+ *(.init6)
+ *(.init7)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009c        0x4 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+ *(.text)
+ .text          0x000000a0        0x4 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                0x000000a0                __vector_22
+                0x000000a0                __vector_1
+                0x000000a0                __bad_interrupt
+                0x000000a0                __vector_6
+                0x000000a0                __vector_3
+                0x000000a0                __vector_23
+                0x000000a0                __vector_11
+                0x000000a0                __vector_13
+                0x000000a0                __vector_17
+                0x000000a0                __vector_19
+                0x000000a0                __vector_5
+                0x000000a0                __vector_4
+                0x000000a0                __vector_9
+                0x000000a0                __vector_2
+                0x000000a0                __vector_21
+                0x000000a0                __vector_15
+                0x000000a0                __vector_14
+                0x000000a0                __vector_10
+                0x000000a0                __vector_16
+                0x000000a0                __vector_18
+                0x000000a0                __vector_20
+ .text          0x000000a4      0x1c0 main.o
+                0x0000013c                __vector_12
+                0x0000021e                hd_init
+                0x000000f0                __vector_7
+                0x0000024c                main
+                0x000000a4                __vector_8
+ .text          0x00000264       0xe8 task.o
+                0x000002da                task5
+                0x000002ca                task4
+                0x0000028a                task0
+                0x0000029a                task1
+                0x000002aa                task2
+                0x0000030a                task6
+                0x00000264                delay
+                0x0000033c                task7
+                0x000002ba                task3
+ .text          0x0000034c      0x208 ../kernel_0_5/TaskManager.o
+                0x000004cc                kernelStartUp
+                0x00000458                schedule
+                0x00000488                release
+                0x0000034c                preempt
+                0x000004a4                taskExit
+                0x000004f2                find_msb
+ .text          0x00000554       0xe4 ../kernel_0_5/ResourceManager.o
+                0x00000554                lock
+                0x000005a4                unlock
+                0x000005f0                pushPiStack
+                0x00000612                popPiStack
+ .text          0x00000638      0x124 ../kernel_0_5/IntegratedEventManager.o
+                0x00000752                enable
+                0x0000072e                enableNext
+                0x00000726                disable
+                0x000006e4                executeOPC
+                0x00000638                sweepTable
+                0x0000068c                eventManager
+ .text          0x0000075c       0x84 ../kernel_0_5/SynchronizationBus.o
+                0x00000780                test_and_reset
+                0x0000075c                signal_and_release
+ .text          0x000007e0      0x162 ../kernel_0_5/CommunicationBus.o
+                0x00000908                getMsgLength
+                0x00000804                msg_test_and_reset
+                0x0000091e                copy_message
+                0x000007e0                msg_signal_and_release
+                0x000008f2                getMsgDestinationBuffer
+                0x00000886                receive
+                0x00000864                broadcast
+                0x000008dc                getMsgSourceBuffer
+                0x00000942                . = ALIGN (0x2)
+ *(.text.*)
+                0x00000942                . = ALIGN (0x2)
+ *(.fini9)
+ *(.fini8)
+ *(.fini7)
+ *(.fini6)
+ *(.fini5)
+ *(.fini4)
+ *(.fini3)
+ *(.fini2)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000942        0x2 C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+                0x00000944                _etext = .
+
+.data           0x00800060       0x90 load address 0x00000944
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060       0x22 task.o
+                0x00800060                RCB
+                0x00800072                start_task
+                0x00800062                TCB
+ .data          0x00800082        0xc message.o
+                0x0080008a                MsgSCB
+                0x00800082                MCB
+ .data          0x0080008e       0x1f events.o
+                0x0080008e                ED_Table
+                0x008000ac                EXT_EVENT_Table
+ .data          0x008000ad       0x20 ../kernel_0_5/global.o
+                0x008000ad                bit_vect
+ .data          0x008000cd       0x23 ../kernel_0_5/ResourceManager.o
+                0x008000ce                PI_Table
+                0x008000cd                PI
+ *(.gnu.linkonce.d*)
+                0x008000f0                . = ALIGN (0x2)
+                0x008000f0                _edata = .
+                0x008000f0                PROVIDE (__data_end, .)
+
+.bss            0x008000f0       0x23
+                0x008000f0                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008000f0        0x7 main.o
+ .bss           0x008000f7        0x2 semaphore.o
+                0x008000f7                SCB
+ .bss           0x008000f9        0x4 events.o
+                0x008000f9                _10_mS_EVENT_Table
+                0x008000fc                HR_EVENT_Table
+                0x008000fa                SEC_EVENT_Table
+                0x008000fb                MIN_EVENT_Table
+ .bss           0x008000fd        0x1 ../kernel_0_5/ResourceManager.o
+                0x008000fd                top
+ *(COMMON)
+ COMMON         0x008000fe       0x10 main.o
+                                  0x0 (size before relaxing)
+                0x008000fe                sourceBuf0
+                0x00800100                msgDestBuf2
+                0x00800104                msgDestBuf5
+                0x00800106                sourceBuf1
+                0x0080010a                msgDestBuf6
+ COMMON         0x0080010e        0x2 task.o
+                                  0x0 (size before relaxing)
+                0x0080010e                PI_Stack
+ COMMON         0x00800110        0x3 ../kernel_0_5/TaskManager.o
+                                  0x0 (size before relaxing)
+                0x00800110                BTV
+                0x00800111                ATV
+                0x00800112                RT
+                0x00800113                PROVIDE (__bss_end, .)
+                0x00000944                __data_load_start = LOADADDR (.data)
+                0x000009d4                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800113        0x0
+                0x00800113                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800113                PROVIDE (__noinit_end, .)
+                0x00800113                _end = .
+                0x00800113                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0 load address 0x000009d4
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+
+Cross Reference Table
+
+Symbol                                            File
+ATV                                               ../kernel_0_5/TaskManager.o
+BTV                                               ../kernel_0_5/ResourceManager.o
+                                                  ../kernel_0_5/TaskManager.o
+ED_Table                                          events.o
+                                                  ../kernel_0_5/IntegratedEventManager.o
+                                                  main.o
+EXT_EVENT_Table                                   events.o
+HR_EVENT_Table                                    events.o
+                                                  main.o
+MCB                                               message.o
+                                                  ../kernel_0_5/CommunicationBus.o
+MIN_EVENT_Table                                   events.o
+                                                  main.o
+MsgSCB                                            message.o
+                                                  ../kernel_0_5/CommunicationBus.o
+PI                                                ../kernel_0_5/ResourceManager.o
+PI_Stack                                          ../kernel_0_5/ResourceManager.o
+                                                  task.o
+PI_Table                                          ../kernel_0_5/ResourceManager.o
+RCB                                               task.o
+                                                  ../kernel_0_5/ResourceManager.o
+RT                                                ../kernel_0_5/CommunicationBus.o
+                                                  ../kernel_0_5/SynchronizationBus.o
+                                                  ../kernel_0_5/TaskManager.o
+SCB                                               semaphore.o
+                                                  ../kernel_0_5/SynchronizationBus.o
+SEC_EVENT_Table                                   events.o
+                                                  main.o
+TCB                                               task.o
+                                                  ../kernel_0_5/CommunicationBus.o
+_10_mS_EVENT_Table                                events.o
+                                                  main.o
+__bad_interrupt                                   C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__bss_end                                         C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+__bss_start                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+__data_end                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__data_load_start                                 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__data_start                                      C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__do_clear_bss                                    C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+                                                  ../kernel_0_5/CommunicationBus.o
+                                                  ../kernel_0_5/SynchronizationBus.o
+                                                  ../kernel_0_5/IntegratedEventManager.o
+                                                  ../kernel_0_5/ResourceManager.o
+                                                  ../kernel_0_5/TaskManager.o
+                                                  ../kernel_0_5/global.o
+                                                  events.o
+                                                  semaphore.o
+                                                  message.o
+                                                  task.o
+                                                  main.o
+__do_copy_data                                    C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                                                  ../kernel_0_5/CommunicationBus.o
+                                                  ../kernel_0_5/SynchronizationBus.o
+                                                  ../kernel_0_5/IntegratedEventManager.o
+                                                  ../kernel_0_5/ResourceManager.o
+                                                  ../kernel_0_5/TaskManager.o
+                                                  ../kernel_0_5/global.o
+                                                  events.o
+                                                  semaphore.o
+                                                  message.o
+                                                  task.o
+                                                  main.o
+__heap_end                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__init                                            C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__stack                                           C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                                                  main.o
+__vector_1                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_10                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_11                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_12                                       main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_13                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_14                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_15                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_16                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_17                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_18                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_19                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_2                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_20                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_21                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_22                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_23                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_3                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_4                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_5                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_6                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_7                                        main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_8                                        main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_9                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_default                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vectors                                         C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+_exit                                             C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+bit_vect                                          ../kernel_0_5/global.o
+                                                  ../kernel_0_5/CommunicationBus.o
+                                                  ../kernel_0_5/SynchronizationBus.o
+                                                  ../kernel_0_5/TaskManager.o
+                                                  main.o
+broadcast                                         ../kernel_0_5/CommunicationBus.o
+                                                  ../kernel_0_5/IntegratedEventManager.o
+                                                  task.o
+copy_message                                      ../kernel_0_5/CommunicationBus.o
+delay                                             task.o
+disable                                           ../kernel_0_5/IntegratedEventManager.o
+enable                                            ../kernel_0_5/IntegratedEventManager.o
+enableNext                                        ../kernel_0_5/IntegratedEventManager.o
+eventManager                                      ../kernel_0_5/IntegratedEventManager.o
+                                                  main.o
+executeOPC                                        ../kernel_0_5/IntegratedEventManager.o
+exit                                              C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+                                                  main.o
+find_msb                                          ../kernel_0_5/TaskManager.o
+getMsgDestinationBuffer                           ../kernel_0_5/CommunicationBus.o
+                                                  task.o
+getMsgLength                                      ../kernel_0_5/CommunicationBus.o
+getMsgSourceBuffer                                ../kernel_0_5/CommunicationBus.o
+                                                  task.o
+hd_init                                           main.o
+kernelStartUp                                     ../kernel_0_5/TaskManager.o
+                                                  main.o
+lock                                              ../kernel_0_5/ResourceManager.o
+main                                              main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+msgDestBuf2                                       events.o
+                                                  task.o
+                                                  main.o
+msgDestBuf5                                       events.o
+                                                  task.o
+                                                  main.o
+msgDestBuf6                                       events.o
+                                                  task.o
+                                                  main.o
+msg_signal_and_release                            ../kernel_0_5/CommunicationBus.o
+msg_test_and_reset                                ../kernel_0_5/CommunicationBus.o
+popPiStack                                        ../kernel_0_5/ResourceManager.o
+preempt                                           ../kernel_0_5/TaskManager.o
+                                                  ../kernel_0_5/ResourceManager.o
+pushPiStack                                       ../kernel_0_5/ResourceManager.o
+receive                                           ../kernel_0_5/CommunicationBus.o
+                                                  task.o
+release                                           ../kernel_0_5/TaskManager.o
+                                                  ../kernel_0_5/CommunicationBus.o
+                                                  ../kernel_0_5/SynchronizationBus.o
+                                                  ../kernel_0_5/IntegratedEventManager.o
+                                                  main.o
+schedule                                          ../kernel_0_5/TaskManager.o
+signal_and_release                                ../kernel_0_5/SynchronizationBus.o
+                                                  ../kernel_0_5/IntegratedEventManager.o
+sourceBuf0                                        events.o
+                                                  message.o
+                                                  task.o
+                                                  main.o
+sourceBuf1                                        events.o
+                                                  message.o
+                                                  task.o
+                                                  main.o
+start_task                                        task.o
+                                                  ../kernel_0_5/TaskManager.o
+sweepTable                                        ../kernel_0_5/IntegratedEventManager.o
+                                                  main.o
+task0                                             task.o
+task1                                             task.o
+task2                                             task.o
+task3                                             task.o
+task4                                             task.o
+task5                                             task.o
+task6                                             task.o
+task7                                             task.o
+taskExit                                          ../kernel_0_5/TaskManager.o
+                                                  task.o
+test_and_reset                                    ../kernel_0_5/SynchronizationBus.o
+top                                               ../kernel_0_5/ResourceManager.o
+unlock                                            ../kernel_0_5/ResourceManager.o

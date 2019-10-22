@@ -1,0 +1,430 @@
+Archive member included because of file (symbol)
+
+C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+                              main.o (exit)
+C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+BTV                 0x1               ../kernel_0_1/TaskManager.o
+PI_Stack            0x2               task.o
+ATV                 0x1               ../kernel_0_1/TaskManager.o
+RT                  0x1               ../kernel_0_1/TaskManager.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+LOAD main.o
+LOAD task.o
+LOAD ../kernel_0_1/global.o
+LOAD ../kernel_0_1/TaskManager.o
+LOAD ../kernel_0_1/ResourceManager.o
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\libc.a
+LOAD C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x740
+ *(.vectors)
+ .vectors       0x00000000       0x60 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+                0x00000060                __ctors_start = .
+ *(.ctors)
+                0x00000060                __ctors_end = .
+                0x00000060                __dtors_start = .
+ *(.dtors)
+                0x00000060                __dtors_end = .
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000060                . = ALIGN (0x2)
+ *(.init0)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000060        0xc C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+ *(.init3)
+ *(.init4)
+ .init4         0x0000006c       0x20 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                0x0000006c                __do_copy_data
+ .init4         0x0000008c       0x10 C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+                0x0000008c                __do_clear_bss
+ *(.init5)
+ *(.init6)
+ *(.init7)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009c        0x4 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+ *(.text)
+ .text          0x000000a0        0x4 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                0x000000a0                __vector_22
+                0x000000a0                __vector_1
+                0x000000a0                __vector_12
+                0x000000a0                __bad_interrupt
+                0x000000a0                __vector_6
+                0x000000a0                __vector_3
+                0x000000a0                __vector_23
+                0x000000a0                __vector_11
+                0x000000a0                __vector_13
+                0x000000a0                __vector_17
+                0x000000a0                __vector_19
+                0x000000a0                __vector_5
+                0x000000a0                __vector_4
+                0x000000a0                __vector_9
+                0x000000a0                __vector_2
+                0x000000a0                __vector_21
+                0x000000a0                __vector_15
+                0x000000a0                __vector_14
+                0x000000a0                __vector_10
+                0x000000a0                __vector_16
+                0x000000a0                __vector_18
+                0x000000a0                __vector_20
+ .text          0x000000a4       0xf8 main.o
+                0x00000154                hd_init
+                0x000000fc                __vector_7
+                0x00000184                main
+                0x000000a4                __vector_8
+ .text          0x0000019c      0x132 task.o
+                0x000001f6                task0
+                0x00000266                task1
+                0x0000019c                delay
+ .text          0x000002ce      0x2ca ../kernel_0_1/TaskManager.o
+                0x000004ce                kernelStartUp
+                0x0000040a                schedule
+                0x0000044e                release
+                0x000002ce                preempt
+                0x00000490                taskExit
+                0x000004f8                find_msb
+ .text          0x00000598      0x1a6 ../kernel_0_1/ResourceManager.o
+                0x00000598                lock
+                0x00000624                unlock
+                0x000006a2                pushPiStack
+                0x000006ee                popPiStack
+                0x0000073e                . = ALIGN (0x2)
+ *(.text.*)
+                0x0000073e                . = ALIGN (0x2)
+ *(.fini9)
+ *(.fini8)
+ *(.fini7)
+ *(.fini6)
+ *(.fini5)
+ *(.fini4)
+ *(.fini3)
+ *(.fini2)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000073e        0x2 C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+                0x00000740                _etext = .
+
+.data           0x00800060       0x4a load address 0x00000740
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x6 task.o
+                0x00800060                RCB
+                0x00800062                start_task
+ .data          0x00800066       0x20 ../kernel_0_1/global.o
+                0x00800066                bit_vect
+ .data          0x00800086       0x23 ../kernel_0_1/ResourceManager.o
+                0x00800087                PI_Table
+                0x00800086                PI
+ *(.gnu.linkonce.d*)
+                0x008000aa                . = ALIGN (0x2)
+ *fill*         0x008000a9        0x1 00
+                0x008000aa                _edata = .
+                0x008000aa                PROVIDE (__data_end, .)
+
+.bss            0x008000aa        0x6
+                0x008000aa                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008000aa        0x1 ../kernel_0_1/ResourceManager.o
+                0x008000aa                top
+ *(COMMON)
+ COMMON         0x008000ab        0x2 task.o
+                                  0x0 (size before relaxing)
+                0x008000ab                PI_Stack
+ COMMON         0x008000ad        0x3 ../kernel_0_1/TaskManager.o
+                                  0x0 (size before relaxing)
+                0x008000ad                BTV
+                0x008000ae                ATV
+                0x008000af                RT
+                0x008000b0                PROVIDE (__bss_end, .)
+                0x00000740                __data_load_start = LOADADDR (.data)
+                0x0000078a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008000b0        0x0
+                0x008000b0                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008000b0                PROVIDE (__noinit_end, .)
+                0x008000b0                _end = .
+                0x008000b0                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0 load address 0x0000078a
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.stab           0x00000000     0x117c
+ *(.stab)
+ .stab          0x00000000      0x3f0 main.o
+ .stab          0x000003f0      0x384 task.o
+                                0x48c (size before relaxing)
+ .stab          0x00000774      0x144 ../kernel_0_1/global.o
+                                0x1ec (size before relaxing)
+ .stab          0x000008b8      0x534 ../kernel_0_1/TaskManager.o
+                                0x624 (size before relaxing)
+ .stab          0x00000dec      0x390 ../kernel_0_1/ResourceManager.o
+                                0x48c (size before relaxing)
+
+.stabstr        0x00000000      0x9f2
+ *(.stabstr)
+ .stabstr       0x00000000      0x9f2 main.o
+                                  0x0 (size before relaxing)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+
+Cross Reference Table
+
+Symbol                                            File
+ATV                                               ../kernel_0_1/TaskManager.o
+BTV                                               ../kernel_0_1/ResourceManager.o
+                                                  ../kernel_0_1/TaskManager.o
+PI                                                ../kernel_0_1/ResourceManager.o
+PI_Stack                                          ../kernel_0_1/ResourceManager.o
+                                                  task.o
+PI_Table                                          ../kernel_0_1/ResourceManager.o
+RCB                                               task.o
+                                                  ../kernel_0_1/ResourceManager.o
+RT                                                ../kernel_0_1/TaskManager.o
+__bad_interrupt                                   C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__bss_end                                         C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+__bss_start                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+__data_end                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__data_load_start                                 C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__data_start                                      C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__do_clear_bss                                    C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_clear_bss.o)
+                                                  ../kernel_0_1/ResourceManager.o
+                                                  ../kernel_0_1/TaskManager.o
+                                                  ../kernel_0_1/global.o
+                                                  task.o
+                                                  main.o
+__do_copy_data                                    C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                                                  ../kernel_0_1/ResourceManager.o
+                                                  ../kernel_0_1/TaskManager.o
+                                                  ../kernel_0_1/global.o
+                                                  task.o
+                                                  main.o
+__heap_end                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__init                                            C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__stack                                           C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+                                                  main.o
+__vector_1                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_10                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_11                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_12                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_13                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_14                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_15                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_16                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_17                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_18                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_19                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_2                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_20                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_21                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_22                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_23                                       C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_3                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_4                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_5                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_6                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_7                                        main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_8                                        main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_9                                        C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vector_default                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+__vectors                                         C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+_exit                                             C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+bit_vect                                          ../kernel_0_1/global.o
+                                                  ../kernel_0_1/TaskManager.o
+                                                  task.o
+                                                  main.o
+delay                                             task.o
+exit                                              C:\programs\bin\..\lib\gcc-lib\avr\3.3\avr3\libgcc.a(_exit.o)
+                                                  main.o
+find_msb                                          ../kernel_0_1/TaskManager.o
+hd_init                                           main.o
+kernelStartUp                                     ../kernel_0_1/TaskManager.o
+                                                  main.o
+lock                                              ../kernel_0_1/ResourceManager.o
+                                                  task.o
+main                                              main.o
+                                                  C:\programs\bin\..\lib\gcc-lib\avr\3.3\..\..\..\..\avr\lib\avr3\crtm103.o
+popPiStack                                        ../kernel_0_1/ResourceManager.o
+preempt                                           ../kernel_0_1/TaskManager.o
+                                                  ../kernel_0_1/ResourceManager.o
+pushPiStack                                       ../kernel_0_1/ResourceManager.o
+release                                           ../kernel_0_1/TaskManager.o
+                                                  task.o
+                                                  main.o
+schedule                                          ../kernel_0_1/TaskManager.o
+start_task                                        task.o
+                                                  ../kernel_0_1/TaskManager.o
+task0                                             task.o
+task1                                             task.o
+taskExit                                          ../kernel_0_1/TaskManager.o
+                                                  task.o
+top                                               ../kernel_0_1/ResourceManager.o
+unlock                                            ../kernel_0_1/ResourceManager.o
+                                                  task.o

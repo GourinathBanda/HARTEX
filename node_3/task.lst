@@ -1,0 +1,292 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 1
+
+
+   1               		.file	"task.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	RCB
+  11               		.data
+  12               		.type	RCB, @object
+  13               		.size	RCB, 2
+  14               	RCB:
+  15 0000 00        		.byte	0
+  16 0001 01        		.byte	1
+  17               	.global	start_task
+  18               		.type	start_task, @object
+  19               		.size	start_task, 16
+  20               	start_task:
+  21 0002 0000      		.word	pm(task0)
+  22 0004 0000      		.word	pm(task1)
+  23 0006 0000      		.word	pm(task2)
+  24 0008 0000      		.word	pm(task3)
+  25 000a 0000      		.word	pm(task4)
+  26 000c 0000      		.word	pm(task5)
+  27 000e 0000      		.word	pm(task6)
+  28 0010 0000      		.word	pm(task7)
+  29               		.text
+  30               	.global	delay
+  31               		.type	delay, @function
+  32               	delay:
+  33               	/* prologue: frame size=0 */
+  34               	/* prologue end (size=0) */
+  35 0000 6150      		subi r22,lo8(-(-1))
+  36 0002 7040      		sbci r23,hi8(-(-1))
+  37 0004 8040      		sbci r24,hlo8(-(-1))
+  38 0006 9040      		sbci r25,hhi8(-(-1))
+  39 0008 6F3F      		cpi r22,lo8(-1)
+  40 000a 2FEF      		ldi r18,hi8(-1)
+  41 000c 7207      		cpc r23,r18
+  42 000e 2FEF      		ldi r18,hlo8(-1)
+  43 0010 8207      		cpc r24,r18
+  44 0012 2FEF      		ldi r18,hhi8(-1)
+  45 0014 9207      		cpc r25,r18
+  46 0016 31F0      		breq .L7
+  47               	.L5:
+  48               	/* #APP */
+  49 0018 0000      		nop
+  50               	/* #NOAPP */
+  51 001a 6150      		subi r22,1
+  52 001c 7109      		sbc r23,__zero_reg__
+  53 001e 8109      		sbc r24,__zero_reg__
+  54 0020 9109      		sbc r25,__zero_reg__
+  55               	
+  56 0022 D0F7      		brcc .L5
+  57               	.L7:
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 2
+
+
+  58 0024 0895      		ret
+  59               	/* epilogue: frame size=0 */
+  60               	/* epilogue: noreturn */
+  61               	/* epilogue end (size=0) */
+  62               	/* function delay size 27 (27) */
+  63               		.size	delay, .-delay
+  64               	.global	task0
+  65               		.type	task0, @function
+  66               	task0:
+  67               	/* prologue: frame size=0 */
+  68               	/* prologue end (size=0) */
+  69               	/* #APP */
+  70 0026 7894      		sei
+  71               	/* #NOAPP */
+  72 0028 88B3      		in r24,56-0x20
+  73 002a 91E0      		ldi r25,lo8(1)
+  74 002c 8927      		eor r24,r25
+  75 002e 88BB      		out 56-0x20,r24
+  76 0030 0E94 0000 		call taskExit
+  77               	/* epilogue: frame size=0 */
+  78 0034 0895      		ret
+  79               	/* epilogue end (size=1) */
+  80               	/* function task0 size 9 (8) */
+  81               		.size	task0, .-task0
+  82               	.global	task1
+  83               		.type	task1, @function
+  84               	task1:
+  85               	/* prologue: frame size=0 */
+  86               	/* prologue end (size=0) */
+  87               	/* #APP */
+  88 0036 7894      		sei
+  89               	/* #NOAPP */
+  90 0038 88B3      		in r24,56-0x20
+  91 003a 92E0      		ldi r25,lo8(2)
+  92 003c 8927      		eor r24,r25
+  93 003e 88BB      		out 56-0x20,r24
+  94 0040 0E94 0000 		call taskExit
+  95               	/* epilogue: frame size=0 */
+  96 0044 0895      		ret
+  97               	/* epilogue end (size=1) */
+  98               	/* function task1 size 9 (8) */
+  99               		.size	task1, .-task1
+ 100               	.global	task2
+ 101               		.type	task2, @function
+ 102               	task2:
+ 103               	/* prologue: frame size=0 */
+ 104               	/* prologue end (size=0) */
+ 105               	/* #APP */
+ 106 0046 7894      		sei
+ 107               	/* #NOAPP */
+ 108 0048 8BB3      		in r24,59-0x20
+ 109 004a 91E0      		ldi r25,lo8(1)
+ 110 004c 8927      		eor r24,r25
+ 111 004e 8BBB      		out 59-0x20,r24
+ 112 0050 88B3      		in r24,56-0x20
+ 113 0052 94E0      		ldi r25,lo8(4)
+ 114 0054 8927      		eor r24,r25
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 3
+
+
+ 115 0056 88BB      		out 56-0x20,r24
+ 116 0058 0E94 0000 		call taskExit
+ 117               	/* epilogue: frame size=0 */
+ 118 005c 0895      		ret
+ 119               	/* epilogue end (size=1) */
+ 120               	/* function task2 size 13 (12) */
+ 121               		.size	task2, .-task2
+ 122               	.global	task3
+ 123               		.type	task3, @function
+ 124               	task3:
+ 125               	/* prologue: frame size=0 */
+ 126               	/* prologue end (size=0) */
+ 127               	/* #APP */
+ 128 005e 7894      		sei
+ 129               	/* #NOAPP */
+ 130 0060 88B3      		in r24,56-0x20
+ 131 0062 98E0      		ldi r25,lo8(8)
+ 132 0064 8927      		eor r24,r25
+ 133 0066 88BB      		out 56-0x20,r24
+ 134 0068 0E94 0000 		call taskExit
+ 135               	/* epilogue: frame size=0 */
+ 136 006c 0895      		ret
+ 137               	/* epilogue end (size=1) */
+ 138               	/* function task3 size 9 (8) */
+ 139               		.size	task3, .-task3
+ 140               	.global	task4
+ 141               		.type	task4, @function
+ 142               	task4:
+ 143               	/* prologue: frame size=0 */
+ 144               	/* prologue end (size=0) */
+ 145               	/* #APP */
+ 146 006e 7894      		sei
+ 147               	/* #NOAPP */
+ 148 0070 88B3      		in r24,56-0x20
+ 149 0072 90E1      		ldi r25,lo8(16)
+ 150 0074 8927      		eor r24,r25
+ 151 0076 88BB      		out 56-0x20,r24
+ 152 0078 0E94 0000 		call taskExit
+ 153               	/* epilogue: frame size=0 */
+ 154 007c 0895      		ret
+ 155               	/* epilogue end (size=1) */
+ 156               	/* function task4 size 9 (8) */
+ 157               		.size	task4, .-task4
+ 158               	.global	task5
+ 159               		.type	task5, @function
+ 160               	task5:
+ 161               	/* prologue: frame size=0 */
+ 162               	/* prologue end (size=0) */
+ 163               	/* #APP */
+ 164 007e 7894      		sei
+ 165               	/* #NOAPP */
+ 166 0080 88B3      		in r24,56-0x20
+ 167 0082 90E2      		ldi r25,lo8(32)
+ 168 0084 8927      		eor r24,r25
+ 169 0086 88BB      		out 56-0x20,r24
+ 170 0088 0E94 0000 		call taskExit
+ 171               	/* epilogue: frame size=0 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 4
+
+
+ 172 008c 0895      		ret
+ 173               	/* epilogue end (size=1) */
+ 174               	/* function task5 size 9 (8) */
+ 175               		.size	task5, .-task5
+ 176               	.global	task6
+ 177               		.type	task6, @function
+ 178               	task6:
+ 179               	/* prologue: frame size=0 */
+ 180 008e 1F93      		push r17
+ 181               	/* prologue end (size=1) */
+ 182               	/* #APP */
+ 183 0090 7894      		sei
+ 184               	/* #NOAPP */
+ 185 0092 88B3      		in r24,56-0x20
+ 186 0094 10E4      		ldi r17,lo8(64)
+ 187 0096 8127      		eor r24,r17
+ 188 0098 88BB      		out 56-0x20,r24
+ 189 009a 60E5      		ldi r22,lo8(50000)
+ 190 009c 73EC      		ldi r23,hi8(50000)
+ 191 009e 80E0      		ldi r24,hlo8(50000)
+ 192 00a0 90E0      		ldi r25,hhi8(50000)
+ 193 00a2 0E94 0000 		call delay
+ 194 00a6 88B3      		in r24,56-0x20
+ 195 00a8 8127      		eor r24,r17
+ 196 00aa 88BB      		out 56-0x20,r24
+ 197 00ac 60E5      		ldi r22,lo8(50000)
+ 198 00ae 73EC      		ldi r23,hi8(50000)
+ 199 00b0 80E0      		ldi r24,hlo8(50000)
+ 200 00b2 90E0      		ldi r25,hhi8(50000)
+ 201 00b4 0E94 0000 		call delay
+ 202 00b8 88B3      		in r24,56-0x20
+ 203 00ba 8127      		eor r24,r17
+ 204 00bc 88BB      		out 56-0x20,r24
+ 205 00be 0E94 0000 		call taskExit
+ 206               	/* epilogue: frame size=0 */
+ 207 00c2 1F91      		pop r17
+ 208 00c4 0895      		ret
+ 209               	/* epilogue end (size=2) */
+ 210               	/* function task6 size 29 (26) */
+ 211               		.size	task6, .-task6
+ 212               	.global	task7
+ 213               		.type	task7, @function
+ 214               	task7:
+ 215               	/* prologue: frame size=0 */
+ 216 00c6 1F93      		push r17
+ 217               	/* prologue end (size=1) */
+ 218               	/* #APP */
+ 219 00c8 7894      		sei
+ 220               	/* #NOAPP */
+ 221 00ca 88B3      		in r24,56-0x20
+ 222 00cc 10E8      		ldi r17,lo8(-128)
+ 223 00ce 8127      		eor r24,r17
+ 224 00d0 88BB      		out 56-0x20,r24
+ 225 00d2 60E5      		ldi r22,lo8(50000)
+ 226 00d4 73EC      		ldi r23,hi8(50000)
+ 227 00d6 80E0      		ldi r24,hlo8(50000)
+ 228 00d8 90E0      		ldi r25,hhi8(50000)
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 5
+
+
+ 229 00da 0E94 0000 		call delay
+ 230 00de 88B3      		in r24,56-0x20
+ 231 00e0 8127      		eor r24,r17
+ 232 00e2 88BB      		out 56-0x20,r24
+ 233 00e4 60E5      		ldi r22,lo8(50000)
+ 234 00e6 73EC      		ldi r23,hi8(50000)
+ 235 00e8 80E0      		ldi r24,hlo8(50000)
+ 236 00ea 90E0      		ldi r25,hhi8(50000)
+ 237 00ec 0E94 0000 		call delay
+ 238 00f0 88B3      		in r24,56-0x20
+ 239 00f2 8127      		eor r24,r17
+ 240 00f4 88BB      		out 56-0x20,r24
+ 241 00f6 0E94 0000 		call taskExit
+ 242               	/* epilogue: frame size=0 */
+ 243 00fa 1F91      		pop r17
+ 244 00fc 0895      		ret
+ 245               	/* epilogue end (size=2) */
+ 246               	/* function task7 size 29 (26) */
+ 247               		.size	task7, .-task7
+ 248               		.comm PI_Stack,2,1
+ 249               	/* File "task.c": code  143 = 0x008f ( 131), prologues   2, epilogues  10 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 task.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:14     .data:00000000 RCB
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:20     .data:00000002 start_task
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:66     .text:00000026 task0
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:84     .text:00000036 task1
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:102    .text:00000046 task2
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:124    .text:0000005e task3
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:142    .text:0000006e task4
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:160    .text:0000007e task5
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:178    .text:0000008e task6
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:214    .text:000000c6 task7
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccyuaaaa.s:32     .text:00000000 delay
+                            *COM*:00000002 PI_Stack
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+taskExit

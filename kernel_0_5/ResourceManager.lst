@@ -1,0 +1,245 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s 			page 1
+
+
+   1               		.file	"ResourceManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	PI
+  11               		.data
+  12               		.type	PI, @object
+  13               		.size	PI, 1
+  14               	PI:
+  15 0000 FF        		.byte	-1
+  16               	.global	top
+  17               	.global	top
+  18               		.section .bss
+  19               		.type	top, @object
+  20               		.size	top, 1
+  21               	top:
+  22 0000 00        		.skip 1,0
+  23               	.global	PI_Table
+  24               		.data
+  25               		.type	PI_Table, @object
+  26               		.size	PI_Table, 34
+  27               	PI_Table:
+  28 0001 0000      		.word	0
+  29 0003 0100      		.word	1
+  30 0005 0300      		.word	3
+  31 0007 0700      		.word	7
+  32 0009 0F00      		.word	15
+  33 000b 1F00      		.word	31
+  34 000d 3F00      		.word	63
+  35 000f 7F00      		.word	127
+  36 0011 FF00      		.word	255
+  37 0013 FF01      		.word	511
+  38 0015 FF03      		.word	1023
+  39 0017 FF07      		.word	2047
+  40 0019 FF0F      		.word	4095
+  41 001b FF1F      		.word	8191
+  42 001d FF3F      		.word	16383
+  43 001f FF7F      		.word	32767
+  44 0021 FFFF      		.word	-1
+  45               		.text
+  46               	.global	lock
+  47               		.type	lock, @function
+  48               	lock:
+  49               	/* prologue: frame size=0 */
+  50 0000 CF93      		push r28
+  51 0002 DF93      		push r29
+  52               	/* prologue end (size=2) */
+  53               	/* #APP */
+  54 0004 0FB6      		in __tmp_reg__,__SREG__
+  55 0006 F894      		cli
+  56 0008 0F92      		push __tmp_reg__
+  57               		
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s 			page 2
+
+
+  58               	/* #NOAPP */
+  59 000a C82F      		mov r28,r24
+  60 000c DD27      		clr r29
+  61 000e C050      		subi r28,lo8(-(RCB))
+  62 0010 D040      		sbci r29,hi8(-(RCB))
+  63 0012 8881      		ld r24,Y
+  64 0014 9091 0000 		lds r25,PI
+  65 0018 8917      		cp r24,r25
+  66 001a ACF0      		brlt .L2
+  67 001c 892F      		mov r24,r25
+  68 001e 0E94 0000 		call pushPiStack
+  69 0022 8881      		ld r24,Y
+  70 0024 8093 0000 		sts PI,r24
+  71 0028 E82F      		mov r30,r24
+  72 002a FF27      		clr r31
+  73 002c E7FD      		sbrc r30,7
+  74 002e F095      		com r31
+  75 0030 EE0F      		add r30,r30
+  76 0032 FF1F      		adc r31,r31
+  77 0034 E050      		subi r30,lo8(-(PI_Table))
+  78 0036 F040      		sbci r31,hi8(-(PI_Table))
+  79 0038 8091 0000 		lds r24,BTV
+  80 003c 9281      		ldd r25,Z+2
+  81 003e 892B      		or r24,r25
+  82 0040 8095      		com r24
+  83 0042 8093 0000 		sts BTV,r24
+  84               	.L2:
+  85               	/* #APP */
+  86 0046 0F90      		pop __tmp_reg__
+  87 0048 0FBE      		out __SREG__,__tmp_reg__
+  88               		
+  89               	/* #NOAPP */
+  90               	/* epilogue: frame size=0 */
+  91 004a DF91      		pop r29
+  92 004c CF91      		pop r28
+  93 004e 0895      		ret
+  94               	/* epilogue end (size=3) */
+  95               	/* function lock size 49 (44) */
+  96               		.size	lock, .-lock
+  97               	.global	unlock
+  98               		.type	unlock, @function
+  99               	unlock:
+ 100               	/* prologue: frame size=0 */
+ 101               	/* prologue end (size=0) */
+ 102               	/* #APP */
+ 103 0050 0FB6      		in __tmp_reg__,__SREG__
+ 104 0052 F894      		cli
+ 105 0054 0F92      		push __tmp_reg__
+ 106               		
+ 107               	/* #NOAPP */
+ 108 0056 E82F      		mov r30,r24
+ 109 0058 FF27      		clr r31
+ 110 005a E050      		subi r30,lo8(-(RCB))
+ 111 005c F040      		sbci r31,hi8(-(RCB))
+ 112 005e 9081      		ld r25,Z
+ 113 0060 8091 0000 		lds r24,PI
+ 114 0064 9817      		cp r25,r24
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s 			page 3
+
+
+ 115 0066 B9F4      		brne .L4
+ 116 0068 80E0      		ldi r24,lo8(PI)
+ 117 006a 90E0      		ldi r25,hi8(PI)
+ 118 006c 0E94 0000 		call popPiStack
+ 119 0070 8091 0000 		lds r24,PI
+ 120 0074 E82F      		mov r30,r24
+ 121 0076 FF27      		clr r31
+ 122 0078 E7FD      		sbrc r30,7
+ 123 007a F095      		com r31
+ 124 007c EE0F      		add r30,r30
+ 125 007e FF1F      		adc r31,r31
+ 126 0080 E050      		subi r30,lo8(-(PI_Table))
+ 127 0082 F040      		sbci r31,hi8(-(PI_Table))
+ 128 0084 8091 0000 		lds r24,BTV
+ 129 0088 9281      		ldd r25,Z+2
+ 130 008a 8923      		and r24,r25
+ 131 008c 8095      		com r24
+ 132 008e 8093 0000 		sts BTV,r24
+ 133 0092 0E94 0000 		call preempt
+ 134               	.L4:
+ 135               	/* #APP */
+ 136 0096 0F90      		pop __tmp_reg__
+ 137 0098 0FBE      		out __SREG__,__tmp_reg__
+ 138               		
+ 139               	/* #NOAPP */
+ 140               	/* epilogue: frame size=0 */
+ 141 009a 0895      		ret
+ 142               	/* epilogue end (size=1) */
+ 143               	/* function unlock size 47 (46) */
+ 144               		.size	unlock, .-unlock
+ 145               	.global	pushPiStack
+ 146               		.type	pushPiStack, @function
+ 147               	pushPiStack:
+ 148               	/* prologue: frame size=0 */
+ 149               	/* prologue end (size=0) */
+ 150 009c 982F      		mov r25,r24
+ 151               	/* #APP */
+ 152 009e 0FB6      		in __tmp_reg__,__SREG__
+ 153 00a0 F894      		cli
+ 154 00a2 0F92      		push __tmp_reg__
+ 155               		
+ 156               	/* #NOAPP */
+ 157 00a4 8091 0000 		lds r24,top
+ 158 00a8 E0E0      		ldi r30,lo8(PI_Stack)
+ 159 00aa F0E0      		ldi r31,hi8(PI_Stack)
+ 160 00ac E80F      		add r30,r24
+ 161 00ae F11D      		adc r31,__zero_reg__
+ 162 00b0 9083      		st Z,r25
+ 163 00b2 8F5F      		subi r24,lo8(-(1))
+ 164 00b4 8093 0000 		sts top,r24
+ 165               	/* #APP */
+ 166 00b8 0F90      		pop __tmp_reg__
+ 167 00ba 0FBE      		out __SREG__,__tmp_reg__
+ 168               		
+ 169               	/* #NOAPP */
+ 170               	/* epilogue: frame size=0 */
+ 171 00bc 0895      		ret
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s 			page 4
+
+
+ 172               	/* epilogue end (size=1) */
+ 173               	/* function pushPiStack size 26 (25) */
+ 174               		.size	pushPiStack, .-pushPiStack
+ 175               	.global	popPiStack
+ 176               		.type	popPiStack, @function
+ 177               	popPiStack:
+ 178               	/* prologue: frame size=0 */
+ 179               	/* prologue end (size=0) */
+ 180 00be B92F      		mov r27,r25
+ 181 00c0 A82F      		mov r26,r24
+ 182               	/* #APP */
+ 183 00c2 0FB6      		in __tmp_reg__,__SREG__
+ 184 00c4 F894      		cli
+ 185 00c6 0F92      		push __tmp_reg__
+ 186               		
+ 187               	/* #NOAPP */
+ 188 00c8 8091 0000 		lds r24,top
+ 189 00cc 8150      		subi r24,lo8(-(-1))
+ 190 00ce 8093 0000 		sts top,r24
+ 191 00d2 E0E0      		ldi r30,lo8(PI_Stack)
+ 192 00d4 F0E0      		ldi r31,hi8(PI_Stack)
+ 193 00d6 E80F      		add r30,r24
+ 194 00d8 F11D      		adc r31,__zero_reg__
+ 195 00da 8081      		ld r24,Z
+ 196 00dc 8C93      		st X,r24
+ 197               	/* #APP */
+ 198 00de 0F90      		pop __tmp_reg__
+ 199 00e0 0FBE      		out __SREG__,__tmp_reg__
+ 200               		
+ 201               	/* #NOAPP */
+ 202               	/* epilogue: frame size=0 */
+ 203 00e2 0895      		ret
+ 204               	/* epilogue end (size=1) */
+ 205               	/* function popPiStack size 28 (27) */
+ 206               		.size	popPiStack, .-popPiStack
+ 207               	/* File "../kernel_0_5/ResourceManager.c": code  150 = 0x0096 ( 142), prologues   2, epilogues   6 
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ResourceManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:14     .data:00000000 PI
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:21     .bss:00000000 top
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:27     .data:00000001 PI_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:48     .text:00000000 lock
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:147    .text:0000009c pushPiStack
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:99     .text:00000050 unlock
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccacaaaa.s:177    .text:000000be popPiStack
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+RCB
+BTV
+preempt
+PI_Stack

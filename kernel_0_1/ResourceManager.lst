@@ -1,0 +1,539 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 1
+
+
+   1               		.file	"ResourceManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.stabs	"C:\\Programming\\node_1/",100,0,0,.Ltext0
+  11               		.stabs	"../kernel_0_1/ResourceManager.c",100,0,0,.Ltext0
+  12               		.text
+  13               	.Ltext0:
+  14               		.stabs	"gcc2_compiled.",60,0,0,0
+  15               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  16               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  17               		.stabs	"long int:t(0,3)=@s32;r(0,3);0020000000000;0017777777777;",128,0,0,0
+  18               		.stabs	"unsigned int:t(0,4)=r(0,4);0000000000000;0000000177777;",128,0,0,0
+  19               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0000000000000;0037777777777;",128,0,0,0
+  20               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  21               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",128,0,0,
+  22               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  23               		.stabs	"short unsigned int:t(0,9)=r(0,9);0000000000000;0000000177777;",128,0,0,0
+  24               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  25               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  26               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  28               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"complex int:t(0,15)=s4real:(0,1),0,16;imag:(0,1),16,16;;",128,0,0,0
+  30               		.stabs	"complex float:t(0,16)=R3;8;0;",128,0,0,0
+  31               		.stabs	"complex double:t(0,17)=R3;8;0;",128,0,0,0
+  32               		.stabs	"complex long double:t(0,18)=R3;8;0;",128,0,0,0
+  33               		.stabs	"__builtin_va_list:t(0,19)=*(0,20)=(0,20)",128,0,0,0
+  34               		.stabs	"_Bool:t(0,21)=@s8;-16;",128,0,0,0
+  35               		.stabs	"../kernel_0_1/ResourceManager.c",130,0,0,0
+  36               		.stabs	"C:/programs/avr/include/avr/interrupt.h",130,0,0,0
+  37               		.stabs	"C:/programs/avr/include/avr/io.h",130,0,0,0
+  38               		.stabs	"C:/programs/avr/include/avr/sfr_defs.h",130,0,0,0
+  39               		.stabn	162,0,0,0
+  40               		.stabs	"C:/programs/avr/include/avr/iom103.h",130,0,0,0
+  41               		.stabn	162,0,0,0
+  42               		.stabn	162,0,0,0
+  43               		.stabn	162,0,0,0
+  44               		.stabs	"../kernel_0_1/TaskManager.h",130,0,0,0
+  45               		.stabs	"../kernel_0_1/include/typedef.h",130,0,0,0
+  46               		.stabs	"UBYTE:t(7,1)=(0,11)",128,0,7,0
+  47               		.stabs	"UWORD:t(7,2)=(0,9)",128,0,8,0
+  48               		.stabs	"ULONG:t(7,3)=(0,5)",128,0,9,0
+  49               		.stabs	"SBYTE:t(7,4)=(0,10)",128,0,11,0
+  50               		.stabs	"SWORD:t(7,5)=(0,8)",128,0,12,0
+  51               		.stabs	"SLONG:t(7,6)=(0,3)",128,0,13,0
+  52               		.stabs	"period:t(7,7)=(7,3)",128,0,15,0
+  53               		.stabs	"TVEC:t(7,8)=(7,1)",128,0,16,0
+  54               		.stabs	"RESOURCE:t(7,9)=(7,1)",128,0,17,0
+  55               		.stabs	"RCB_tdef:t(7,10)=(7,11)=s1ceiling:(7,4),0,8;;",128,0,21,0
+  56               		.stabs	"SCB_tdef:t(7,12)=(7,13)=s9mode:(7,1),0,8;threshold:(7,3),8,32;event_counter:(7,3),40,32;;"
+  57               		.stabs	"ED_tdef:t(7,14)=(7,15)=s9mode:(7,1),0,8;threshold:(7,3),8,32;event_counter:(7,3),40,32;;",
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 2
+
+
+  58               		.stabn	162,0,0,0
+  59               		.stabn	162,0,0,0
+  60               		.stabs	"../kernel_0_1/ResourceManager.h",130,0,0,0
+  61               		.stabn	162,0,0,0
+  62               		.stabs	"../kernel_0_1/ResourceManager_.h",130,0,0,0
+  63               	.global	PI
+  64               		.data
+  65               		.type	PI, @object
+  66               		.size	PI, 1
+  67               	PI:
+  68 0000 FF        		.byte	-1
+  69               	.global	top
+  70               	.global	top
+  71               		.section .bss
+  72               		.type	top, @object
+  73               		.size	top, 1
+  74               	top:
+  75 0000 00        		.skip 1,0
+  76               	.global	PI_Table
+  77               		.data
+  78               		.type	PI_Table, @object
+  79               		.size	PI_Table, 34
+  80               	PI_Table:
+  81 0001 0000      		.word	0
+  82 0003 0100      		.word	1
+  83 0005 0300      		.word	3
+  84 0007 0700      		.word	7
+  85 0009 0F00      		.word	15
+  86 000b 1F00      		.word	31
+  87 000d 3F00      		.word	63
+  88 000f 7F00      		.word	127
+  89 0011 FF00      		.word	255
+  90 0013 FF01      		.word	511
+  91 0015 FF03      		.word	1023
+  92 0017 FF07      		.word	2047
+  93 0019 FF0F      		.word	4095
+  94 001b FF1F      		.word	8191
+  95 001d FF3F      		.word	16383
+  96 001f FF7F      		.word	32767
+  97 0021 FFFF      		.word	-1
+  98               		.stabn	162,0,0,0
+  99               		.stabs	"../kernel_0_1/include/global.h",130,0,0,0
+ 100               		.stabn	162,0,0,0
+ 101               		.text
+ 102               		.stabs	"lock:F(0,20)",36,0,18,lock
+ 103               		.stabs	"resource:p(7,9)",160,0,17,1
+ 104               	.global	lock
+ 105               		.type	lock, @function
+ 106               	lock:
+   1:../kernel_0_1/ResourceManager.c **** /*
+   2:../kernel_0_1/ResourceManager.c ****  * ----------------------------------------------------------------------------
+   3:../kernel_0_1/ResourceManager.c ****  *
+   4:../kernel_0_1/ResourceManager.c ****  * ----------------------------------------------------------------------------
+   5:../kernel_0_1/ResourceManager.c ****  * file: TaskManager.c, v 0.0 2003/05/08 
+   6:../kernel_0_1/ResourceManager.c ****  */
+   7:../kernel_0_1/ResourceManager.c **** 
+   8:../kernel_0_1/ResourceManager.c **** #include <avr/interrupt.h>
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 3
+
+
+   9:../kernel_0_1/ResourceManager.c **** 
+  10:../kernel_0_1/ResourceManager.c **** #include "TaskManager.h"
+  11:../kernel_0_1/ResourceManager.c **** #include "ResourceManager.h"
+  12:../kernel_0_1/ResourceManager.c **** #include "ResourceManager_.h"
+  13:../kernel_0_1/ResourceManager.c **** 
+  14:../kernel_0_1/ResourceManager.c **** #include "include/typedef.h"
+  15:../kernel_0_1/ResourceManager.c **** #include "include/global.h"
+  16:../kernel_0_1/ResourceManager.c **** 
+  17:../kernel_0_1/ResourceManager.c **** void lock(RESOURCE resource)
+  18:../kernel_0_1/ResourceManager.c **** {
+ 107               		.stabn 68,0,18,.LM1-lock
+ 108               	.LM1:
+ 109               	/* prologue: frame size=1 */
+ 110 0000 CF93      		push r28
+ 111 0002 DF93      		push r29
+ 112 0004 CDB7      		in r28,__SP_L__
+ 113 0006 DEB7      		in r29,__SP_H__
+ 114 0008 2197      		sbiw r28,1
+ 115 000a 0FB6      		in __tmp_reg__,__SREG__
+ 116 000c F894      		cli
+ 117 000e DEBF      		out __SP_H__,r29
+ 118 0010 0FBE      		out __SREG__,__tmp_reg__
+ 119 0012 CDBF      		out __SP_L__,r28
+ 120               	/* prologue end (size=10) */
+ 121 0014 8983      		std Y+1,r24
+  19:../kernel_0_1/ResourceManager.c ****    ENTER_CRITICAL;
+ 122               		.stabn 68,0,19,.LM2-lock
+ 123               	.LM2:
+ 124               	/* #APP */
+ 125 0016 0FB6      		in __tmp_reg__,__SREG__
+ 126 0018 F894      		cli
+ 127 001a 0F92      		push __tmp_reg__
+ 128               		
+  20:../kernel_0_1/ResourceManager.c ****    if (RCB[resource].ceiling >= PI) {
+ 129               		.stabn 68,0,20,.LM3-lock
+ 130               	.LM3:
+ 131               	/* #NOAPP */
+ 132 001c 8981      		ldd r24,Y+1
+ 133 001e 9927      		clr r25
+ 134 0020 F92F      		mov r31,r25
+ 135 0022 E82F      		mov r30,r24
+ 136 0024 E050      		subi r30,lo8(-(RCB))
+ 137 0026 F040      		sbci r31,hi8(-(RCB))
+ 138 0028 9081      		ld r25,Z
+ 139 002a 8091 0000 		lds r24,PI
+ 140 002e 9817      		cp r25,r24
+ 141 0030 14F1      		brlt .L4
+  21:../kernel_0_1/ResourceManager.c ****       pushPiStack(PI);
+ 142               		.stabn 68,0,21,.LM4-lock
+ 143               	.LM4:
+ 144 0032 8091 0000 		lds r24,PI
+ 145 0036 0E94 0000 		call pushPiStack
+  22:../kernel_0_1/ResourceManager.c ****       PI = RCB[resource].ceiling;                  
+ 146               		.stabn 68,0,22,.LM5-lock
+ 147               	.LM5:
+ 148 003a 8981      		ldd r24,Y+1
+ 149 003c 9927      		clr r25
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 4
+
+
+ 150 003e F92F      		mov r31,r25
+ 151 0040 E82F      		mov r30,r24
+ 152 0042 E050      		subi r30,lo8(-(RCB))
+ 153 0044 F040      		sbci r31,hi8(-(RCB))
+ 154 0046 8081      		ld r24,Z
+ 155 0048 8093 0000 		sts PI,r24
+  23:../kernel_0_1/ResourceManager.c ****       BTV = (TVEC)~(BTV | (TVEC)PI_Table[PI+1]);
+ 156               		.stabn 68,0,23,.LM6-lock
+ 157               	.LM6:
+ 158 004c 8091 0000 		lds r24,PI
+ 159 0050 282F      		mov r18,r24
+ 160 0052 3327      		clr r19
+ 161 0054 27FD      		sbrc r18,7
+ 162 0056 3095      		com r19
+ 163 0058 932F      		mov r25,r19
+ 164 005a 822F      		mov r24,r18
+ 165 005c 820F      		add r24,r18
+ 166 005e 931F      		adc r25,r19
+ 167 0060 F92F      		mov r31,r25
+ 168 0062 E82F      		mov r30,r24
+ 169 0064 E050      		subi r30,lo8(-(PI_Table+2))
+ 170 0066 F040      		sbci r31,hi8(-(PI_Table+2))
+ 171 0068 9091 0000 		lds r25,BTV
+ 172 006c 8081      		ld r24,Z
+ 173 006e 892B      		or r24,r25
+ 174 0070 8095      		com r24
+ 175 0072 8093 0000 		sts BTV,r24
+ 176               	.L4:
+  24:../kernel_0_1/ResourceManager.c ****    }
+  25:../kernel_0_1/ResourceManager.c ****    EXIT_CRITICAL;
+ 177               		.stabn 68,0,25,.LM7-lock
+ 178               	.LM7:
+ 179               	/* #APP */
+ 180 0076 0F90      		pop __tmp_reg__
+ 181 0078 0FBE      		out __SREG__,__tmp_reg__
+ 182               		
+  26:../kernel_0_1/ResourceManager.c **** }
+ 183               		.stabn 68,0,26,.LM8-lock
+ 184               	.LM8:
+ 185               	/* #NOAPP */
+ 186               	/* epilogue: frame size=1 */
+ 187 007a 2196      		adiw r28,1
+ 188 007c 0FB6      		in __tmp_reg__,__SREG__
+ 189 007e F894      		cli
+ 190 0080 DEBF      		out __SP_H__,r29
+ 191 0082 0FBE      		out __SREG__,__tmp_reg__
+ 192 0084 CDBF      		out __SP_L__,r28
+ 193 0086 DF91      		pop r29
+ 194 0088 CF91      		pop r28
+ 195 008a 0895      		ret
+ 196               	/* epilogue end (size=9) */
+ 197               	/* function lock size 79 (60) */
+ 198               		.size	lock, .-lock
+ 199               	.Lscope0:
+ 200               		.stabs	"",36,0,0,.Lscope0-lock
+ 201               		.stabs	"unlock:F(0,20)",36,0,29,unlock
+ 202               		.stabs	"resource:p(7,9)",160,0,28,1
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 5
+
+
+ 203               	.global	unlock
+ 204               		.type	unlock, @function
+ 205               	unlock:
+  27:../kernel_0_1/ResourceManager.c **** 
+  28:../kernel_0_1/ResourceManager.c **** void unlock(RESOURCE resource)
+  29:../kernel_0_1/ResourceManager.c **** {
+ 206               		.stabn 68,0,29,.LM9-unlock
+ 207               	.LM9:
+ 208               	/* prologue: frame size=1 */
+ 209 008c CF93      		push r28
+ 210 008e DF93      		push r29
+ 211 0090 CDB7      		in r28,__SP_L__
+ 212 0092 DEB7      		in r29,__SP_H__
+ 213 0094 2197      		sbiw r28,1
+ 214 0096 0FB6      		in __tmp_reg__,__SREG__
+ 215 0098 F894      		cli
+ 216 009a DEBF      		out __SP_H__,r29
+ 217 009c 0FBE      		out __SREG__,__tmp_reg__
+ 218 009e CDBF      		out __SP_L__,r28
+ 219               	/* prologue end (size=10) */
+ 220 00a0 8983      		std Y+1,r24
+  30:../kernel_0_1/ResourceManager.c ****    ENTER_CRITICAL;
+ 221               		.stabn 68,0,30,.LM10-unlock
+ 222               	.LM10:
+ 223               	/* #APP */
+ 224 00a2 0FB6      		in __tmp_reg__,__SREG__
+ 225 00a4 F894      		cli
+ 226 00a6 0F92      		push __tmp_reg__
+ 227               		
+  31:../kernel_0_1/ResourceManager.c ****    if (RCB[resource].ceiling == PI) {
+ 228               		.stabn 68,0,31,.LM11-unlock
+ 229               	.LM11:
+ 230               	/* #NOAPP */
+ 231 00a8 8981      		ldd r24,Y+1
+ 232 00aa 9927      		clr r25
+ 233 00ac F92F      		mov r31,r25
+ 234 00ae E82F      		mov r30,r24
+ 235 00b0 E050      		subi r30,lo8(-(RCB))
+ 236 00b2 F040      		sbci r31,hi8(-(RCB))
+ 237 00b4 9081      		ld r25,Z
+ 238 00b6 8091 0000 		lds r24,PI
+ 239 00ba 9817      		cp r25,r24
+ 240 00bc D9F4      		brne .L6
+  32:../kernel_0_1/ResourceManager.c ****       popPiStack( &PI);
+ 241               		.stabn 68,0,32,.LM12-unlock
+ 242               	.LM12:
+ 243 00be 80E0      		ldi r24,lo8(PI)
+ 244 00c0 90E0      		ldi r25,hi8(PI)
+ 245 00c2 0E94 0000 		call popPiStack
+  33:../kernel_0_1/ResourceManager.c ****       BTV = (TVEC)~(BTV & (TVEC)PI_Table[PI+1]);
+ 246               		.stabn 68,0,33,.LM13-unlock
+ 247               	.LM13:
+ 248 00c6 8091 0000 		lds r24,PI
+ 249 00ca 282F      		mov r18,r24
+ 250 00cc 3327      		clr r19
+ 251 00ce 27FD      		sbrc r18,7
+ 252 00d0 3095      		com r19
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 6
+
+
+ 253 00d2 932F      		mov r25,r19
+ 254 00d4 822F      		mov r24,r18
+ 255 00d6 820F      		add r24,r18
+ 256 00d8 931F      		adc r25,r19
+ 257 00da F92F      		mov r31,r25
+ 258 00dc E82F      		mov r30,r24
+ 259 00de E050      		subi r30,lo8(-(PI_Table+2))
+ 260 00e0 F040      		sbci r31,hi8(-(PI_Table+2))
+ 261 00e2 9091 0000 		lds r25,BTV
+ 262 00e6 8081      		ld r24,Z
+ 263 00e8 8923      		and r24,r25
+ 264 00ea 8095      		com r24
+ 265 00ec 8093 0000 		sts BTV,r24
+  34:../kernel_0_1/ResourceManager.c ****       preempt();                  
+ 266               		.stabn 68,0,34,.LM14-unlock
+ 267               	.LM14:
+ 268 00f0 0E94 0000 		call preempt
+ 269               	.L6:
+  35:../kernel_0_1/ResourceManager.c ****    }
+  36:../kernel_0_1/ResourceManager.c ****    EXIT_CRITICAL;  
+ 270               		.stabn 68,0,36,.LM15-unlock
+ 271               	.LM15:
+ 272               	/* #APP */
+ 273 00f4 0F90      		pop __tmp_reg__
+ 274 00f6 0FBE      		out __SREG__,__tmp_reg__
+ 275               		
+  37:../kernel_0_1/ResourceManager.c **** } 
+ 276               		.stabn 68,0,37,.LM16-unlock
+ 277               	.LM16:
+ 278               	/* #NOAPP */
+ 279               	/* epilogue: frame size=1 */
+ 280 00f8 2196      		adiw r28,1
+ 281 00fa 0FB6      		in __tmp_reg__,__SREG__
+ 282 00fc F894      		cli
+ 283 00fe DEBF      		out __SP_H__,r29
+ 284 0100 0FBE      		out __SREG__,__tmp_reg__
+ 285 0102 CDBF      		out __SP_L__,r28
+ 286 0104 DF91      		pop r29
+ 287 0106 CF91      		pop r28
+ 288 0108 0895      		ret
+ 289               	/* epilogue end (size=9) */
+ 290               	/* function unlock size 72 (53) */
+ 291               		.size	unlock, .-unlock
+ 292               	.Lscope1:
+ 293               		.stabs	"",36,0,0,.Lscope1-unlock
+ 294               		.stabs	"pushPiStack:F(0,20)",36,0,40,pushPiStack
+ 295               		.stabs	"pi:p(7,4)",160,0,39,1
+ 296               	.global	pushPiStack
+ 297               		.type	pushPiStack, @function
+ 298               	pushPiStack:
+  38:../kernel_0_1/ResourceManager.c **** 
+  39:../kernel_0_1/ResourceManager.c **** void pushPiStack(SBYTE pi)
+  40:../kernel_0_1/ResourceManager.c **** {
+ 299               		.stabn 68,0,40,.LM17-pushPiStack
+ 300               	.LM17:
+ 301               	/* prologue: frame size=1 */
+ 302 010a CF93      		push r28
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 7
+
+
+ 303 010c DF93      		push r29
+ 304 010e CDB7      		in r28,__SP_L__
+ 305 0110 DEB7      		in r29,__SP_H__
+ 306 0112 2197      		sbiw r28,1
+ 307 0114 0FB6      		in __tmp_reg__,__SREG__
+ 308 0116 F894      		cli
+ 309 0118 DEBF      		out __SP_H__,r29
+ 310 011a 0FBE      		out __SREG__,__tmp_reg__
+ 311 011c CDBF      		out __SP_L__,r28
+ 312               	/* prologue end (size=10) */
+ 313 011e 8983      		std Y+1,r24
+  41:../kernel_0_1/ResourceManager.c ****    ENTER_CRITICAL;
+ 314               		.stabn 68,0,41,.LM18-pushPiStack
+ 315               	.LM18:
+ 316               	/* #APP */
+ 317 0120 0FB6      		in __tmp_reg__,__SREG__
+ 318 0122 F894      		cli
+ 319 0124 0F92      		push __tmp_reg__
+ 320               		
+  42:../kernel_0_1/ResourceManager.c ****    PI_Stack[top++]= pi;
+ 321               		.stabn 68,0,42,.LM19-pushPiStack
+ 322               	.LM19:
+ 323               	/* #NOAPP */
+ 324 0126 A0E0      		ldi r26,lo8(top)
+ 325 0128 B0E0      		ldi r27,hi8(top)
+ 326 012a 2C91      		ld r18,X
+ 327 012c 822F      		mov r24,r18
+ 328 012e 9927      		clr r25
+ 329 0130 F92F      		mov r31,r25
+ 330 0132 E82F      		mov r30,r24
+ 331 0134 E050      		subi r30,lo8(-(PI_Stack))
+ 332 0136 F040      		sbci r31,hi8(-(PI_Stack))
+ 333 0138 8981      		ldd r24,Y+1
+ 334 013a 8083      		st Z,r24
+ 335 013c 2F5F      		subi r18,lo8(-(1))
+ 336 013e 2C93      		st X,r18
+  43:../kernel_0_1/ResourceManager.c ****    EXIT_CRITICAL;
+ 337               		.stabn 68,0,43,.LM20-pushPiStack
+ 338               	.LM20:
+ 339               	/* #APP */
+ 340 0140 0F90      		pop __tmp_reg__
+ 341 0142 0FBE      		out __SREG__,__tmp_reg__
+ 342               		
+  44:../kernel_0_1/ResourceManager.c **** }
+ 343               		.stabn 68,0,44,.LM21-pushPiStack
+ 344               	.LM21:
+ 345               	/* #NOAPP */
+ 346               	/* epilogue: frame size=1 */
+ 347 0144 2196      		adiw r28,1
+ 348 0146 0FB6      		in __tmp_reg__,__SREG__
+ 349 0148 F894      		cli
+ 350 014a DEBF      		out __SP_H__,r29
+ 351 014c 0FBE      		out __SREG__,__tmp_reg__
+ 352 014e CDBF      		out __SP_L__,r28
+ 353 0150 DF91      		pop r29
+ 354 0152 CF91      		pop r28
+ 355 0154 0895      		ret
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 8
+
+
+ 356               	/* epilogue end (size=9) */
+ 357               	/* function pushPiStack size 47 (28) */
+ 358               		.size	pushPiStack, .-pushPiStack
+ 359               	.Lscope2:
+ 360               		.stabs	"",36,0,0,.Lscope2-pushPiStack
+ 361               		.stabs	"popPiStack:F(0,20)",36,0,47,popPiStack
+ 362               		.stabs	"pi:p(1,1)=*(7,4)",160,0,46,1
+ 363               	.global	popPiStack
+ 364               		.type	popPiStack, @function
+ 365               	popPiStack:
+  45:../kernel_0_1/ResourceManager.c **** 
+  46:../kernel_0_1/ResourceManager.c **** void popPiStack(SBYTE *pi)
+  47:../kernel_0_1/ResourceManager.c **** {
+ 366               		.stabn 68,0,47,.LM22-popPiStack
+ 367               	.LM22:
+ 368               	/* prologue: frame size=2 */
+ 369 0156 CF93      		push r28
+ 370 0158 DF93      		push r29
+ 371 015a CDB7      		in r28,__SP_L__
+ 372 015c DEB7      		in r29,__SP_H__
+ 373 015e 2297      		sbiw r28,2
+ 374 0160 0FB6      		in __tmp_reg__,__SREG__
+ 375 0162 F894      		cli
+ 376 0164 DEBF      		out __SP_H__,r29
+ 377 0166 0FBE      		out __SREG__,__tmp_reg__
+ 378 0168 CDBF      		out __SP_L__,r28
+ 379               	/* prologue end (size=10) */
+ 380 016a 8983      		std Y+1,r24
+ 381 016c 9A83      		std Y+2,r25
+  48:../kernel_0_1/ResourceManager.c ****    ENTER_CRITICAL;
+ 382               		.stabn 68,0,48,.LM23-popPiStack
+ 383               	.LM23:
+ 384               	/* #APP */
+ 385 016e 0FB6      		in __tmp_reg__,__SREG__
+ 386 0170 F894      		cli
+ 387 0172 0F92      		push __tmp_reg__
+ 388               		
+  49:../kernel_0_1/ResourceManager.c ****    *pi = PI_Stack[--top];
+ 389               		.stabn 68,0,49,.LM24-popPiStack
+ 390               	.LM24:
+ 391               	/* #NOAPP */
+ 392 0174 A981      		ldd r26,Y+1
+ 393 0176 BA81      		ldd r27,Y+2
+ 394 0178 8091 0000 		lds r24,top
+ 395 017c 8150      		subi r24,lo8(-(-1))
+ 396 017e 8093 0000 		sts top,r24
+ 397 0182 9927      		clr r25
+ 398 0184 F92F      		mov r31,r25
+ 399 0186 E82F      		mov r30,r24
+ 400 0188 E050      		subi r30,lo8(-(PI_Stack))
+ 401 018a F040      		sbci r31,hi8(-(PI_Stack))
+ 402 018c 8081      		ld r24,Z
+ 403 018e 8C93      		st X,r24
+  50:../kernel_0_1/ResourceManager.c ****    EXIT_CRITICAL;
+ 404               		.stabn 68,0,50,.LM25-popPiStack
+ 405               	.LM25:
+ 406               	/* #APP */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 9
+
+
+ 407 0190 0F90      		pop __tmp_reg__
+ 408 0192 0FBE      		out __SREG__,__tmp_reg__
+ 409               		
+  51:../kernel_0_1/ResourceManager.c **** }
+ 410               		.stabn 68,0,51,.LM26-popPiStack
+ 411               	.LM26:
+ 412               	/* #NOAPP */
+ 413               	/* epilogue: frame size=2 */
+ 414 0194 2296      		adiw r28,2
+ 415 0196 0FB6      		in __tmp_reg__,__SREG__
+ 416 0198 F894      		cli
+ 417 019a DEBF      		out __SP_H__,r29
+ 418 019c 0FBE      		out __SREG__,__tmp_reg__
+ 419 019e CDBF      		out __SP_L__,r28
+ 420 01a0 DF91      		pop r29
+ 421 01a2 CF91      		pop r28
+ 422 01a4 0895      		ret
+ 423               	/* epilogue end (size=9) */
+ 424               	/* function popPiStack size 49 (30) */
+ 425               		.size	popPiStack, .-popPiStack
+ 426               	.Lscope3:
+ 427               		.stabs	"",36,0,0,.Lscope3-popPiStack
+ 428               		.stabs	"PI:G(7,4)",32,0,8,0
+ 429               		.stabs	"top:G(7,1)",32,0,9,0
+ 430               		.stabs	"PI_Table:G(1,2)=ar(1,3)=r(1,3);0000000000000;0000000177777;;0;16;(7,2)",32,0,15,0
+ 431               		.text
+ 432               		.stabs "",100,0,0,Letext
+ 433               	Letext:
+ 434               	/* File "../kernel_0_1/ResourceManager.c": code  247 = 0x00f7 ( 171), prologues  40, epilogues  36 
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ResourceManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:67     .data:00000000 PI
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:74     .bss:00000000 top
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:80     .data:00000001 PI_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:106    .text:00000000 lock
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:298    .text:0000010a pushPiStack
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:205    .text:0000008c unlock
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:365    .text:00000156 popPiStack
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:433    .text:000001a6 Letext
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+RCB
+BTV
+preempt
+PI_Stack

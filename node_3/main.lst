@@ -1,0 +1,424 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	ED_Table
+  11               		.data
+  12               		.type	ED_Table, @object
+  13               		.size	ED_Table, 105
+  14               	ED_Table:
+  15 0000 01        		.byte	1
+  16 0001 02        		.byte	2
+  17 0002 E803 0000 		.long	1000
+  18 0006 E803 0000 		.long	1000
+  19 000a 01        		.byte	1
+  20 000b 00        		.byte	0
+  21 000c 00        		.byte	0
+  22 000d 04        		.byte	4
+  23 000e 00        		.byte	0
+  24 000f 01        		.byte	1
+  25 0010 02        		.byte	2
+  26 0011 7017 0000 		.long	6000
+  27 0015 7017 0000 		.long	6000
+  28 0019 01        		.byte	1
+  29 001a 00        		.byte	0
+  30 001b 00        		.byte	0
+  31 001c 10        		.byte	16
+  32 001d 00        		.byte	0
+  33 001e 01        		.byte	1
+  34 001f 02        		.byte	2
+  35 0020 0100 0000 		.long	1
+  36 0024 0100 0000 		.long	1
+  37 0028 01        		.byte	1
+  38 0029 00        		.byte	0
+  39 002a 00        		.byte	0
+  40 002b 01        		.byte	1
+  41 002c 00        		.byte	0
+  42 002d 01        		.byte	1
+  43 002e 02        		.byte	2
+  44 002f 0200 0000 		.long	2
+  45 0033 0200 0000 		.long	2
+  46 0037 01        		.byte	1
+  47 0038 00        		.byte	0
+  48 0039 00        		.byte	0
+  49 003a 02        		.byte	2
+  50 003b 00        		.byte	0
+  51 003c 01        		.byte	1
+  52 003d 02        		.byte	2
+  53 003e 3C00 0000 		.long	60
+  54 0042 3C00 0000 		.long	60
+  55 0046 01        		.byte	1
+  56 0047 00        		.byte	0
+  57 0048 00        		.byte	0
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 2
+
+
+  58 0049 20        		.byte	32
+  59 004a 00        		.byte	0
+  60 004b 01        		.byte	1
+  61 004c 02        		.byte	2
+  62 004d 0100 0000 		.long	1
+  63 0051 0100 0000 		.long	1
+  64 0055 01        		.byte	1
+  65 0056 00        		.byte	0
+  66 0057 00        		.byte	0
+  67 0058 08        		.byte	8
+  68 0059 00        		.byte	0
+  69 005a 01        		.byte	1
+  70 005b 02        		.byte	2
+  71 005c 0300 0000 		.long	3
+  72 0060 0300 0000 		.long	3
+  73 0064 01        		.byte	1
+  74 0065 00        		.byte	0
+  75 0066 00        		.byte	0
+  76 0067 80        		.byte	-128
+  77 0068 00        		.byte	0
+  78               	.global	_10_mS_EVENT_Table
+  79               		.type	_10_mS_EVENT_Table, @object
+  80               		.size	_10_mS_EVENT_Table, 2
+  81               	_10_mS_EVENT_Table:
+  82 0069 00        		.byte	0
+  83 006a 01        		.byte	1
+  84               	.global	SEC_EVENT_Table
+  85               		.type	SEC_EVENT_Table, @object
+  86               		.size	SEC_EVENT_Table, 3
+  87               	SEC_EVENT_Table:
+  88 006b 02        		.byte	2
+  89 006c 03        		.byte	3
+  90 006d 04        		.byte	4
+  91               	.global	MIN_EVENT_Table
+  92               		.type	MIN_EVENT_Table, @object
+  93               		.size	MIN_EVENT_Table, 1
+  94               	MIN_EVENT_Table:
+  95 006e 05        		.byte	5
+  96               	.global	HR_EVENT_Table
+  97               	.global	HR_EVENT_Table
+  98               		.section .bss
+  99               		.type	HR_EVENT_Table, @object
+ 100               		.size	HR_EVENT_Table, 0
+ 101               	HR_EVENT_Table:
+ 102 0000 00        		.skip 1,0
+ 103               	.global	EXT_EVENT_Table
+ 104               		.data
+ 105               		.type	EXT_EVENT_Table, @object
+ 106               		.size	EXT_EVENT_Table, 1
+ 107               	EXT_EVENT_Table:
+ 108 006f 06        		.byte	6
+ 109               		.text
+ 110               	.global	__vector_8
+ 111               		.type	__vector_8, @function
+ 112               	__vector_8:
+ 113               	/* prologue: frame size=0 */
+ 114 0000 1F92      		push __zero_reg__
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 3
+
+
+ 115 0002 0F92      		push __tmp_reg__
+ 116 0004 0FB6      		in __tmp_reg__,__SREG__
+ 117 0006 0F92      		push __tmp_reg__
+ 118 0008 1124      		clr __zero_reg__
+ 119 000a 2F93      		push r18
+ 120 000c 3F93      		push r19
+ 121 000e 4F93      		push r20
+ 122 0010 5F93      		push r21
+ 123 0012 6F93      		push r22
+ 124 0014 7F93      		push r23
+ 125 0016 8F93      		push r24
+ 126 0018 9F93      		push r25
+ 127 001a AF93      		push r26
+ 128 001c BF93      		push r27
+ 129 001e EF93      		push r30
+ 130 0020 FF93      		push r31
+ 131               	/* prologue end (size=17) */
+ 132 0022 61E0      		ldi r22,lo8(1)
+ 133 0024 80E0      		ldi r24,lo8(EXT_EVENT_Table)
+ 134 0026 90E0      		ldi r25,hi8(EXT_EVENT_Table)
+ 135 0028 0E94 0000 		call sweepTable
+ 136               	/* epilogue: frame size=0 */
+ 137 002c FF91      		pop r31
+ 138 002e EF91      		pop r30
+ 139 0030 BF91      		pop r27
+ 140 0032 AF91      		pop r26
+ 141 0034 9F91      		pop r25
+ 142 0036 8F91      		pop r24
+ 143 0038 7F91      		pop r23
+ 144 003a 6F91      		pop r22
+ 145 003c 5F91      		pop r21
+ 146 003e 4F91      		pop r20
+ 147 0040 3F91      		pop r19
+ 148 0042 2F91      		pop r18
+ 149 0044 0F90      		pop __tmp_reg__
+ 150 0046 0FBE      		out __SREG__,__tmp_reg__
+ 151 0048 0F90      		pop __tmp_reg__
+ 152 004a 1F90      		pop __zero_reg__
+ 153 004c 1895      		reti
+ 154               	/* epilogue end (size=17) */
+ 155               	/* function __vector_8 size 39 (5) */
+ 156               		.size	__vector_8, .-__vector_8
+ 157               	.global	__vector_7
+ 158               		.type	__vector_7, @function
+ 159               	__vector_7:
+ 160               	/* prologue: frame size=0 */
+ 161 004e 1F92      		push __zero_reg__
+ 162 0050 0F92      		push __tmp_reg__
+ 163 0052 0FB6      		in __tmp_reg__,__SREG__
+ 164 0054 0F92      		push __tmp_reg__
+ 165 0056 1124      		clr __zero_reg__
+ 166 0058 2F93      		push r18
+ 167 005a 3F93      		push r19
+ 168 005c 4F93      		push r20
+ 169 005e 5F93      		push r21
+ 170 0060 6F93      		push r22
+ 171 0062 7F93      		push r23
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 4
+
+
+ 172 0064 8F93      		push r24
+ 173 0066 9F93      		push r25
+ 174 0068 AF93      		push r26
+ 175 006a BF93      		push r27
+ 176 006c EF93      		push r30
+ 177 006e FF93      		push r31
+ 178               	/* prologue end (size=17) */
+ 179 0070 8091 0000 		lds r24,bit_vect+12
+ 180 0074 0E94 0000 		call release
+ 181               	/* epilogue: frame size=0 */
+ 182 0078 FF91      		pop r31
+ 183 007a EF91      		pop r30
+ 184 007c BF91      		pop r27
+ 185 007e AF91      		pop r26
+ 186 0080 9F91      		pop r25
+ 187 0082 8F91      		pop r24
+ 188 0084 7F91      		pop r23
+ 189 0086 6F91      		pop r22
+ 190 0088 5F91      		pop r21
+ 191 008a 4F91      		pop r20
+ 192 008c 3F91      		pop r19
+ 193 008e 2F91      		pop r18
+ 194 0090 0F90      		pop __tmp_reg__
+ 195 0092 0FBE      		out __SREG__,__tmp_reg__
+ 196 0094 0F90      		pop __tmp_reg__
+ 197 0096 1F90      		pop __zero_reg__
+ 198 0098 1895      		reti
+ 199               	/* epilogue end (size=17) */
+ 200               	/* function __vector_7 size 38 (4) */
+ 201               		.size	__vector_7, .-__vector_7
+ 202               		.lcomm msec_FLAG.0,1
+ 203               		.lcomm sec_FLAG.1,1
+ 204               		.lcomm min_FLAG.2,1
+ 205               		.lcomm hr_FLAG.3,1
+ 206               		.lcomm msec.4,1
+ 207               		.lcomm sec.5,1
+ 208               		.lcomm min.6,1
+ 209               	.global	__vector_12
+ 210               		.type	__vector_12, @function
+ 211               	__vector_12:
+ 212               	/* prologue: frame size=0 */
+ 213 009a 1F92      		push __zero_reg__
+ 214 009c 0F92      		push __tmp_reg__
+ 215 009e 0FB6      		in __tmp_reg__,__SREG__
+ 216 00a0 0F92      		push __tmp_reg__
+ 217 00a2 1124      		clr __zero_reg__
+ 218 00a4 2F93      		push r18
+ 219 00a6 3F93      		push r19
+ 220 00a8 4F93      		push r20
+ 221 00aa 5F93      		push r21
+ 222 00ac 6F93      		push r22
+ 223 00ae 7F93      		push r23
+ 224 00b0 8F93      		push r24
+ 225 00b2 9F93      		push r25
+ 226 00b4 AF93      		push r26
+ 227 00b6 BF93      		push r27
+ 228 00b8 CF93      		push r28
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 5
+
+
+ 229 00ba EF93      		push r30
+ 230 00bc FF93      		push r31
+ 231               	/* prologue end (size=18) */
+ 232 00be C1E0      		ldi r28,lo8(1)
+ 233 00c0 C093 0000 		sts msec_FLAG.0,r28
+ 234 00c4 8091 0000 		lds r24,msec.4
+ 235 00c8 8C0F      		add r24,r28
+ 236 00ca 8093 0000 		sts msec.4,r24
+ 237 00ce 8436      		cpi r24,lo8(100)
+ 238 00d0 49F4      		brne .L4
+ 239 00d2 C093 0000 		sts sec_FLAG.1,r28
+ 240 00d6 8091 0000 		lds r24,sec.5
+ 241 00da 8C0F      		add r24,r28
+ 242 00dc 8093 0000 		sts sec.5,r24
+ 243 00e0 1092 0000 		sts msec.4,__zero_reg__
+ 244               	.L4:
+ 245 00e4 8091 0000 		lds r24,sec.5
+ 246 00e8 8C33      		cpi r24,lo8(60)
+ 247 00ea 49F4      		brne .L5
+ 248 00ec C093 0000 		sts min_FLAG.2,r28
+ 249 00f0 8091 0000 		lds r24,min.6
+ 250 00f4 8F5F      		subi r24,lo8(-(1))
+ 251 00f6 8093 0000 		sts min.6,r24
+ 252 00fa 1092 0000 		sts sec.5,__zero_reg__
+ 253               	.L5:
+ 254 00fe 8091 0000 		lds r24,min.6
+ 255 0102 8C33      		cpi r24,lo8(60)
+ 256 0104 21F4      		brne .L11
+ 257 0106 C093 0000 		sts hr_FLAG.3,r28
+ 258 010a 1092 0000 		sts min.6,__zero_reg__
+ 259               	.L11:
+ 260 010e 62E0      		ldi r22,lo8(2)
+ 261 0110 80E0      		ldi r24,lo8(_10_mS_EVENT_Table)
+ 262 0112 90E0      		ldi r25,hi8(_10_mS_EVENT_Table)
+ 263 0114 0E94 0000 		call sweepTable
+ 264 0118 8091 0000 		lds r24,sec_FLAG.1
+ 265 011c 8130      		cpi r24,lo8(1)
+ 266 011e 29F4      		brne .L8
+ 267 0120 63E0      		ldi r22,lo8(3)
+ 268 0122 80E0      		ldi r24,lo8(SEC_EVENT_Table)
+ 269 0124 90E0      		ldi r25,hi8(SEC_EVENT_Table)
+ 270 0126 0E94 0000 		call sweepTable
+ 271               	.L8:
+ 272 012a 8091 0000 		lds r24,min_FLAG.2
+ 273 012e 8823      		tst r24
+ 274 0130 29F0      		breq .L9
+ 275 0132 6C2F      		mov r22,r28
+ 276 0134 80E0      		ldi r24,lo8(MIN_EVENT_Table)
+ 277 0136 90E0      		ldi r25,hi8(MIN_EVENT_Table)
+ 278 0138 0E94 0000 		call sweepTable
+ 279               	.L9:
+ 280 013c 8091 0000 		lds r24,hr_FLAG.3
+ 281 0140 8823      		tst r24
+ 282 0142 29F0      		breq .L10
+ 283 0144 60E0      		ldi r22,lo8(0)
+ 284 0146 80E0      		ldi r24,lo8(HR_EVENT_Table)
+ 285 0148 90E0      		ldi r25,hi8(HR_EVENT_Table)
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 6
+
+
+ 286 014a 0E94 0000 		call sweepTable
+ 287               	.L10:
+ 288 014e 1092 0000 		sts msec_FLAG.0,__zero_reg__
+ 289 0152 1092 0000 		sts sec_FLAG.1,__zero_reg__
+ 290 0156 1092 0000 		sts min_FLAG.2,__zero_reg__
+ 291 015a 1092 0000 		sts hr_FLAG.3,__zero_reg__
+ 292               	/* epilogue: frame size=0 */
+ 293 015e FF91      		pop r31
+ 294 0160 EF91      		pop r30
+ 295 0162 CF91      		pop r28
+ 296 0164 BF91      		pop r27
+ 297 0166 AF91      		pop r26
+ 298 0168 9F91      		pop r25
+ 299 016a 8F91      		pop r24
+ 300 016c 7F91      		pop r23
+ 301 016e 6F91      		pop r22
+ 302 0170 5F91      		pop r21
+ 303 0172 4F91      		pop r20
+ 304 0174 3F91      		pop r19
+ 305 0176 2F91      		pop r18
+ 306 0178 0F90      		pop __tmp_reg__
+ 307 017a 0FBE      		out __SREG__,__tmp_reg__
+ 308 017c 0F90      		pop __tmp_reg__
+ 309 017e 1F90      		pop __zero_reg__
+ 310 0180 1895      		reti
+ 311               	/* epilogue end (size=18) */
+ 312               	/* function __vector_12 size 116 (80) */
+ 313               		.size	__vector_12, .-__vector_12
+ 314               	.global	hd_init
+ 315               		.type	hd_init, @function
+ 316               	hd_init:
+ 317               	/* prologue: frame size=0 */
+ 318               	/* prologue end (size=0) */
+ 319 0182 8FEF      		ldi r24,lo8(-1)
+ 320 0184 8ABB      		out 58-0x20,r24
+ 321 0186 87BB      		out 55-0x20,r24
+ 322 0188 88BB      		out 56-0x20,r24
+ 323 018a 11BA      		out 49-0x20,__zero_reg__
+ 324 018c 89B7      		in r24,89-0x20
+ 325 018e 806C      		ori r24,lo8(-64)
+ 326 0190 89BF      		out 89-0x20,r24
+ 327 0192 8AB7      		in r24,90-0x20
+ 328 0194 806A      		ori r24,lo8(-96)
+ 329 0196 8ABF      		out 90-0x20,r24
+ 330 0198 8CE9      		ldi r24,lo8(156)
+ 331 019a 90E0      		ldi r25,hi8(156)
+ 332 019c 8BBD      		out 75-0x20,r24
+ 333 019e 80E4      		ldi r24,lo8(-25536)
+ 334 01a0 9CE9      		ldi r25,hi8(-25536)
+ 335 01a2 8ABD      		out 74-0x20,r24
+ 336 01a4 89E0      		ldi r24,lo8(9)
+ 337 01a6 8EBD      		out 78-0x20,r24
+ 338 01a8 87B7      		in r24,87-0x20
+ 339 01aa 8061      		ori r24,lo8(16)
+ 340 01ac 87BF      		out 87-0x20,r24
+ 341               	/* epilogue: frame size=0 */
+ 342 01ae 0895      		ret
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 7
+
+
+ 343               	/* epilogue end (size=1) */
+ 344               	/* function hd_init size 23 (22) */
+ 345               		.size	hd_init, .-hd_init
+ 346               	.global	main
+ 347               		.type	main, @function
+ 348               	main:
+ 349               	/* prologue: frame size=0 */
+ 350 01b0 C0E0      		ldi r28,lo8(__stack - 0)
+ 351 01b2 D0E0      		ldi r29,hi8(__stack - 0)
+ 352 01b4 DEBF      		out __SP_H__,r29
+ 353 01b6 CDBF      		out __SP_L__,r28
+ 354               	/* prologue end (size=4) */
+ 355 01b8 0E94 0000 		call hd_init
+ 356 01bc 0E94 0000 		call kernelStartUp
+ 357 01c0 80E0      		ldi r24,lo8(0)
+ 358 01c2 90E0      		ldi r25,hi8(0)
+ 359               	/* epilogue: frame size=0 */
+ 360 01c4 0C94 0000 		jmp exit
+ 361               	/* epilogue end (size=2) */
+ 362               	/* function main size 12 (6) */
+ 363               		.size	main, .-main
+ 364               	/* File "main.c": code  228 = 0x00e4 ( 117), prologues  56, epilogues  55 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:14     .data:00000000 ED_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:81     .data:00000069 _10_mS_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:87     .data:0000006b SEC_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:94     .data:0000006e MIN_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:101    .bss:00000000 HR_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:107    .data:0000006f EXT_EVENT_Table
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:112    .text:00000000 __vector_8
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:159    .text:0000004e __vector_7
+                             .bss:00000001 msec_FLAG.0
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:202    .bss:00000002 sec_FLAG.1
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:203    .bss:00000003 min_FLAG.2
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:204    .bss:00000004 hr_FLAG.3
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:205    .bss:00000005 msec.4
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:206    .bss:00000006 sec.5
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:207    .bss:00000007 min.6
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:211    .text:0000009a __vector_12
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:316    .text:00000182 hd_init
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccWsaaaa.s:348    .text:000001b0 main
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+sweepTable
+bit_vect
+release
+__stack
+kernelStartUp
+exit

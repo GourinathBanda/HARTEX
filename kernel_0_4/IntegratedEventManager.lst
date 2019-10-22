@@ -1,0 +1,410 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 1
+
+
+   1               		.file	"IntegratedEventManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.text
+  11               	.global	sweepTable
+  12               		.type	sweepTable, @function
+  13               	sweepTable:
+  14               	/* prologue: frame size=5 */
+  15 0000 CF93      		push r28
+  16 0002 DF93      		push r29
+  17 0004 CDB7      		in r28,__SP_L__
+  18 0006 DEB7      		in r29,__SP_H__
+  19 0008 2597      		sbiw r28,5
+  20 000a 0FB6      		in __tmp_reg__,__SREG__
+  21 000c F894      		cli
+  22 000e DEBF      		out __SP_H__,r29
+  23 0010 0FBE      		out __SREG__,__tmp_reg__
+  24 0012 CDBF      		out __SP_L__,r28
+  25               	/* prologue end (size=10) */
+  26 0014 8983      		std Y+1,r24
+  27 0016 9A83      		std Y+2,r25
+  28 0018 6B83      		std Y+3,r22
+  29 001a 1C82      		std Y+4,__zero_reg__
+  30 001c 1D82      		std Y+5,__zero_reg__
+  31               	.L4:
+  32 001e 8B81      		ldd r24,Y+3
+  33 0020 282F      		mov r18,r24
+  34 0022 3327      		clr r19
+  35 0024 8C81      		ldd r24,Y+4
+  36 0026 9D81      		ldd r25,Y+5
+  37 0028 8217      		cp r24,r18
+  38 002a 9307      		cpc r25,r19
+  39 002c 0CF0      		brlt .L7
+  40 002e 1FC0      		rjmp .L3
+  41               	.L7:
+  42 0030 2981      		ldd r18,Y+1
+  43 0032 3A81      		ldd r19,Y+2
+  44 0034 8C81      		ldd r24,Y+4
+  45 0036 9D81      		ldd r25,Y+5
+  46 0038 F32F      		mov r31,r19
+  47 003a E22F      		mov r30,r18
+  48 003c E80F      		add r30,r24
+  49 003e F91F      		adc r31,r25
+  50 0040 8081      		ld r24,Z
+  51 0042 282F      		mov r18,r24
+  52 0044 3327      		clr r19
+  53 0046 932F      		mov r25,r19
+  54 0048 822F      		mov r24,r18
+  55 004a 8295      		swap r24
+  56 004c 9295      		swap r25
+  57 004e 907F      		andi r25,0xf0
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 2
+
+
+  58 0050 9827      		eor r25,r24
+  59 0052 807F      		andi r24,0xf0
+  60 0054 9827      		eor r25,r24
+  61 0056 821B      		sub r24,r18
+  62 0058 930B      		sbc r25,r19
+  63 005a 8050      		subi r24,lo8(-(ED_Table))
+  64 005c 9040      		sbci r25,hi8(-(ED_Table))
+  65 005e 0E94 0000 		call eventManager
+  66 0062 8C81      		ldd r24,Y+4
+  67 0064 9D81      		ldd r25,Y+5
+  68 0066 0196      		adiw r24,1
+  69 0068 8C83      		std Y+4,r24
+  70 006a 9D83      		std Y+5,r25
+  71 006c D8CF      		rjmp .L4
+  72               	.L3:
+  73               	/* epilogue: frame size=5 */
+  74 006e 2596      		adiw r28,5
+  75 0070 0FB6      		in __tmp_reg__,__SREG__
+  76 0072 F894      		cli
+  77 0074 DEBF      		out __SP_H__,r29
+  78 0076 0FBE      		out __SREG__,__tmp_reg__
+  79 0078 CDBF      		out __SP_L__,r28
+  80 007a DF91      		pop r29
+  81 007c CF91      		pop r28
+  82 007e 0895      		ret
+  83               	/* epilogue end (size=9) */
+  84               	/* function sweepTable size 64 (45) */
+  85               		.size	sweepTable, .-sweepTable
+  86               	.global	eventManager
+  87               		.type	eventManager, @function
+  88               	eventManager:
+  89               	/* prologue: frame size=2 */
+  90 0080 CF93      		push r28
+  91 0082 DF93      		push r29
+  92 0084 CDB7      		in r28,__SP_L__
+  93 0086 DEB7      		in r29,__SP_H__
+  94 0088 2297      		sbiw r28,2
+  95 008a 0FB6      		in __tmp_reg__,__SREG__
+  96 008c F894      		cli
+  97 008e DEBF      		out __SP_H__,r29
+  98 0090 0FBE      		out __SREG__,__tmp_reg__
+  99 0092 CDBF      		out __SP_L__,r28
+ 100               	/* prologue end (size=10) */
+ 101 0094 8983      		std Y+1,r24
+ 102 0096 9A83      		std Y+2,r25
+ 103 0098 E981      		ldd r30,Y+1
+ 104 009a FA81      		ldd r31,Y+2
+ 105 009c 8081      		ld r24,Z
+ 106 009e 8130      		cpi r24,lo8(1)
+ 107 00a0 B1F5      		brne .L8
+ 108 00a2 2981      		ldd r18,Y+1
+ 109 00a4 3A81      		ldd r19,Y+2
+ 110 00a6 E981      		ldd r30,Y+1
+ 111 00a8 FA81      		ldd r31,Y+2
+ 112 00aa 8681      		ldd r24,Z+6
+ 113 00ac 9781      		ldd r25,Z+7
+ 114 00ae A085      		ldd r26,Z+8
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 3
+
+
+ 115 00b0 B185      		ldd r27,Z+9
+ 116 00b2 0197      		sbiw r24,1
+ 117 00b4 A109      		sbc r26,__zero_reg__
+ 118 00b6 B109      		sbc r27,__zero_reg__
+ 119 00b8 F32F      		mov r31,r19
+ 120 00ba E22F      		mov r30,r18
+ 121 00bc 8683      		std Z+6,r24
+ 122 00be 9783      		std Z+7,r25
+ 123 00c0 A087      		std Z+8,r26
+ 124 00c2 B187      		std Z+9,r27
+ 125 00c4 E981      		ldd r30,Y+1
+ 126 00c6 FA81      		ldd r31,Y+2
+ 127 00c8 8681      		ldd r24,Z+6
+ 128 00ca 9781      		ldd r25,Z+7
+ 129 00cc A085      		ldd r26,Z+8
+ 130 00ce B185      		ldd r27,Z+9
+ 131 00d0 0097      		sbiw r24,0
+ 132 00d2 A105      		cpc r26,__zero_reg__
+ 133 00d4 B105      		cpc r27,__zero_reg__
+ 134 00d6 D9F4      		brne .L8
+ 135 00d8 8981      		ldd r24,Y+1
+ 136 00da 9A81      		ldd r25,Y+2
+ 137 00dc 0E94 0000 		call executeOPC
+ 138 00e0 2981      		ldd r18,Y+1
+ 139 00e2 3A81      		ldd r19,Y+2
+ 140 00e4 E981      		ldd r30,Y+1
+ 141 00e6 FA81      		ldd r31,Y+2
+ 142 00e8 8281      		ldd r24,Z+2
+ 143 00ea 9381      		ldd r25,Z+3
+ 144 00ec A481      		ldd r26,Z+4
+ 145 00ee B581      		ldd r27,Z+5
+ 146 00f0 F32F      		mov r31,r19
+ 147 00f2 E22F      		mov r30,r18
+ 148 00f4 8683      		std Z+6,r24
+ 149 00f6 9783      		std Z+7,r25
+ 150 00f8 A087      		std Z+8,r26
+ 151 00fa B187      		std Z+9,r27
+ 152 00fc E981      		ldd r30,Y+1
+ 153 00fe FA81      		ldd r31,Y+2
+ 154 0100 8181      		ldd r24,Z+1
+ 155 0102 8130      		cpi r24,lo8(1)
+ 156 0104 21F4      		brne .L8
+ 157 0106 8981      		ldd r24,Y+1
+ 158 0108 9A81      		ldd r25,Y+2
+ 159 010a 0E94 0000 		call disable
+ 160               	.L8:
+ 161               	/* epilogue: frame size=2 */
+ 162 010e 2296      		adiw r28,2
+ 163 0110 0FB6      		in __tmp_reg__,__SREG__
+ 164 0112 F894      		cli
+ 165 0114 DEBF      		out __SP_H__,r29
+ 166 0116 0FBE      		out __SREG__,__tmp_reg__
+ 167 0118 CDBF      		out __SP_L__,r28
+ 168 011a DF91      		pop r29
+ 169 011c CF91      		pop r28
+ 170 011e 0895      		ret
+ 171               	/* epilogue end (size=9) */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 4
+
+
+ 172               	/* function eventManager size 80 (61) */
+ 173               		.size	eventManager, .-eventManager
+ 174               	.global	executeOPC
+ 175               		.type	executeOPC, @function
+ 176               	executeOPC:
+ 177               	/* prologue: frame size=2 */
+ 178 0120 CF93      		push r28
+ 179 0122 DF93      		push r29
+ 180 0124 CDB7      		in r28,__SP_L__
+ 181 0126 DEB7      		in r29,__SP_H__
+ 182 0128 2297      		sbiw r28,2
+ 183 012a 0FB6      		in __tmp_reg__,__SREG__
+ 184 012c F894      		cli
+ 185 012e DEBF      		out __SP_H__,r29
+ 186 0130 0FBE      		out __SREG__,__tmp_reg__
+ 187 0132 CDBF      		out __SP_L__,r28
+ 188               	/* prologue end (size=10) */
+ 189 0134 8983      		std Y+1,r24
+ 190 0136 9A83      		std Y+2,r25
+ 191 0138 E981      		ldd r30,Y+1
+ 192 013a FA81      		ldd r31,Y+2
+ 193 013c 8285      		ldd r24,Z+10
+ 194 013e 9927      		clr r25
+ 195 0140 8170      		andi r24,lo8(1)
+ 196 0142 9070      		andi r25,hi8(1)
+ 197 0144 0097      		sbiw r24,0
+ 198 0146 51F0      		breq .L14
+ 199 0148 E981      		ldd r30,Y+1
+ 200 014a FA81      		ldd r31,Y+2
+ 201 014c A981      		ldd r26,Y+1
+ 202 014e BA81      		ldd r27,Y+2
+ 203 0150 6485      		ldd r22,Z+12
+ 204 0152 FB2F      		mov r31,r27
+ 205 0154 EA2F      		mov r30,r26
+ 206 0156 8385      		ldd r24,Z+11
+ 207 0158 0E94 0000 		call signal_and_release
+ 208               	.L14:
+ 209 015c E981      		ldd r30,Y+1
+ 210 015e FA81      		ldd r31,Y+2
+ 211 0160 8285      		ldd r24,Z+10
+ 212 0162 9927      		clr r25
+ 213 0164 8870      		andi r24,lo8(8)
+ 214 0166 9070      		andi r25,hi8(8)
+ 215 0168 0097      		sbiw r24,0
+ 216 016a 21F0      		breq .L15
+ 217 016c 8981      		ldd r24,Y+1
+ 218 016e 9A81      		ldd r25,Y+2
+ 219 0170 0E94 0000 		call enableNext
+ 220               	.L15:
+ 221 0174 E981      		ldd r30,Y+1
+ 222 0176 FA81      		ldd r31,Y+2
+ 223 0178 8285      		ldd r24,Z+10
+ 224 017a 9927      		clr r25
+ 225 017c 8270      		andi r24,lo8(2)
+ 226 017e 9070      		andi r25,hi8(2)
+ 227 0180 0097      		sbiw r24,0
+ 228 0182 29F0      		breq .L12
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 5
+
+
+ 229 0184 E981      		ldd r30,Y+1
+ 230 0186 FA81      		ldd r31,Y+2
+ 231 0188 8485      		ldd r24,Z+12
+ 232 018a 0E94 0000 		call release
+ 233               	.L12:
+ 234               	/* epilogue: frame size=2 */
+ 235 018e 2296      		adiw r28,2
+ 236 0190 0FB6      		in __tmp_reg__,__SREG__
+ 237 0192 F894      		cli
+ 238 0194 DEBF      		out __SP_H__,r29
+ 239 0196 0FBE      		out __SREG__,__tmp_reg__
+ 240 0198 CDBF      		out __SP_L__,r28
+ 241 019a DF91      		pop r29
+ 242 019c CF91      		pop r28
+ 243 019e 0895      		ret
+ 244               	/* epilogue end (size=9) */
+ 245               	/* function executeOPC size 64 (45) */
+ 246               		.size	executeOPC, .-executeOPC
+ 247               	.global	disable
+ 248               		.type	disable, @function
+ 249               	disable:
+ 250               	/* prologue: frame size=2 */
+ 251 01a0 CF93      		push r28
+ 252 01a2 DF93      		push r29
+ 253 01a4 CDB7      		in r28,__SP_L__
+ 254 01a6 DEB7      		in r29,__SP_H__
+ 255 01a8 2297      		sbiw r28,2
+ 256 01aa 0FB6      		in __tmp_reg__,__SREG__
+ 257 01ac F894      		cli
+ 258 01ae DEBF      		out __SP_H__,r29
+ 259 01b0 0FBE      		out __SREG__,__tmp_reg__
+ 260 01b2 CDBF      		out __SP_L__,r28
+ 261               	/* prologue end (size=10) */
+ 262 01b4 8983      		std Y+1,r24
+ 263 01b6 9A83      		std Y+2,r25
+ 264 01b8 E981      		ldd r30,Y+1
+ 265 01ba FA81      		ldd r31,Y+2
+ 266 01bc 1082      		st Z,__zero_reg__
+ 267               	/* epilogue: frame size=2 */
+ 268 01be 2296      		adiw r28,2
+ 269 01c0 0FB6      		in __tmp_reg__,__SREG__
+ 270 01c2 F894      		cli
+ 271 01c4 DEBF      		out __SP_H__,r29
+ 272 01c6 0FBE      		out __SREG__,__tmp_reg__
+ 273 01c8 CDBF      		out __SP_L__,r28
+ 274 01ca DF91      		pop r29
+ 275 01cc CF91      		pop r28
+ 276 01ce 0895      		ret
+ 277               	/* epilogue end (size=9) */
+ 278               	/* function disable size 24 (5) */
+ 279               		.size	disable, .-disable
+ 280               	.global	enableNext
+ 281               		.type	enableNext, @function
+ 282               	enableNext:
+ 283               	/* prologue: frame size=2 */
+ 284 01d0 CF93      		push r28
+ 285 01d2 DF93      		push r29
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 6
+
+
+ 286 01d4 CDB7      		in r28,__SP_L__
+ 287 01d6 DEB7      		in r29,__SP_H__
+ 288 01d8 2297      		sbiw r28,2
+ 289 01da 0FB6      		in __tmp_reg__,__SREG__
+ 290 01dc F894      		cli
+ 291 01de DEBF      		out __SP_H__,r29
+ 292 01e0 0FBE      		out __SREG__,__tmp_reg__
+ 293 01e2 CDBF      		out __SP_L__,r28
+ 294               	/* prologue end (size=10) */
+ 295 01e4 8983      		std Y+1,r24
+ 296 01e6 9A83      		std Y+2,r25
+ 297 01e8 E981      		ldd r30,Y+1
+ 298 01ea FA81      		ldd r31,Y+2
+ 299 01ec 8685      		ldd r24,Z+14
+ 300 01ee 282F      		mov r18,r24
+ 301 01f0 3327      		clr r19
+ 302 01f2 932F      		mov r25,r19
+ 303 01f4 822F      		mov r24,r18
+ 304 01f6 8295      		swap r24
+ 305 01f8 9295      		swap r25
+ 306 01fa 907F      		andi r25,0xf0
+ 307 01fc 9827      		eor r25,r24
+ 308 01fe 807F      		andi r24,0xf0
+ 309 0200 9827      		eor r25,r24
+ 310 0202 821B      		sub r24,r18
+ 311 0204 930B      		sbc r25,r19
+ 312 0206 F92F      		mov r31,r25
+ 313 0208 E82F      		mov r30,r24
+ 314 020a E050      		subi r30,lo8(-(ED_Table))
+ 315 020c F040      		sbci r31,hi8(-(ED_Table))
+ 316 020e 81E0      		ldi r24,lo8(1)
+ 317 0210 8083      		st Z,r24
+ 318               	/* epilogue: frame size=2 */
+ 319 0212 2296      		adiw r28,2
+ 320 0214 0FB6      		in __tmp_reg__,__SREG__
+ 321 0216 F894      		cli
+ 322 0218 DEBF      		out __SP_H__,r29
+ 323 021a 0FBE      		out __SREG__,__tmp_reg__
+ 324 021c CDBF      		out __SP_L__,r28
+ 325 021e DF91      		pop r29
+ 326 0220 CF91      		pop r28
+ 327 0222 0895      		ret
+ 328               	/* epilogue end (size=9) */
+ 329               	/* function enableNext size 42 (23) */
+ 330               		.size	enableNext, .-enableNext
+ 331               	.global	enable
+ 332               		.type	enable, @function
+ 333               	enable:
+ 334               	/* prologue: frame size=2 */
+ 335 0224 CF93      		push r28
+ 336 0226 DF93      		push r29
+ 337 0228 CDB7      		in r28,__SP_L__
+ 338 022a DEB7      		in r29,__SP_H__
+ 339 022c 2297      		sbiw r28,2
+ 340 022e 0FB6      		in __tmp_reg__,__SREG__
+ 341 0230 F894      		cli
+ 342 0232 DEBF      		out __SP_H__,r29
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 7
+
+
+ 343 0234 0FBE      		out __SREG__,__tmp_reg__
+ 344 0236 CDBF      		out __SP_L__,r28
+ 345               	/* prologue end (size=10) */
+ 346 0238 8983      		std Y+1,r24
+ 347 023a 9A83      		std Y+2,r25
+ 348 023c E981      		ldd r30,Y+1
+ 349 023e FA81      		ldd r31,Y+2
+ 350 0240 81E0      		ldi r24,lo8(1)
+ 351 0242 8083      		st Z,r24
+ 352               	/* epilogue: frame size=2 */
+ 353 0244 2296      		adiw r28,2
+ 354 0246 0FB6      		in __tmp_reg__,__SREG__
+ 355 0248 F894      		cli
+ 356 024a DEBF      		out __SP_H__,r29
+ 357 024c 0FBE      		out __SREG__,__tmp_reg__
+ 358 024e CDBF      		out __SP_L__,r28
+ 359 0250 DF91      		pop r29
+ 360 0252 CF91      		pop r28
+ 361 0254 0895      		ret
+ 362               	/* epilogue end (size=9) */
+ 363               	/* function enable size 25 (6) */
+ 364               		.size	enable, .-enable
+ 365               	/* File "../kernel_0_4/IntegratedEventManager.c": code  299 = 0x012b ( 185), prologues  60, epilogu
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 IntegratedEventManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s:13     .text:00000000 sweepTable
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s:88     .text:00000080 eventManager
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s:176    .text:00000120 executeOPC
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s:249    .text:000001a0 disable
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s:282    .text:000001d0 enableNext
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccmyaaaa.s:333    .text:00000224 enable
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+ED_Table
+signal_and_release
+release

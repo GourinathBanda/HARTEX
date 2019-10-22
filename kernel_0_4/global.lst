@@ -1,0 +1,49 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 1
+
+
+   1               		.file	"global.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	bit_vect
+  11               		.data
+  12               		.type	bit_vect, @object
+  13               		.size	bit_vect, 32
+  14               	bit_vect:
+  15 0000 0100      		.word	1
+  16 0002 0200      		.word	2
+  17 0004 0400      		.word	4
+  18 0006 0800      		.word	8
+  19 0008 1000      		.word	16
+  20 000a 2000      		.word	32
+  21 000c 4000      		.word	64
+  22 000e 8000      		.word	128
+  23 0010 0001      		.word	256
+  24 0012 0002      		.word	512
+  25 0014 0004      		.word	1024
+  26 0016 0008      		.word	2048
+  27 0018 0010      		.word	4096
+  28 001a 0020      		.word	8192
+  29 001c 0040      		.word	16384
+  30 001e 0080      		.word	-32768
+  31               	/* File "../kernel_0_4/global.c": code    0 = 0x0000 (   0), prologues   0, epilogues   0 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 global.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqyaaaa.s:14     .data:00000000 bit_vect
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

@@ -1,0 +1,52 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 1
+
+
+   1               		.file	"message.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               	.global	MCB
+  11               		.data
+  12               		.type	MCB, @object
+  13               		.size	MCB, 8
+  14               	MCB:
+  15 0000 60        		.byte	96
+  16 0001 0000      		.word	sourceBuf0
+  17 0003 02        		.byte	2
+  18 0004 42        		.byte	66
+  19 0005 0000      		.word	sourceBuf1
+  20 0007 04        		.byte	4
+  21               	.global	MsgSCB
+  22               		.type	MsgSCB, @object
+  23               		.size	MsgSCB, 4
+  24               	MsgSCB:
+  25 0008 00        		.byte	0
+  26 0009 60        		.byte	96
+  27 000a 00        		.byte	0
+  28 000b 42        		.byte	66
+  29               		.comm sourceBuf0,2,1
+  30               		.comm sourceBuf1,4,1
+  31               	/* File "message.c": code    0 = 0x0000 (   0), prologues   0, epilogues   0 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 message.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:14     .data:00000000 MCB
+                            *COM*:00000002 sourceBuf0
+                            *COM*:00000004 sourceBuf1
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccwxaaaa.s:24     .data:00000008 MsgSCB
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

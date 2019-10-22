@@ -1,0 +1,97 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 1
+
+
+   1               		.file	"global.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.stabs	"C:\\Programming\\node_1/",100,0,0,.Ltext0
+  11               		.stabs	"../kernel_0_1/global.c",100,0,0,.Ltext0
+  12               		.text
+  13               	.Ltext0:
+  14               		.stabs	"gcc2_compiled.",60,0,0,0
+  15               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  16               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  17               		.stabs	"long int:t(0,3)=@s32;r(0,3);0020000000000;0017777777777;",128,0,0,0
+  18               		.stabs	"unsigned int:t(0,4)=r(0,4);0000000000000;0000000177777;",128,0,0,0
+  19               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0000000000000;0037777777777;",128,0,0,0
+  20               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  21               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",128,0,0,
+  22               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  23               		.stabs	"short unsigned int:t(0,9)=r(0,9);0000000000000;0000000177777;",128,0,0,0
+  24               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  25               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  26               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  28               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"complex int:t(0,15)=s4real:(0,1),0,16;imag:(0,1),16,16;;",128,0,0,0
+  30               		.stabs	"complex float:t(0,16)=R3;8;0;",128,0,0,0
+  31               		.stabs	"complex double:t(0,17)=R3;8;0;",128,0,0,0
+  32               		.stabs	"complex long double:t(0,18)=R3;8;0;",128,0,0,0
+  33               		.stabs	"__builtin_va_list:t(0,19)=*(0,20)=(0,20)",128,0,0,0
+  34               		.stabs	"_Bool:t(0,21)=@s8;-16;",128,0,0,0
+  35               		.stabs	"../kernel_0_1/global.c",130,0,0,0
+  36               		.stabs	"../kernel_0_1/include/typedef.h",130,0,0,0
+  37               		.stabs	"UBYTE:t(2,1)=(0,11)",128,0,7,0
+  38               		.stabs	"UWORD:t(2,2)=(0,9)",128,0,8,0
+  39               		.stabs	"ULONG:t(2,3)=(0,5)",128,0,9,0
+  40               		.stabs	"SBYTE:t(2,4)=(0,10)",128,0,11,0
+  41               		.stabs	"SWORD:t(2,5)=(0,8)",128,0,12,0
+  42               		.stabs	"SLONG:t(2,6)=(0,3)",128,0,13,0
+  43               		.stabs	"period:t(2,7)=(2,3)",128,0,15,0
+  44               		.stabs	"TVEC:t(2,8)=(2,1)",128,0,16,0
+  45               		.stabs	"RESOURCE:t(2,9)=(2,1)",128,0,17,0
+  46               		.stabs	"RCB_tdef:t(2,10)=(2,11)=s1ceiling:(2,4),0,8;;",128,0,21,0
+  47               		.stabs	"SCB_tdef:t(2,12)=(2,13)=s9mode:(2,1),0,8;threshold:(2,3),8,32;event_counter:(2,3),40,32;;"
+  48               		.stabs	"ED_tdef:t(2,14)=(2,15)=s9mode:(2,1),0,8;threshold:(2,3),8,32;event_counter:(2,3),40,32;;",
+  49               		.stabn	162,0,0,0
+  50               	.global	bit_vect
+  51               		.data
+  52               		.type	bit_vect, @object
+  53               		.size	bit_vect, 32
+  54               	bit_vect:
+  55 0000 0100      		.word	1
+  56 0002 0200      		.word	2
+  57 0004 0400      		.word	4
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 2
+
+
+  58 0006 0800      		.word	8
+  59 0008 1000      		.word	16
+  60 000a 2000      		.word	32
+  61 000c 4000      		.word	64
+  62 000e 8000      		.word	128
+  63 0010 0001      		.word	256
+  64 0012 0002      		.word	512
+  65 0014 0004      		.word	1024
+  66 0016 0008      		.word	2048
+  67 0018 0010      		.word	4096
+  68 001a 0020      		.word	8192
+  69 001c 0040      		.word	16384
+  70 001e 0080      		.word	-32768
+  71               		.stabs	"bit_vect:G(1,1)=ar(1,2)=r(1,2);0000000000000;0000000177777;;0;15;(2,2)",32,0,3,0
+  72               		.text
+  73               		.stabs "",100,0,0,Letext
+  74               	Letext:
+  75               	/* File "../kernel_0_1/global.c": code    0 = 0x0000 (   0), prologues   0, epilogues   0 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 global.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:54     .data:00000000 bit_vect
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccewaaaa.s:74     .text:00000000 Letext
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

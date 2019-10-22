@@ -1,0 +1,248 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s 			page 1
+
+
+   1               		.file	"IntegratedEventManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.text
+  11               	.global	sweepTable
+  12               		.type	sweepTable, @function
+  13               	sweepTable:
+  14               	/* prologue: frame size=0 */
+  15 0000 0F93      		push r16
+  16 0002 1F93      		push r17
+  17 0004 CF93      		push r28
+  18 0006 DF93      		push r29
+  19               	/* prologue end (size=4) */
+  20 0008 482F      		mov r20,r24
+  21 000a 592F      		mov r21,r25
+  22 000c 262F      		mov r18,r22
+  23 000e 3327      		clr r19
+  24 0010 2115      		cp r18,__zero_reg__
+  25 0012 3105      		cpc r19,__zero_reg__
+  26 0014 D1F0      		breq .L8
+  27 0016 042F      		mov r16,r20
+  28 0018 152F      		mov r17,r21
+  29 001a D32F      		mov r29,r19
+  30 001c C22F      		mov r28,r18
+  31               	.L6:
+  32 001e F12F      		mov r31,r17
+  33 0020 E02F      		mov r30,r16
+  34 0022 8191      		ld r24,Z+
+  35 0024 0E2F      		mov r16,r30
+  36 0026 1F2F      		mov r17,r31
+  37 0028 282F      		mov r18,r24
+  38 002a 3327      		clr r19
+  39 002c 932F      		mov r25,r19
+  40 002e 822F      		mov r24,r18
+  41 0030 44E0      		ldi r20,4
+  42 0032 880F      	1:	lsl r24
+  43 0034 991F      		rol r25
+  44 0036 4A95      		dec r20
+  45 0038 E1F7      		brne 1b
+  46 003a 821B      		sub r24,r18
+  47 003c 930B      		sbc r25,r19
+  48 003e 8050      		subi r24,lo8(-(ED_Table))
+  49 0040 9040      		sbci r25,hi8(-(ED_Table))
+  50 0042 0E94 0000 		call eventManager
+  51 0046 2197      		sbiw r28,1
+  52 0048 51F7      		brne .L6
+  53               	.L8:
+  54               	/* epilogue: frame size=0 */
+  55 004a DF91      		pop r29
+  56 004c CF91      		pop r28
+  57 004e 1F91      		pop r17
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s 			page 2
+
+
+  58 0050 0F91      		pop r16
+  59 0052 0895      		ret
+  60               	/* epilogue end (size=5) */
+  61               	/* function sweepTable size 43 (34) */
+  62               		.size	sweepTable, .-sweepTable
+  63               	.global	eventManager
+  64               		.type	eventManager, @function
+  65               	eventManager:
+  66               	/* prologue: frame size=0 */
+  67 0054 CF93      		push r28
+  68 0056 DF93      		push r29
+  69               	/* prologue end (size=2) */
+  70 0058 D92F      		mov r29,r25
+  71 005a C82F      		mov r28,r24
+  72 005c 8881      		ld r24,Y
+  73 005e 8130      		cpi r24,lo8(1)
+  74 0060 11F5      		brne .L9
+  75 0062 8E81      		ldd r24,Y+6
+  76 0064 9F81      		ldd r25,Y+7
+  77 0066 A885      		ldd r26,Y+8
+  78 0068 B985      		ldd r27,Y+9
+  79 006a 0197      		sbiw r24,1
+  80 006c A109      		sbc r26,__zero_reg__
+  81 006e B109      		sbc r27,__zero_reg__
+  82 0070 8E83      		std Y+6,r24
+  83 0072 9F83      		std Y+7,r25
+  84 0074 A887      		std Y+8,r26
+  85 0076 B987      		std Y+9,r27
+  86 0078 0097      		sbiw r24,0
+  87 007a A105      		cpc r26,__zero_reg__
+  88 007c B105      		cpc r27,__zero_reg__
+  89 007e 99F4      		brne .L9
+  90 0080 8C2F      		mov r24,r28
+  91 0082 9D2F      		mov r25,r29
+  92 0084 0E94 0000 		call executeOPC
+  93 0088 8A81      		ldd r24,Y+2
+  94 008a 9B81      		ldd r25,Y+3
+  95 008c AC81      		ldd r26,Y+4
+  96 008e BD81      		ldd r27,Y+5
+  97 0090 8E83      		std Y+6,r24
+  98 0092 9F83      		std Y+7,r25
+  99 0094 A887      		std Y+8,r26
+ 100 0096 B987      		std Y+9,r27
+ 101 0098 8981      		ldd r24,Y+1
+ 102 009a 8130      		cpi r24,lo8(1)
+ 103 009c 21F4      		brne .L9
+ 104 009e 8C2F      		mov r24,r28
+ 105 00a0 9D2F      		mov r25,r29
+ 106 00a2 0E94 0000 		call disable
+ 107               	.L9:
+ 108               	/* epilogue: frame size=0 */
+ 109 00a6 DF91      		pop r29
+ 110 00a8 CF91      		pop r28
+ 111 00aa 0895      		ret
+ 112               	/* epilogue end (size=3) */
+ 113               	/* function eventManager size 44 (39) */
+ 114               		.size	eventManager, .-eventManager
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s 			page 3
+
+
+ 115               	.global	executeOPC
+ 116               		.type	executeOPC, @function
+ 117               	executeOPC:
+ 118               	/* prologue: frame size=0 */
+ 119 00ac CF93      		push r28
+ 120 00ae DF93      		push r29
+ 121               	/* prologue end (size=2) */
+ 122 00b0 D92F      		mov r29,r25
+ 123 00b2 C82F      		mov r28,r24
+ 124 00b4 8A85      		ldd r24,Y+10
+ 125 00b6 80FF      		sbrs r24,0
+ 126 00b8 04C0      		rjmp .L14
+ 127 00ba 6C85      		ldd r22,Y+12
+ 128 00bc 8B85      		ldd r24,Y+11
+ 129 00be 0E94 0000 		call signal_and_release
+ 130               	.L14:
+ 131 00c2 8A85      		ldd r24,Y+10
+ 132 00c4 82FF      		sbrs r24,2
+ 133 00c6 03C0      		rjmp .L15
+ 134 00c8 8D85      		ldd r24,Y+13
+ 135 00ca 0E94 0000 		call broadcast
+ 136               	.L15:
+ 137 00ce 8A85      		ldd r24,Y+10
+ 138 00d0 83FF      		sbrs r24,3
+ 139 00d2 04C0      		rjmp .L16
+ 140 00d4 8C2F      		mov r24,r28
+ 141 00d6 9D2F      		mov r25,r29
+ 142 00d8 0E94 0000 		call enableNext
+ 143               	.L16:
+ 144 00dc 8A85      		ldd r24,Y+10
+ 145 00de 81FF      		sbrs r24,1
+ 146 00e0 03C0      		rjmp .L13
+ 147 00e2 8C85      		ldd r24,Y+12
+ 148 00e4 0E94 0000 		call release
+ 149               	.L13:
+ 150               	/* epilogue: frame size=0 */
+ 151 00e8 DF91      		pop r29
+ 152 00ea CF91      		pop r28
+ 153 00ec 0895      		ret
+ 154               	/* epilogue end (size=3) */
+ 155               	/* function executeOPC size 33 (28) */
+ 156               		.size	executeOPC, .-executeOPC
+ 157               	.global	disable
+ 158               		.type	disable, @function
+ 159               	disable:
+ 160               	/* prologue: frame size=0 */
+ 161               	/* prologue end (size=0) */
+ 162 00ee F92F      		mov r31,r25
+ 163 00f0 E82F      		mov r30,r24
+ 164 00f2 1082      		st Z,__zero_reg__
+ 165               	/* epilogue: frame size=0 */
+ 166 00f4 0895      		ret
+ 167               	/* epilogue end (size=1) */
+ 168               	/* function disable size 4 (3) */
+ 169               		.size	disable, .-disable
+ 170               	.global	enableNext
+ 171               		.type	enableNext, @function
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s 			page 4
+
+
+ 172               	enableNext:
+ 173               	/* prologue: frame size=0 */
+ 174               	/* prologue end (size=0) */
+ 175 00f6 F92F      		mov r31,r25
+ 176 00f8 E82F      		mov r30,r24
+ 177 00fa 8685      		ldd r24,Z+14
+ 178 00fc 9927      		clr r25
+ 179 00fe F92F      		mov r31,r25
+ 180 0100 E82F      		mov r30,r24
+ 181 0102 54E0      		ldi r21,4
+ 182 0104 EE0F      	1:	lsl r30
+ 183 0106 FF1F      		rol r31
+ 184 0108 5A95      		dec r21
+ 185 010a E1F7      		brne 1b
+ 186 010c E81B      		sub r30,r24
+ 187 010e F90B      		sbc r31,r25
+ 188 0110 E050      		subi r30,lo8(-(ED_Table))
+ 189 0112 F040      		sbci r31,hi8(-(ED_Table))
+ 190 0114 81E0      		ldi r24,lo8(1)
+ 191 0116 8083      		st Z,r24
+ 192               	/* epilogue: frame size=0 */
+ 193 0118 0895      		ret
+ 194               	/* epilogue end (size=1) */
+ 195               	/* function enableNext size 18 (17) */
+ 196               		.size	enableNext, .-enableNext
+ 197               	.global	enable
+ 198               		.type	enable, @function
+ 199               	enable:
+ 200               	/* prologue: frame size=0 */
+ 201               	/* prologue end (size=0) */
+ 202 011a F92F      		mov r31,r25
+ 203 011c E82F      		mov r30,r24
+ 204 011e 81E0      		ldi r24,lo8(1)
+ 205 0120 8083      		st Z,r24
+ 206               	/* epilogue: frame size=0 */
+ 207 0122 0895      		ret
+ 208               	/* epilogue end (size=1) */
+ 209               	/* function enable size 5 (4) */
+ 210               		.size	enable, .-enable
+ 211               	/* File "../kernel_0_5/IntegratedEventManager.c": code  147 = 0x0093 ( 125), prologues   8, epilogu
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 IntegratedEventManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s:13     .text:00000000 sweepTable
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s:65     .text:00000054 eventManager
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s:117    .text:000000ac executeOPC
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s:159    .text:000000ee disable
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s:172    .text:000000f6 enableNext
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccMhaaaa.s:199    .text:0000011a enable
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+ED_Table
+signal_and_release
+broadcast
+release

@@ -1,0 +1,838 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 1
+
+
+   1               		.file	"TaskManager.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.stabs	"C:\\Programming\\node_1/",100,0,0,.Ltext0
+  11               		.stabs	"../kernel_0_1/TaskManager.c",100,0,0,.Ltext0
+  12               		.text
+  13               	.Ltext0:
+  14               		.stabs	"gcc2_compiled.",60,0,0,0
+  15               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  16               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  17               		.stabs	"long int:t(0,3)=@s32;r(0,3);0020000000000;0017777777777;",128,0,0,0
+  18               		.stabs	"unsigned int:t(0,4)=r(0,4);0000000000000;0000000177777;",128,0,0,0
+  19               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0000000000000;0037777777777;",128,0,0,0
+  20               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  21               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",128,0,0,
+  22               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  23               		.stabs	"short unsigned int:t(0,9)=r(0,9);0000000000000;0000000177777;",128,0,0,0
+  24               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  25               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  26               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  28               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"complex int:t(0,15)=s4real:(0,1),0,16;imag:(0,1),16,16;;",128,0,0,0
+  30               		.stabs	"complex float:t(0,16)=R3;8;0;",128,0,0,0
+  31               		.stabs	"complex double:t(0,17)=R3;8;0;",128,0,0,0
+  32               		.stabs	"complex long double:t(0,18)=R3;8;0;",128,0,0,0
+  33               		.stabs	"__builtin_va_list:t(0,19)=*(0,20)=(0,20)",128,0,0,0
+  34               		.stabs	"_Bool:t(0,21)=@s8;-16;",128,0,0,0
+  35               		.stabs	"../kernel_0_1/TaskManager.c",130,0,0,0
+  36               		.stabs	"C:/programs/avr/include/avr/interrupt.h",130,0,0,0
+  37               		.stabs	"C:/programs/avr/include/avr/io.h",130,0,0,0
+  38               		.stabs	"C:/programs/avr/include/avr/sfr_defs.h",130,0,0,0
+  39               		.stabn	162,0,0,0
+  40               		.stabs	"C:/programs/avr/include/avr/iom103.h",130,0,0,0
+  41               		.stabn	162,0,0,0
+  42               		.stabn	162,0,0,0
+  43               		.stabn	162,0,0,0
+  44               		.stabs	"../kernel_0_1/TaskManager.h",130,0,0,0
+  45               		.stabs	"../kernel_0_1/include/typedef.h",130,0,0,0
+  46               		.stabs	"UBYTE:t(7,1)=(0,11)",128,0,7,0
+  47               		.stabs	"UWORD:t(7,2)=(0,9)",128,0,8,0
+  48               		.stabs	"ULONG:t(7,3)=(0,5)",128,0,9,0
+  49               		.stabs	"SBYTE:t(7,4)=(0,10)",128,0,11,0
+  50               		.stabs	"SWORD:t(7,5)=(0,8)",128,0,12,0
+  51               		.stabs	"SLONG:t(7,6)=(0,3)",128,0,13,0
+  52               		.stabs	"period:t(7,7)=(7,3)",128,0,15,0
+  53               		.stabs	"TVEC:t(7,8)=(7,1)",128,0,16,0
+  54               		.stabs	"RESOURCE:t(7,9)=(7,1)",128,0,17,0
+  55               		.stabs	"RCB_tdef:t(7,10)=(7,11)=s1ceiling:(7,4),0,8;;",128,0,21,0
+  56               		.stabs	"SCB_tdef:t(7,12)=(7,13)=s9mode:(7,1),0,8;threshold:(7,3),8,32;event_counter:(7,3),40,32;;"
+  57               		.stabs	"ED_tdef:t(7,14)=(7,15)=s9mode:(7,1),0,8;threshold:(7,3),8,32;event_counter:(7,3),40,32;;",
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 2
+
+
+  58               		.stabn	162,0,0,0
+  59               		.stabn	162,0,0,0
+  60               		.stabs	"../kernel_0_1/TaskManager_.h",130,0,0,0
+  61               		.stabn	162,0,0,0
+  62               		.stabs	"../kernel_0_1/include/global.h",130,0,0,0
+  63               		.stabn	162,0,0,0
+  64               		.stabs	"preempt:F(0,20)",36,0,16,preempt
+  65               	.global	preempt
+  66               		.type	preempt, @function
+  67               	preempt:
+   1:../kernel_0_1/TaskManager.c **** /*
+   2:../kernel_0_1/TaskManager.c ****  * ----------------------------------------------------------------------------
+   3:../kernel_0_1/TaskManager.c ****  *
+   4:../kernel_0_1/TaskManager.c ****  * ----------------------------------------------------------------------------
+   5:../kernel_0_1/TaskManager.c ****  * file: TaskManager.c, v 0.0 2003/05/08 
+   6:../kernel_0_1/TaskManager.c ****  */
+   7:../kernel_0_1/TaskManager.c **** 
+   8:../kernel_0_1/TaskManager.c **** #include <avr/interrupt.h>
+   9:../kernel_0_1/TaskManager.c **** 
+  10:../kernel_0_1/TaskManager.c **** #include "TaskManager.h"
+  11:../kernel_0_1/TaskManager.c **** #include "TaskManager_.h"
+  12:../kernel_0_1/TaskManager.c **** 
+  13:../kernel_0_1/TaskManager.c **** #include "include/global.h"
+  14:../kernel_0_1/TaskManager.c **** 
+  15:../kernel_0_1/TaskManager.c **** void preempt(void) 
+  16:../kernel_0_1/TaskManager.c **** {
+  68               		.stabn 68,0,16,.LM1-preempt
+  69               	.LM1:
+  70               	/* prologue: frame size=1 */
+  71 0000 CF93      		push r28
+  72 0002 DF93      		push r29
+  73 0004 CDB7      		in r28,__SP_L__
+  74 0006 DEB7      		in r29,__SP_H__
+  75 0008 2197      		sbiw r28,1
+  76 000a 0FB6      		in __tmp_reg__,__SREG__
+  77 000c F894      		cli
+  78 000e DEBF      		out __SP_H__,r29
+  79 0010 0FBE      		out __SREG__,__tmp_reg__
+  80 0012 CDBF      		out __SP_L__,r28
+  81               	/* prologue end (size=10) */
+  17:../kernel_0_1/TaskManager.c ****    TVEC HP;
+  18:../kernel_0_1/TaskManager.c **** 
+  19:../kernel_0_1/TaskManager.c ****    ENTER_CRITICAL;			
+  82               		.stabn 68,0,19,.LM2-preempt
+  83               	.LM2:
+  84               	.LBB2:
+  85               	/* #APP */
+  86 0014 0FB6      		in __tmp_reg__,__SREG__
+  87 0016 F894      		cli
+  88 0018 0F92      		push __tmp_reg__
+  89               		
+  20:../kernel_0_1/TaskManager.c ****    //if (ATV) {				   // Assumption: ATV is non zero value
+  21:../kernel_0_1/TaskManager.c ****    HP = find_msb(ATV & BTV);
+  90               		.stabn 68,0,21,.LM3-preempt
+  91               	.LM3:
+  92               	/* #NOAPP */
+  93 001a 9091 0000 		lds r25,ATV
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 3
+
+
+  94 001e 8091 0000 		lds r24,BTV
+  95 0022 8923      		and r24,r25
+  96 0024 0E94 0000 		call find_msb
+  97 0028 8983      		std Y+1,r24
+  22:../kernel_0_1/TaskManager.c ****    if (RT != NO_TASK) {			// there is running task
+  98               		.stabn 68,0,22,.LM4-preempt
+  99               	.LM4:
+ 100 002a 8091 0000 		lds r24,RT
+ 101 002e 8F3F      		cpi r24,lo8(-1)
+ 102 0030 09F4      		brne .+2
+ 103 0032 66C0      		rjmp .L4
+  23:../kernel_0_1/TaskManager.c ****       if (HP > RT) { 
+ 104               		.stabn 68,0,23,.LM5-preempt
+ 105               	.LM5:
+ 106 0034 9981      		ldd r25,Y+1
+ 107 0036 8091 0000 		lds r24,RT
+ 108 003a 8917      		cp r24,r25
+ 109 003c 08F0      		brlo .+2
+ 110 003e 73C0      		rjmp .L6
+  24:../kernel_0_1/TaskManager.c ****          //PTV |= (TVEC)bit_vect[RT];	// not needed
+  25:../kernel_0_1/TaskManager.c ****          STORE_CONTEXT;                
+ 111               		.stabn 68,0,25,.LM6-preempt
+ 112               	.LM6:
+ 113               	/* #APP */
+ 114 0040 0F92      		push R0
+ 115 0042 1F92      		push R1
+ 116 0044 2F92      		push R2
+ 117 0046 3F92      		push R3
+ 118 0048 4F92      		push R4
+ 119 004a 5F92      		push R5
+ 120 004c 6F92      		push R6
+ 121 004e 7F92      		push R7
+ 122 0050 8F92      		push R8
+ 123 0052 9F92      		push R9
+ 124 0054 AF92      		push R10
+ 125 0056 BF92      		push R11
+ 126 0058 CF92      		push R12
+ 127 005a DF92      		push R13
+ 128 005c EF92      		push R14
+ 129 005e FF92      		push R15
+ 130 0060 0F93      		push R16
+ 131 0062 1F93      		push R17
+ 132 0064 2F93      		push R18
+ 133 0066 3F93      		push R19
+ 134 0068 4F93      		push R20
+ 135 006a 5F93      		push R21
+ 136 006c 6F93      		push R22
+ 137 006e 7F93      		push R23
+ 138 0070 8F93      		push R24
+ 139 0072 9F93      		push R25
+ 140 0074 AF93      		push R26
+ 141 0076 BF93      		push R27
+ 142 0078 CF93      		push R28
+ 143 007a DF93      		push R29
+ 144 007c EF93      		push R30
+ 145 007e FF93      		push R31
+ 146 0080 0FB6      		in __tmp_reg__,__SREG__
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 4
+
+
+ 147 0082 0F92      		push __tmp_reg__
+ 148               		
+  26:../kernel_0_1/TaskManager.c ****          STORE_RT;				
+ 149               		.stabn 68,0,26,.LM7-preempt
+ 150               	.LM7:
+ 151               	/* #NOAPP */
+ 152 0084 8091 0000 		lds r24,RT
+ 153               	/* #APP */
+ 154 0088 8F93      		push r24
+ 155               		
+  27:../kernel_0_1/TaskManager.c ****          RT = HP;                      
+ 156               		.stabn 68,0,27,.LM8-preempt
+ 157               	.LM8:
+ 158               	/* #NOAPP */
+ 159 008a 8981      		ldd r24,Y+1
+ 160 008c 8093 0000 		sts RT,r24
+  28:../kernel_0_1/TaskManager.c **** 
+  29:../kernel_0_1/TaskManager.c ****          (*start_task[RT])();	// just let it run
+ 161               		.stabn 68,0,29,.LM9-preempt
+ 162               	.LM9:
+ 163 0090 8091 0000 		lds r24,RT
+ 164 0094 282F      		mov r18,r24
+ 165 0096 3327      		clr r19
+ 166 0098 932F      		mov r25,r19
+ 167 009a 822F      		mov r24,r18
+ 168 009c 820F      		add r24,r18
+ 169 009e 931F      		adc r25,r19
+ 170 00a0 F92F      		mov r31,r25
+ 171 00a2 E82F      		mov r30,r24
+ 172 00a4 E050      		subi r30,lo8(-(start_task))
+ 173 00a6 F040      		sbci r31,hi8(-(start_task))
+ 174 00a8 0190      		ld __tmp_reg__,Z+
+ 175 00aa F081      		ld r31,Z
+ 176 00ac E02D      		mov r30,__tmp_reg__
+ 177 00ae 0995      		icall
+  30:../kernel_0_1/TaskManager.c **** 
+  31:../kernel_0_1/TaskManager.c **** 	      LOAD_RT;
+ 178               		.stabn 68,0,31,.LM10-preempt
+ 179               	.LM10:
+ 180               	/* #APP */
+ 181 00b0 8F91      		pop r24
+ 182               		
+ 183               	/* #NOAPP */
+ 184 00b2 8093 0000 		sts RT,r24
+ 185 00b6 8091 0000 		lds r24,RT
+  32:../kernel_0_1/TaskManager.c ****          LOAD_CONTEXT;
+ 186               		.stabn 68,0,32,.LM11-preempt
+ 187               	.LM11:
+ 188               	/* #APP */
+ 189 00ba 0F90      		pop __tmp_reg__
+ 190 00bc 0FBE      		out __SREG__,__tmp_reg__
+ 191 00be FF91      		pop R31
+ 192 00c0 EF91      		pop R30
+ 193 00c2 DF91      		pop R29
+ 194 00c4 CF91      		pop R28
+ 195 00c6 BF91      		pop R27
+ 196 00c8 AF91      		pop R26
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 5
+
+
+ 197 00ca 9F91      		pop R25
+ 198 00cc 8F91      		pop R24
+ 199 00ce 7F91      		pop R23
+ 200 00d0 6F91      		pop R22
+ 201 00d2 5F91      		pop R21
+ 202 00d4 4F91      		pop R20
+ 203 00d6 3F91      		pop R19
+ 204 00d8 2F91      		pop R18
+ 205 00da 1F91      		pop R17
+ 206 00dc 0F91      		pop R16
+ 207 00de FF90      		pop R15
+ 208 00e0 EF90      		pop R14
+ 209 00e2 DF90      		pop R13
+ 210 00e4 CF90      		pop R12
+ 211 00e6 BF90      		pop R11
+ 212 00e8 AF90      		pop R10
+ 213 00ea 9F90      		pop R9
+ 214 00ec 8F90      		pop R8
+ 215 00ee 7F90      		pop R7
+ 216 00f0 6F90      		pop R6
+ 217 00f2 5F90      		pop R5
+ 218 00f4 4F90      		pop R4
+ 219 00f6 3F90      		pop R3
+ 220 00f8 2F90      		pop R2
+ 221 00fa 1F90      		pop R1
+ 222 00fc 0F90      		pop R0
+ 223               		
+ 224               	/* #NOAPP */
+ 225 00fe 13C0      		rjmp .L6
+ 226               	.L4:
+  33:../kernel_0_1/TaskManager.c ****    	   //PTV &= (TVEC)~bit_vect[RT];	// not needed
+  34:../kernel_0_1/TaskManager.c ****       }
+  35:../kernel_0_1/TaskManager.c ****    }
+  36:../kernel_0_1/TaskManager.c ****    else {
+  37:../kernel_0_1/TaskManager.c ****       RT = HP;
+ 227               		.stabn 68,0,37,.LM12-preempt
+ 228               	.LM12:
+ 229 0100 8981      		ldd r24,Y+1
+ 230 0102 8093 0000 		sts RT,r24
+  38:../kernel_0_1/TaskManager.c ****       (*start_task[RT])();		// just let HP run
+ 231               		.stabn 68,0,38,.LM13-preempt
+ 232               	.LM13:
+ 233 0106 8091 0000 		lds r24,RT
+ 234 010a 282F      		mov r18,r24
+ 235 010c 3327      		clr r19
+ 236 010e 932F      		mov r25,r19
+ 237 0110 822F      		mov r24,r18
+ 238 0112 820F      		add r24,r18
+ 239 0114 931F      		adc r25,r19
+ 240 0116 F92F      		mov r31,r25
+ 241 0118 E82F      		mov r30,r24
+ 242 011a E050      		subi r30,lo8(-(start_task))
+ 243 011c F040      		sbci r31,hi8(-(start_task))
+ 244 011e 0190      		ld __tmp_reg__,Z+
+ 245 0120 F081      		ld r31,Z
+ 246 0122 E02D      		mov r30,__tmp_reg__
+ 247 0124 0995      		icall
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 6
+
+
+ 248               	.L6:
+  39:../kernel_0_1/TaskManager.c ****    }
+  40:../kernel_0_1/TaskManager.c ****    //}
+  41:../kernel_0_1/TaskManager.c ****    EXIT_CRITICAL;
+ 249               		.stabn 68,0,41,.LM14-preempt
+ 250               	.LM14:
+ 251               	/* #APP */
+ 252 0126 0F90      		pop __tmp_reg__
+ 253 0128 0FBE      		out __SREG__,__tmp_reg__
+ 254               		
+  42:../kernel_0_1/TaskManager.c **** }
+ 255               		.stabn 68,0,42,.LM15-preempt
+ 256               	.LM15:
+ 257               	/* #NOAPP */
+ 258               	.LBE2:
+ 259               	/* epilogue: frame size=1 */
+ 260 012a 2196      		adiw r28,1
+ 261 012c 0FB6      		in __tmp_reg__,__SREG__
+ 262 012e F894      		cli
+ 263 0130 DEBF      		out __SP_H__,r29
+ 264 0132 0FBE      		out __SREG__,__tmp_reg__
+ 265 0134 CDBF      		out __SP_L__,r28
+ 266 0136 DF91      		pop r29
+ 267 0138 CF91      		pop r28
+ 268 013a 0895      		ret
+ 269               	/* epilogue end (size=9) */
+ 270               	/* function preempt size 245 (226) */
+ 271               		.size	preempt, .-preempt
+ 272               		.stabs	"HP:(7,8)",128,0,17,1
+ 273               		.stabn	192,0,0,.LBB2-preempt
+ 274               		.stabn	224,0,0,.LBE2-preempt
+ 275               	.Lscope0:
+ 276               		.stabs	"",36,0,0,.Lscope0-preempt
+ 277               		.stabs	"schedule:F(0,20)",36,0,45,schedule
+ 278               	.global	schedule
+ 279               		.type	schedule, @function
+ 280               	schedule:
+  43:../kernel_0_1/TaskManager.c **** 
+  44:../kernel_0_1/TaskManager.c **** void schedule(void) 
+  45:../kernel_0_1/TaskManager.c **** {
+ 281               		.stabn 68,0,45,.LM16-schedule
+ 282               	.LM16:
+ 283               	/* prologue: frame size=0 */
+ 284 013c CF93      		push r28
+ 285 013e DF93      		push r29
+ 286 0140 CDB7      		in r28,__SP_L__
+ 287 0142 DEB7      		in r29,__SP_H__
+ 288               	/* prologue end (size=4) */
+  46:../kernel_0_1/TaskManager.c ****    ENTER_CRITICAL;
+ 289               		.stabn 68,0,46,.LM17-schedule
+ 290               	.LM17:
+ 291               	/* #APP */
+ 292 0144 0FB6      		in __tmp_reg__,__SREG__
+ 293 0146 F894      		cli
+ 294 0148 0F92      		push __tmp_reg__
+ 295               		
+  47:../kernel_0_1/TaskManager.c ****    //if (ATV) {				// Assumption: ATV is non zero value
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 7
+
+
+  48:../kernel_0_1/TaskManager.c ****    RT = find_msb(ATV);
+ 296               		.stabn 68,0,48,.LM18-schedule
+ 297               	.LM18:
+ 298               	/* #NOAPP */
+ 299 014a 8091 0000 		lds r24,ATV
+ 300 014e 0E94 0000 		call find_msb
+ 301 0152 8093 0000 		sts RT,r24
+  49:../kernel_0_1/TaskManager.c ****    
+  50:../kernel_0_1/TaskManager.c ****    (*start_task[RT])();			// just let it run
+ 302               		.stabn 68,0,50,.LM19-schedule
+ 303               	.LM19:
+ 304 0156 8091 0000 		lds r24,RT
+ 305 015a 282F      		mov r18,r24
+ 306 015c 3327      		clr r19
+ 307 015e 932F      		mov r25,r19
+ 308 0160 822F      		mov r24,r18
+ 309 0162 820F      		add r24,r18
+ 310 0164 931F      		adc r25,r19
+ 311 0166 F92F      		mov r31,r25
+ 312 0168 E82F      		mov r30,r24
+ 313 016a E050      		subi r30,lo8(-(start_task))
+ 314 016c F040      		sbci r31,hi8(-(start_task))
+ 315 016e 0190      		ld __tmp_reg__,Z+
+ 316 0170 F081      		ld r31,Z
+ 317 0172 E02D      		mov r30,__tmp_reg__
+ 318 0174 0995      		icall
+  51:../kernel_0_1/TaskManager.c ****    
+  52:../kernel_0_1/TaskManager.c ****    //}
+  53:../kernel_0_1/TaskManager.c ****    EXIT_CRITICAL;
+ 319               		.stabn 68,0,53,.LM20-schedule
+ 320               	.LM20:
+ 321               	/* #APP */
+ 322 0176 0F90      		pop __tmp_reg__
+ 323 0178 0FBE      		out __SREG__,__tmp_reg__
+ 324               		
+  54:../kernel_0_1/TaskManager.c **** }
+ 325               		.stabn 68,0,54,.LM21-schedule
+ 326               	.LM21:
+ 327               	/* #NOAPP */
+ 328               	/* epilogue: frame size=0 */
+ 329 017a DF91      		pop r29
+ 330 017c CF91      		pop r28
+ 331 017e 0895      		ret
+ 332               	/* epilogue end (size=3) */
+ 333               	/* function schedule size 43 (36) */
+ 334               		.size	schedule, .-schedule
+ 335               	.Lscope1:
+ 336               		.stabs	"",36,0,0,.Lscope1-schedule
+ 337               		.stabs	"release:F(0,20)",36,0,57,release
+ 338               		.stabs	"tasks:p(7,8)",160,0,56,1
+ 339               	.global	release
+ 340               		.type	release, @function
+ 341               	release:
+  55:../kernel_0_1/TaskManager.c **** 
+  56:../kernel_0_1/TaskManager.c **** void release(TVEC tasks)
+  57:../kernel_0_1/TaskManager.c **** {
+ 342               		.stabn 68,0,57,.LM22-release
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 8
+
+
+ 343               	.LM22:
+ 344               	/* prologue: frame size=1 */
+ 345 0180 CF93      		push r28
+ 346 0182 DF93      		push r29
+ 347 0184 CDB7      		in r28,__SP_L__
+ 348 0186 DEB7      		in r29,__SP_H__
+ 349 0188 2197      		sbiw r28,1
+ 350 018a 0FB6      		in __tmp_reg__,__SREG__
+ 351 018c F894      		cli
+ 352 018e DEBF      		out __SP_H__,r29
+ 353 0190 0FBE      		out __SREG__,__tmp_reg__
+ 354 0192 CDBF      		out __SP_L__,r28
+ 355               	/* prologue end (size=10) */
+ 356 0194 8983      		std Y+1,r24
+  58:../kernel_0_1/TaskManager.c ****    ENTER_CRITICAL;
+ 357               		.stabn 68,0,58,.LM23-release
+ 358               	.LM23:
+ 359               	/* #APP */
+ 360 0196 0FB6      		in __tmp_reg__,__SREG__
+ 361 0198 F894      		cli
+ 362 019a 0F92      		push __tmp_reg__
+ 363               		
+  59:../kernel_0_1/TaskManager.c ****    ATV |= (TVEC)tasks;
+ 364               		.stabn 68,0,59,.LM24-release
+ 365               	.LM24:
+ 366               	/* #NOAPP */
+ 367 019c 8091 0000 		lds r24,ATV
+ 368 01a0 9981      		ldd r25,Y+1
+ 369 01a2 892B      		or r24,r25
+ 370 01a4 8093 0000 		sts ATV,r24
+  60:../kernel_0_1/TaskManager.c ****    preempt();				// not necessary
+ 371               		.stabn 68,0,60,.LM25-release
+ 372               	.LM25:
+ 373 01a8 0E94 0000 		call preempt
+  61:../kernel_0_1/TaskManager.c ****    EXIT_CRITICAL;
+ 374               		.stabn 68,0,61,.LM26-release
+ 375               	.LM26:
+ 376               	/* #APP */
+ 377 01ac 0F90      		pop __tmp_reg__
+ 378 01ae 0FBE      		out __SREG__,__tmp_reg__
+ 379               		
+  62:../kernel_0_1/TaskManager.c **** }
+ 380               		.stabn 68,0,62,.LM27-release
+ 381               	.LM27:
+ 382               	/* #NOAPP */
+ 383               	/* epilogue: frame size=1 */
+ 384 01b0 2196      		adiw r28,1
+ 385 01b2 0FB6      		in __tmp_reg__,__SREG__
+ 386 01b4 F894      		cli
+ 387 01b6 DEBF      		out __SP_H__,r29
+ 388 01b8 0FBE      		out __SREG__,__tmp_reg__
+ 389 01ba CDBF      		out __SP_L__,r28
+ 390 01bc DF91      		pop r29
+ 391 01be CF91      		pop r28
+ 392 01c0 0895      		ret
+ 393               	/* epilogue end (size=9) */
+ 394               	/* function release size 42 (23) */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 9
+
+
+ 395               		.size	release, .-release
+ 396               	.Lscope2:
+ 397               		.stabs	"",36,0,0,.Lscope2-release
+ 398               		.stabs	"taskExit:F(0,20)",36,0,65,taskExit
+ 399               	.global	taskExit
+ 400               		.type	taskExit, @function
+ 401               	taskExit:
+  63:../kernel_0_1/TaskManager.c **** 
+  64:../kernel_0_1/TaskManager.c **** void taskExit(void)
+  65:../kernel_0_1/TaskManager.c **** {
+ 402               		.stabn 68,0,65,.LM28-taskExit
+ 403               	.LM28:
+ 404               	/* prologue: frame size=0 */
+ 405 01c2 CF93      		push r28
+ 406 01c4 DF93      		push r29
+ 407 01c6 CDB7      		in r28,__SP_L__
+ 408 01c8 DEB7      		in r29,__SP_H__
+ 409               	/* prologue end (size=4) */
+  66:../kernel_0_1/TaskManager.c ****    cli();					// disable interrupts - necessary !
+ 410               		.stabn 68,0,66,.LM29-taskExit
+ 411               	.LM29:
+ 412               	/* #APP */
+ 413 01ca F894      		cli
+  67:../kernel_0_1/TaskManager.c ****    ATV &= (TVEC)~bit_vect[RT];
+ 414               		.stabn 68,0,67,.LM30-taskExit
+ 415               	.LM30:
+ 416               	/* #NOAPP */
+ 417 01cc 8091 0000 		lds r24,RT
+ 418 01d0 282F      		mov r18,r24
+ 419 01d2 3327      		clr r19
+ 420 01d4 932F      		mov r25,r19
+ 421 01d6 822F      		mov r24,r18
+ 422 01d8 820F      		add r24,r18
+ 423 01da 931F      		adc r25,r19
+ 424 01dc F92F      		mov r31,r25
+ 425 01de E82F      		mov r30,r24
+ 426 01e0 E050      		subi r30,lo8(-(bit_vect))
+ 427 01e2 F040      		sbci r31,hi8(-(bit_vect))
+ 428 01e4 8081      		ld r24,Z
+ 429 01e6 982F      		mov r25,r24
+ 430 01e8 9095      		com r25
+ 431 01ea 8091 0000 		lds r24,ATV
+ 432 01ee 8923      		and r24,r25
+ 433 01f0 8093 0000 		sts ATV,r24
+  68:../kernel_0_1/TaskManager.c ****    RT = NO_TASK;				// there is no task running in the system
+ 434               		.stabn 68,0,68,.LM31-taskExit
+ 435               	.LM31:
+ 436 01f4 8FEF      		ldi r24,lo8(-1)
+ 437 01f6 8093 0000 		sts RT,r24
+  69:../kernel_0_1/TaskManager.c **** }
+ 438               		.stabn 68,0,69,.LM32-taskExit
+ 439               	.LM32:
+ 440               	/* epilogue: frame size=0 */
+ 441 01fa DF91      		pop r29
+ 442 01fc CF91      		pop r28
+ 443 01fe 0895      		ret
+ 444               	/* epilogue end (size=3) */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 10
+
+
+ 445               	/* function taskExit size 32 (25) */
+ 446               		.size	taskExit, .-taskExit
+ 447               	.Lscope3:
+ 448               		.stabs	"",36,0,0,.Lscope3-taskExit
+ 449               		.stabs	"kernelStartUp:F(0,20)",36,0,72,kernelStartUp
+ 450               	.global	kernelStartUp
+ 451               		.type	kernelStartUp, @function
+ 452               	kernelStartUp:
+  70:../kernel_0_1/TaskManager.c **** 
+  71:../kernel_0_1/TaskManager.c **** void kernelStartUp(void) 
+  72:../kernel_0_1/TaskManager.c **** {
+ 453               		.stabn 68,0,72,.LM33-kernelStartUp
+ 454               	.LM33:
+ 455               	/* prologue: frame size=0 */
+ 456 0200 CF93      		push r28
+ 457 0202 DF93      		push r29
+ 458 0204 CDB7      		in r28,__SP_L__
+ 459 0206 DEB7      		in r29,__SP_H__
+ 460               	/* prologue end (size=4) */
+  73:../kernel_0_1/TaskManager.c ****    sei();                              /* enable interrupts */
+ 461               		.stabn 68,0,73,.LM34-kernelStartUp
+ 462               	.LM34:
+ 463               	/* #APP */
+ 464 0208 7894      		sei
+  74:../kernel_0_1/TaskManager.c **** 
+  75:../kernel_0_1/TaskManager.c ****    ATV = 0;
+ 465               		.stabn 68,0,75,.LM35-kernelStartUp
+ 466               	.LM35:
+ 467               	/* #NOAPP */
+ 468 020a 1092 0000 		sts ATV,__zero_reg__
+  76:../kernel_0_1/TaskManager.c ****    BTV = (TVEC)~0;
+ 469               		.stabn 68,0,76,.LM36-kernelStartUp
+ 470               	.LM36:
+ 471 020e 8FEF      		ldi r24,lo8(-1)
+ 472 0210 8093 0000 		sts BTV,r24
+  77:../kernel_0_1/TaskManager.c ****    RT  = NO_TASK;
+ 473               		.stabn 68,0,77,.LM37-kernelStartUp
+ 474               	.LM37:
+ 475 0214 8FEF      		ldi r24,lo8(-1)
+ 476 0216 8093 0000 		sts RT,r24
+  78:../kernel_0_1/TaskManager.c **** 
+  79:../kernel_0_1/TaskManager.c ****    while (TRUE) {
+  80:../kernel_0_1/TaskManager.c ****       while (ATV) {			// schedule all active tasks
+ 477               		.stabn 68,0,80,.LM38-kernelStartUp
+ 478               	.LM38:
+ 479               	.L14:
+ 480 021a 8091 0000 		lds r24,ATV
+ 481 021e 8823      		tst r24
+ 482 0220 09F4      		brne .L16
+ 483 0222 FBCF      		rjmp .L14
+ 484               	.L16:
+  81:../kernel_0_1/TaskManager.c ****          schedule();
+ 485               		.stabn 68,0,81,.LM39-kernelStartUp
+ 486               	.LM39:
+ 487 0224 0E94 0000 		call schedule
+ 488 0228 F8CF      		rjmp .L14
+  82:../kernel_0_1/TaskManager.c ****       }
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 11
+
+
+  83:../kernel_0_1/TaskManager.c ****    }
+  84:../kernel_0_1/TaskManager.c **** }
+ 489               		.stabn 68,0,84,.LM40-kernelStartUp
+ 490               	.LM40:
+ 491               	/* epilogue: frame size=0 */
+ 492               	/* epilogue: noreturn */
+ 493               	/* epilogue end (size=0) */
+ 494               	/* function kernelStartUp size 22 (18) */
+ 495               		.size	kernelStartUp, .-kernelStartUp
+ 496               	.Lscope4:
+ 497               		.stabs	"",36,0,0,.Lscope4-kernelStartUp
+ 498               		.stabs	"find_msb:F(7,1)",36,0,87,find_msb
+ 499               		.stabs	"vector:p(7,8)",160,0,86,1
+ 500               	.global	find_msb
+ 501               		.type	find_msb, @function
+ 502               	find_msb:
+  85:../kernel_0_1/TaskManager.c **** 
+  86:../kernel_0_1/TaskManager.c **** UBYTE find_msb( TVEC vector)  	// fast, time constant routine 
+  87:../kernel_0_1/TaskManager.c **** {						// Assumption: vector is non zero value !!!
+ 503               		.stabn 68,0,87,.LM41-find_msb
+ 504               	.LM41:
+ 505               	/* prologue: frame size=3 */
+ 506 022a CF93      		push r28
+ 507 022c DF93      		push r29
+ 508 022e CDB7      		in r28,__SP_L__
+ 509 0230 DEB7      		in r29,__SP_H__
+ 510 0232 2397      		sbiw r28,3
+ 511 0234 0FB6      		in __tmp_reg__,__SREG__
+ 512 0236 F894      		cli
+ 513 0238 DEBF      		out __SP_H__,r29
+ 514 023a 0FBE      		out __SREG__,__tmp_reg__
+ 515 023c CDBF      		out __SP_L__,r28
+ 516               	/* prologue end (size=10) */
+ 517 023e 8983      		std Y+1,r24
+  88:../kernel_0_1/TaskManager.c ****    if ( vector > 0x0F) { 		// TVEC is UBYTE - unsigned 8 bit
+ 518               		.stabn 68,0,88,.LM42-find_msb
+ 519               	.LM42:
+ 520 0240 8981      		ldd r24,Y+1
+ 521 0242 8031      		cpi r24,lo8(16)
+ 522 0244 E8F0      		brlo .L18
+  89:../kernel_0_1/TaskManager.c ****       if ( vector > 0x3F) {
+ 523               		.stabn 68,0,89,.LM43-find_msb
+ 524               	.LM43:
+ 525 0246 8981      		ldd r24,Y+1
+ 526 0248 8034      		cpi r24,lo8(64)
+ 527 024a 68F0      		brlo .L19
+  90:../kernel_0_1/TaskManager.c **** 	   if ( vector > 0x7F) {
+ 528               		.stabn 68,0,90,.LM44-find_msb
+ 529               	.LM44:
+ 530 024c 8981      		ldd r24,Y+1
+ 531 024e 8823      		tst r24
+ 532 0250 2CF4      		brge .L20
+  91:../kernel_0_1/TaskManager.c ****             return 7;
+ 533               		.stabn 68,0,91,.LM45-find_msb
+ 534               	.LM45:
+ 535 0252 87E0      		ldi r24,lo8(7)
+ 536 0254 90E0      		ldi r25,hi8(7)
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 12
+
+
+ 537 0256 8A83      		std Y+2,r24
+ 538 0258 9B83      		std Y+3,r25
+ 539 025a 2CC0      		rjmp .L17
+ 540               	.L20:
+  92:../kernel_0_1/TaskManager.c ****          }
+  93:../kernel_0_1/TaskManager.c ****          else {
+  94:../kernel_0_1/TaskManager.c ****             return 6;
+ 541               		.stabn 68,0,94,.LM46-find_msb
+ 542               	.LM46:
+ 543 025c 86E0      		ldi r24,lo8(6)
+ 544 025e 90E0      		ldi r25,hi8(6)
+ 545 0260 8A83      		std Y+2,r24
+ 546 0262 9B83      		std Y+3,r25
+ 547 0264 27C0      		rjmp .L17
+ 548               	.L19:
+  95:../kernel_0_1/TaskManager.c ****          }
+  96:../kernel_0_1/TaskManager.c ****       }
+  97:../kernel_0_1/TaskManager.c ****       else {
+  98:../kernel_0_1/TaskManager.c **** 	   if ( vector > 0x1F) {
+ 549               		.stabn 68,0,98,.LM47-find_msb
+ 550               	.LM47:
+ 551 0266 8981      		ldd r24,Y+1
+ 552 0268 8032      		cpi r24,lo8(32)
+ 553 026a 28F0      		brlo .L23
+  99:../kernel_0_1/TaskManager.c ****             return 5;
+ 554               		.stabn 68,0,99,.LM48-find_msb
+ 555               	.LM48:
+ 556 026c 85E0      		ldi r24,lo8(5)
+ 557 026e 90E0      		ldi r25,hi8(5)
+ 558 0270 8A83      		std Y+2,r24
+ 559 0272 9B83      		std Y+3,r25
+ 560 0274 1FC0      		rjmp .L17
+ 561               	.L23:
+ 100:../kernel_0_1/TaskManager.c ****          }
+ 101:../kernel_0_1/TaskManager.c ****          else {
+ 102:../kernel_0_1/TaskManager.c ****             return 4;
+ 562               		.stabn 68,0,102,.LM49-find_msb
+ 563               	.LM49:
+ 564 0276 84E0      		ldi r24,lo8(4)
+ 565 0278 90E0      		ldi r25,hi8(4)
+ 566 027a 8A83      		std Y+2,r24
+ 567 027c 9B83      		std Y+3,r25
+ 568 027e 1AC0      		rjmp .L17
+ 569               	.L18:
+ 103:../kernel_0_1/TaskManager.c ****          }
+ 104:../kernel_0_1/TaskManager.c ****       }
+ 105:../kernel_0_1/TaskManager.c ****    }
+ 106:../kernel_0_1/TaskManager.c ****    else {
+ 107:../kernel_0_1/TaskManager.c ****       if ( vector > 0x03) {
+ 570               		.stabn 68,0,107,.LM50-find_msb
+ 571               	.LM50:
+ 572 0280 8981      		ldd r24,Y+1
+ 573 0282 8430      		cpi r24,lo8(4)
+ 574 0284 68F0      		brlo .L26
+ 108:../kernel_0_1/TaskManager.c ****          if ( vector > 0x07) {
+ 575               		.stabn 68,0,108,.LM51-find_msb
+ 576               	.LM51:
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 13
+
+
+ 577 0286 8981      		ldd r24,Y+1
+ 578 0288 8830      		cpi r24,lo8(8)
+ 579 028a 28F0      		brlo .L27
+ 109:../kernel_0_1/TaskManager.c ****             return 3;
+ 580               		.stabn 68,0,109,.LM52-find_msb
+ 581               	.LM52:
+ 582 028c 83E0      		ldi r24,lo8(3)
+ 583 028e 90E0      		ldi r25,hi8(3)
+ 584 0290 8A83      		std Y+2,r24
+ 585 0292 9B83      		std Y+3,r25
+ 586 0294 0FC0      		rjmp .L17
+ 587               	.L27:
+ 110:../kernel_0_1/TaskManager.c ****          }
+ 111:../kernel_0_1/TaskManager.c ****          else {
+ 112:../kernel_0_1/TaskManager.c ****             return 2;
+ 588               		.stabn 68,0,112,.LM53-find_msb
+ 589               	.LM53:
+ 590 0296 82E0      		ldi r24,lo8(2)
+ 591 0298 90E0      		ldi r25,hi8(2)
+ 592 029a 8A83      		std Y+2,r24
+ 593 029c 9B83      		std Y+3,r25
+ 594 029e 0AC0      		rjmp .L17
+ 595               	.L26:
+ 113:../kernel_0_1/TaskManager.c ****          }
+ 114:../kernel_0_1/TaskManager.c ****       }
+ 115:../kernel_0_1/TaskManager.c ****       else {
+ 116:../kernel_0_1/TaskManager.c **** 	   if ( vector > 0x01) {
+ 596               		.stabn 68,0,116,.LM54-find_msb
+ 597               	.LM54:
+ 598 02a0 8981      		ldd r24,Y+1
+ 599 02a2 8230      		cpi r24,lo8(2)
+ 600 02a4 28F0      		brlo .L30
+ 117:../kernel_0_1/TaskManager.c ****             return 1;
+ 601               		.stabn 68,0,117,.LM55-find_msb
+ 602               	.LM55:
+ 603 02a6 81E0      		ldi r24,lo8(1)
+ 604 02a8 90E0      		ldi r25,hi8(1)
+ 605 02aa 8A83      		std Y+2,r24
+ 606 02ac 9B83      		std Y+3,r25
+ 607 02ae 02C0      		rjmp .L17
+ 608               	.L30:
+ 118:../kernel_0_1/TaskManager.c ****          }
+ 119:../kernel_0_1/TaskManager.c ****          else {//if ( vector == 0x01){// uncomment if vector can be zero
+ 120:../kernel_0_1/TaskManager.c ****             return 0;
+ 609               		.stabn 68,0,120,.LM56-find_msb
+ 610               	.LM56:
+ 611 02b0 1A82      		std Y+2,__zero_reg__
+ 612 02b2 1B82      		std Y+3,__zero_reg__
+ 121:../kernel_0_1/TaskManager.c ****          }
+ 122:../kernel_0_1/TaskManager.c **** 	   //else {
+ 123:../kernel_0_1/TaskManager.c ****          //   return NO_TASK;
+ 124:../kernel_0_1/TaskManager.c ****          //}
+ 125:../kernel_0_1/TaskManager.c ****       }
+ 126:../kernel_0_1/TaskManager.c ****    }
+ 127:../kernel_0_1/TaskManager.c **** }
+ 613               		.stabn 68,0,127,.LM57-find_msb
+ 614               	.LM57:
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 14
+
+
+ 615               	.L17:
+ 616 02b4 8A81      		ldd r24,Y+2
+ 617 02b6 9B81      		ldd r25,Y+3
+ 618               	/* epilogue: frame size=3 */
+ 619 02b8 2396      		adiw r28,3
+ 620 02ba 0FB6      		in __tmp_reg__,__SREG__
+ 621 02bc F894      		cli
+ 622 02be DEBF      		out __SP_H__,r29
+ 623 02c0 0FBE      		out __SREG__,__tmp_reg__
+ 624 02c2 CDBF      		out __SP_L__,r28
+ 625 02c4 DF91      		pop r29
+ 626 02c6 CF91      		pop r28
+ 627 02c8 0895      		ret
+ 628               	/* epilogue end (size=9) */
+ 629               	/* function find_msb size 80 (61) */
+ 630               		.size	find_msb, .-find_msb
+ 631               	.Lscope5:
+ 632               		.stabs	"",36,0,0,.Lscope5-find_msb
+ 633               		.comm ATV,1,1
+ 634               		.comm BTV,1,1
+ 635               		.comm RT,1,1
+ 636               		.stabs	"ATV:G(1,1)=B(7,8)",32,0,8,0
+ 637               		.stabs	"BTV:G(1,1)",32,0,9,0
+ 638               		.stabs	"RT:G(1,2)=B(7,1)",32,0,10,0
+ 639               		.text
+ 640               		.stabs "",100,0,0,Letext
+ 641               	Letext:
+ 642               	/* File "../kernel_0_1/TaskManager.c": code  464 = 0x01d0 ( 389), prologues  42, epilogues  33 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 TaskManager.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:67     .text:00000000 preempt
+                            *COM*:00000001 ATV
+                            *COM*:00000001 BTV
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:502    .text:0000022a find_msb
+                            *COM*:00000001 RT
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:280    .text:0000013c schedule
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:341    .text:00000180 release
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:401    .text:000001c2 taskExit
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:452    .text:00000200 kernelStartUp
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccqwaaaa.s:641    .text:000002ca Letext
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+start_task
+bit_vect

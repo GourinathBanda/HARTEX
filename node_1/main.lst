@@ -1,0 +1,357 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.stabs	"C:\\Programming\\node_1/",100,0,0,.Ltext0
+  11               		.stabs	"main.c",100,0,0,.Ltext0
+  12               		.text
+  13               	.Ltext0:
+  14               		.stabs	"gcc2_compiled.",60,0,0,0
+  15               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  16               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  17               		.stabs	"long int:t(0,3)=@s32;r(0,3);0020000000000;0017777777777;",128,0,0,0
+  18               		.stabs	"unsigned int:t(0,4)=r(0,4);0000000000000;0000000177777;",128,0,0,0
+  19               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0000000000000;0037777777777;",128,0,0,0
+  20               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  21               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",128,0,0,
+  22               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  23               		.stabs	"short unsigned int:t(0,9)=r(0,9);0000000000000;0000000177777;",128,0,0,0
+  24               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  25               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  26               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  28               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"complex int:t(0,15)=s4real:(0,1),0,16;imag:(0,1),16,16;;",128,0,0,0
+  30               		.stabs	"complex float:t(0,16)=R3;8;0;",128,0,0,0
+  31               		.stabs	"complex double:t(0,17)=R3;8;0;",128,0,0,0
+  32               		.stabs	"complex long double:t(0,18)=R3;8;0;",128,0,0,0
+  33               		.stabs	"__builtin_va_list:t(0,19)=*(0,20)=(0,20)",128,0,0,0
+  34               		.stabs	"_Bool:t(0,21)=@s8;-16;",128,0,0,0
+  35               		.stabs	"main.c",130,0,0,0
+  36               		.stabs	"C:/programs/avr/include/avr/io.h",130,0,0,0
+  37               		.stabs	"C:/programs/avr/include/avr/sfr_defs.h",130,0,0,0
+  38               		.stabn	162,0,0,0
+  39               		.stabs	"C:/programs/avr/include/avr/iom103.h",130,0,0,0
+  40               		.stabn	162,0,0,0
+  41               		.stabn	162,0,0,0
+  42               		.stabs	"C:/programs/avr/include/avr/interrupt.h",130,0,0,0
+  43               		.stabn	162,0,0,0
+  44               		.stabs	"C:/programs/avr/include/avr/signal.h",130,0,0,0
+  45               		.stabn	162,0,0,0
+  46               		.stabs	"../kernel_0_1/TaskManager.h",130,0,0,0
+  47               		.stabs	"../kernel_0_1/include/typedef.h",130,0,0,0
+  48               		.stabs	"UBYTE:t(8,1)=(0,11)",128,0,7,0
+  49               		.stabs	"UWORD:t(8,2)=(0,9)",128,0,8,0
+  50               		.stabs	"ULONG:t(8,3)=(0,5)",128,0,9,0
+  51               		.stabs	"SBYTE:t(8,4)=(0,10)",128,0,11,0
+  52               		.stabs	"SWORD:t(8,5)=(0,8)",128,0,12,0
+  53               		.stabs	"SLONG:t(8,6)=(0,3)",128,0,13,0
+  54               		.stabs	"period:t(8,7)=(8,3)",128,0,15,0
+  55               		.stabs	"TVEC:t(8,8)=(8,1)",128,0,16,0
+  56               		.stabs	"RESOURCE:t(8,9)=(8,1)",128,0,17,0
+  57               		.stabs	"RCB_tdef:t(8,10)=(8,11)=s1ceiling:(8,4),0,8;;",128,0,21,0
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 2
+
+
+  58               		.stabs	"SCB_tdef:t(8,12)=(8,13)=s9mode:(8,1),0,8;threshold:(8,3),8,32;event_counter:(8,3),40,32;;"
+  59               		.stabs	"ED_tdef:t(8,14)=(8,15)=s9mode:(8,1),0,8;threshold:(8,3),8,32;event_counter:(8,3),40,32;;",
+  60               		.stabn	162,0,0,0
+  61               		.stabn	162,0,0,0
+  62               		.stabs	"../kernel_0_1/ResourceManager.h",130,0,0,0
+  63               		.stabn	162,0,0,0
+  64               		.stabs	"../kernel_0_1/include/global.h",130,0,0,0
+  65               		.stabn	162,0,0,0
+  66               		.stabs	"task.h",130,0,0,0
+  67               		.stabn	162,0,0,0
+  68               		.stabs	"__vector_8:F(0,20)",36,0,21,__vector_8
+  69               	.global	__vector_8
+  70               		.type	__vector_8, @function
+  71               	__vector_8:
+   1:main.c        **** /*
+   2:main.c        ****  * ----------------------------------------------------------------------------
+   3:main.c        ****  *
+   4:main.c        ****  * ----------------------------------------------------------------------------
+   5:main.c        ****  * file: main.c, v 0.0 2003/05/08 
+   6:main.c        ****  */
+   7:main.c        **** 
+   8:main.c        **** #include <avr/io.h>
+   9:main.c        **** #include <avr/interrupt.h>
+  10:main.c        **** #include <avr/signal.h>
+  11:main.c        **** 
+  12:main.c        **** #include "../kernel_0_1/TaskManager.h"
+  13:main.c        **** #include "../kernel_0_1/ResourceManager.h"
+  14:main.c        **** 
+  15:main.c        **** #include "../kernel_0_1/include/typedef.h"
+  16:main.c        **** #include "../kernel_0_1/include/global.h"
+  17:main.c        **** 
+  18:main.c        **** #include "task.h"
+  19:main.c        **** 
+  20:main.c        **** SIGNAL(SIG_INTERRUPT7)
+  21:main.c        **** {
+  72               		.stabn 68,0,21,.LM1-__vector_8
+  73               	.LM1:
+  74               	/* prologue: frame size=0 */
+  75 0000 1F92      		push __zero_reg__
+  76 0002 0F92      		push __tmp_reg__
+  77 0004 0FB6      		in __tmp_reg__,__SREG__
+  78 0006 0F92      		push __tmp_reg__
+  79 0008 1124      		clr __zero_reg__
+  80 000a 2F93      		push r18
+  81 000c 3F93      		push r19
+  82 000e 4F93      		push r20
+  83 0010 5F93      		push r21
+  84 0012 6F93      		push r22
+  85 0014 7F93      		push r23
+  86 0016 8F93      		push r24
+  87 0018 9F93      		push r25
+  88 001a AF93      		push r26
+  89 001c BF93      		push r27
+  90 001e EF93      		push r30
+  91 0020 FF93      		push r31
+  92 0022 CF93      		push r28
+  93 0024 DF93      		push r29
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 3
+
+
+  94 0026 CDB7      		in r28,__SP_L__
+  95 0028 DEB7      		in r29,__SP_H__
+  96               	/* prologue end (size=21) */
+  22:main.c        ****    release(TASK1V);
+  97               		.stabn 68,0,22,.LM2-__vector_8
+  98               	.LM2:
+  99 002a 8091 0000 		lds r24,bit_vect+2
+ 100 002e 0E94 0000 		call release
+  23:main.c        **** }
+ 101               		.stabn 68,0,23,.LM3-__vector_8
+ 102               	.LM3:
+ 103               	/* epilogue: frame size=0 */
+ 104 0032 DF91      		pop r29
+ 105 0034 CF91      		pop r28
+ 106 0036 FF91      		pop r31
+ 107 0038 EF91      		pop r30
+ 108 003a BF91      		pop r27
+ 109 003c AF91      		pop r26
+ 110 003e 9F91      		pop r25
+ 111 0040 8F91      		pop r24
+ 112 0042 7F91      		pop r23
+ 113 0044 6F91      		pop r22
+ 114 0046 5F91      		pop r21
+ 115 0048 4F91      		pop r20
+ 116 004a 3F91      		pop r19
+ 117 004c 2F91      		pop r18
+ 118 004e 0F90      		pop __tmp_reg__
+ 119 0050 0FBE      		out __SREG__,__tmp_reg__
+ 120 0052 0F90      		pop __tmp_reg__
+ 121 0054 1F90      		pop __zero_reg__
+ 122 0056 1895      		reti
+ 123               	/* epilogue end (size=19) */
+ 124               	/* function __vector_8 size 44 (4) */
+ 125               		.size	__vector_8, .-__vector_8
+ 126               	.Lscope0:
+ 127               		.stabs	"",36,0,0,.Lscope0-__vector_8
+ 128               		.stabs	"__vector_7:F(0,20)",36,0,26,__vector_7
+ 129               	.global	__vector_7
+ 130               		.type	__vector_7, @function
+ 131               	__vector_7:
+  24:main.c        **** 
+  25:main.c        **** SIGNAL(SIG_INTERRUPT6)
+  26:main.c        **** {
+ 132               		.stabn 68,0,26,.LM4-__vector_7
+ 133               	.LM4:
+ 134               	/* prologue: frame size=0 */
+ 135 0058 1F92      		push __zero_reg__
+ 136 005a 0F92      		push __tmp_reg__
+ 137 005c 0FB6      		in __tmp_reg__,__SREG__
+ 138 005e 0F92      		push __tmp_reg__
+ 139 0060 1124      		clr __zero_reg__
+ 140 0062 2F93      		push r18
+ 141 0064 3F93      		push r19
+ 142 0066 4F93      		push r20
+ 143 0068 5F93      		push r21
+ 144 006a 6F93      		push r22
+ 145 006c 7F93      		push r23
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 4
+
+
+ 146 006e 8F93      		push r24
+ 147 0070 9F93      		push r25
+ 148 0072 AF93      		push r26
+ 149 0074 BF93      		push r27
+ 150 0076 EF93      		push r30
+ 151 0078 FF93      		push r31
+ 152 007a CF93      		push r28
+ 153 007c DF93      		push r29
+ 154 007e CDB7      		in r28,__SP_L__
+ 155 0080 DEB7      		in r29,__SP_H__
+ 156               	/* prologue end (size=21) */
+  27:main.c        ****    release(TASK0V);
+ 157               		.stabn 68,0,27,.LM5-__vector_7
+ 158               	.LM5:
+ 159 0082 8091 0000 		lds r24,bit_vect
+ 160 0086 0E94 0000 		call release
+  28:main.c        **** }
+ 161               		.stabn 68,0,28,.LM6-__vector_7
+ 162               	.LM6:
+ 163               	/* epilogue: frame size=0 */
+ 164 008a DF91      		pop r29
+ 165 008c CF91      		pop r28
+ 166 008e FF91      		pop r31
+ 167 0090 EF91      		pop r30
+ 168 0092 BF91      		pop r27
+ 169 0094 AF91      		pop r26
+ 170 0096 9F91      		pop r25
+ 171 0098 8F91      		pop r24
+ 172 009a 7F91      		pop r23
+ 173 009c 6F91      		pop r22
+ 174 009e 5F91      		pop r21
+ 175 00a0 4F91      		pop r20
+ 176 00a2 3F91      		pop r19
+ 177 00a4 2F91      		pop r18
+ 178 00a6 0F90      		pop __tmp_reg__
+ 179 00a8 0FBE      		out __SREG__,__tmp_reg__
+ 180 00aa 0F90      		pop __tmp_reg__
+ 181 00ac 1F90      		pop __zero_reg__
+ 182 00ae 1895      		reti
+ 183               	/* epilogue end (size=19) */
+ 184               	/* function __vector_7 size 44 (4) */
+ 185               		.size	__vector_7, .-__vector_7
+ 186               	.Lscope1:
+ 187               		.stabs	"",36,0,0,.Lscope1-__vector_7
+ 188               		.stabs	"hd_init:F(0,20)",36,0,31,hd_init
+ 189               	.global	hd_init
+ 190               		.type	hd_init, @function
+ 191               	hd_init:
+  29:main.c        **** 
+  30:main.c        **** void hd_init(void)
+  31:main.c        **** {
+ 192               		.stabn 68,0,31,.LM7-hd_init
+ 193               	.LM7:
+ 194               	/* prologue: frame size=0 */
+ 195 00b0 CF93      		push r28
+ 196 00b2 DF93      		push r29
+ 197 00b4 CDB7      		in r28,__SP_L__
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 5
+
+
+ 198 00b6 DEB7      		in r29,__SP_H__
+ 199               	/* prologue end (size=4) */
+  32:main.c        ****    DDRB  = 0xFF;                       /* 0-7 output */
+ 200               		.stabn 68,0,32,.LM8-hd_init
+ 201               	.LM8:
+ 202 00b8 8FEF      		ldi r24,lo8(-1)
+ 203 00ba 8093 3700 		sts 55,r24
+  33:main.c        ****    PORTB = 0x00;
+ 204               		.stabn 68,0,33,.LM9-hd_init
+ 205               	.LM9:
+ 206 00be 1092 3800 		sts 56,__zero_reg__
+  34:main.c        ****    DDRD  = 0x00;                       /* 0-7 input */
+ 207               		.stabn 68,0,34,.LM10-hd_init
+ 208               	.LM10:
+ 209 00c2 1092 3100 		sts 49,__zero_reg__
+  35:main.c        ****    
+  36:main.c        ****    EIMSK |= (1<<INT7) | (1<<INT6); 		/* enable 6, 7 external interrupts */
+ 210               		.stabn 68,0,36,.LM11-hd_init
+ 211               	.LM11:
+ 212 00c6 8091 5900 		lds r24,89
+ 213 00ca 806C      		ori r24,lo8(-64)
+ 214 00cc 8093 5900 		sts 89,r24
+  37:main.c        ****    EICR  |= (1<<ISC71) | (1<<ISC61);  	/* interrupt request for INT7 ,INT6 */ 
+ 215               		.stabn 68,0,37,.LM12-hd_init
+ 216               	.LM12:
+ 217 00d0 8091 5A00 		lds r24,90
+ 218 00d4 806A      		ori r24,lo8(-96)
+ 219 00d6 8093 5A00 		sts 90,r24
+  38:main.c        ****                                        /* on falling edge */
+  39:main.c        **** }
+ 220               		.stabn 68,0,39,.LM13-hd_init
+ 221               	.LM13:
+ 222               	/* epilogue: frame size=0 */
+ 223 00da DF91      		pop r29
+ 224 00dc CF91      		pop r28
+ 225 00de 0895      		ret
+ 226               	/* epilogue end (size=3) */
+ 227               	/* function hd_init size 24 (17) */
+ 228               		.size	hd_init, .-hd_init
+ 229               	.Lscope2:
+ 230               		.stabs	"",36,0,0,.Lscope2-hd_init
+ 231               		.stabs	"main:F(0,1)",36,0,42,main
+ 232               	.global	main
+ 233               		.type	main, @function
+ 234               	main:
+  40:main.c        **** 
+  41:main.c        **** int main(void)
+  42:main.c        **** {
+ 235               		.stabn 68,0,42,.LM14-main
+ 236               	.LM14:
+ 237               	/* prologue: frame size=0 */
+ 238 00e0 C0E0      		ldi r28,lo8(__stack - 0)
+ 239 00e2 D0E0      		ldi r29,hi8(__stack - 0)
+ 240 00e4 DEBF      		out __SP_H__,r29
+ 241 00e6 CDBF      		out __SP_L__,r28
+ 242               	/* prologue end (size=4) */
+  43:main.c        ****    hd_init();
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 6
+
+
+ 243               		.stabn 68,0,43,.LM15-main
+ 244               	.LM15:
+ 245 00e8 0E94 0000 		call hd_init
+  44:main.c        **** 
+  45:main.c        **** //   while(1) {  }
+  46:main.c        ****    kernelStartUp();
+ 246               		.stabn 68,0,46,.LM16-main
+ 247               	.LM16:
+ 248 00ec 0E94 0000 		call kernelStartUp
+  47:main.c        **** 
+  48:main.c        ****    return 0;
+ 249               		.stabn 68,0,48,.LM17-main
+ 250               	.LM17:
+ 251 00f0 80E0      		ldi r24,lo8(0)
+ 252 00f2 90E0      		ldi r25,hi8(0)
+  49:main.c        **** }
+ 253               		.stabn 68,0,49,.LM18-main
+ 254               	.LM18:
+ 255               	/* epilogue: frame size=0 */
+ 256 00f4 0C94 0000 		jmp exit
+ 257               	/* epilogue end (size=2) */
+ 258               	/* function main size 12 (6) */
+ 259               		.size	main, .-main
+ 260               	.Lscope3:
+ 261               		.stabs	"",36,0,0,.Lscope3-main
+ 262               		.text
+ 263               		.stabs "",100,0,0,Letext
+ 264               	Letext:
+ 265               	/* File "main.c": code  124 = 0x007c (  31), prologues  50, epilogues  43 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s:71     .text:00000000 __vector_8
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s:131    .text:00000058 __vector_7
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s:191    .text:000000b0 hd_init
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s:234    .text:000000e0 main
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccOwaaaa.s:264    .text:000000f8 Letext
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+bit_vect
+release
+__stack
+kernelStartUp
+exit

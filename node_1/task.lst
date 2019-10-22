@@ -1,0 +1,429 @@
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 1
+
+
+   1               		.file	"task.c"
+   2               		.arch atmega103
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.stabs	"C:\\Programming\\node_1/",100,0,0,.Ltext0
+  11               		.stabs	"task.c",100,0,0,.Ltext0
+  12               		.text
+  13               	.Ltext0:
+  14               		.stabs	"gcc2_compiled.",60,0,0,0
+  15               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  16               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  17               		.stabs	"long int:t(0,3)=@s32;r(0,3);0020000000000;0017777777777;",128,0,0,0
+  18               		.stabs	"unsigned int:t(0,4)=r(0,4);0000000000000;0000000177777;",128,0,0,0
+  19               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0000000000000;0037777777777;",128,0,0,0
+  20               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  21               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",128,0,0,
+  22               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  23               		.stabs	"short unsigned int:t(0,9)=r(0,9);0000000000000;0000000177777;",128,0,0,0
+  24               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  25               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  26               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  28               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"complex int:t(0,15)=s4real:(0,1),0,16;imag:(0,1),16,16;;",128,0,0,0
+  30               		.stabs	"complex float:t(0,16)=R3;8;0;",128,0,0,0
+  31               		.stabs	"complex double:t(0,17)=R3;8;0;",128,0,0,0
+  32               		.stabs	"complex long double:t(0,18)=R3;8;0;",128,0,0,0
+  33               		.stabs	"__builtin_va_list:t(0,19)=*(0,20)=(0,20)",128,0,0,0
+  34               		.stabs	"_Bool:t(0,21)=@s8;-16;",128,0,0,0
+  35               		.stabs	"task.c",130,0,0,0
+  36               		.stabs	"C:/programs/avr/include/avr/io.h",130,0,0,0
+  37               		.stabs	"C:/programs/avr/include/avr/sfr_defs.h",130,0,0,0
+  38               		.stabn	162,0,0,0
+  39               		.stabs	"C:/programs/avr/include/avr/iom103.h",130,0,0,0
+  40               		.stabn	162,0,0,0
+  41               		.stabn	162,0,0,0
+  42               		.stabs	"C:/programs/avr/include/avr/interrupt.h",130,0,0,0
+  43               		.stabn	162,0,0,0
+  44               		.stabs	"../kernel_0_1/TaskManager.h",130,0,0,0
+  45               		.stabs	"../kernel_0_1/include/typedef.h",130,0,0,0
+  46               		.stabs	"UBYTE:t(7,1)=(0,11)",128,0,7,0
+  47               		.stabs	"UWORD:t(7,2)=(0,9)",128,0,8,0
+  48               		.stabs	"ULONG:t(7,3)=(0,5)",128,0,9,0
+  49               		.stabs	"SBYTE:t(7,4)=(0,10)",128,0,11,0
+  50               		.stabs	"SWORD:t(7,5)=(0,8)",128,0,12,0
+  51               		.stabs	"SLONG:t(7,6)=(0,3)",128,0,13,0
+  52               		.stabs	"period:t(7,7)=(7,3)",128,0,15,0
+  53               		.stabs	"TVEC:t(7,8)=(7,1)",128,0,16,0
+  54               		.stabs	"RESOURCE:t(7,9)=(7,1)",128,0,17,0
+  55               		.stabs	"RCB_tdef:t(7,10)=(7,11)=s1ceiling:(7,4),0,8;;",128,0,21,0
+  56               		.stabs	"SCB_tdef:t(7,12)=(7,13)=s9mode:(7,1),0,8;threshold:(7,3),8,32;event_counter:(7,3),40,32;;"
+  57               		.stabs	"ED_tdef:t(7,14)=(7,15)=s9mode:(7,1),0,8;threshold:(7,3),8,32;event_counter:(7,3),40,32;;",
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 2
+
+
+  58               		.stabn	162,0,0,0
+  59               		.stabn	162,0,0,0
+  60               		.stabs	"../kernel_0_1/ResourceManager.h",130,0,0,0
+  61               		.stabn	162,0,0,0
+  62               		.stabs	"../kernel_0_1/include/global.h",130,0,0,0
+  63               		.stabn	162,0,0,0
+  64               		.stabs	"task.h",130,0,0,0
+  65               		.stabn	162,0,0,0
+  66               		.stabs	"resource.h",130,0,0,0
+  67               	.global	RCB
+  68               		.data
+  69               		.type	RCB, @object
+  70               		.size	RCB, 2
+  71               	RCB:
+  72 0000 00        		.byte	0
+  73 0001 01        		.byte	1
+  74               		.stabn	162,0,0,0
+  75               	.global	start_task
+  76               		.type	start_task, @object
+  77               		.size	start_task, 4
+  78               	start_task:
+  79 0002 0000      		.word	pm(task0)
+  80 0004 0000      		.word	pm(task1)
+  81               		.text
+  82               		.stabs	"delay:F(0,20)",36,0,16,delay
+  83               		.stabs	"delay:p(7,3)",160,0,15,1
+  84               	.global	delay
+  85               		.type	delay, @function
+  86               	delay:
+   1:task.c        **** #include <avr/io.h>
+   2:task.c        **** #include <avr/interrupt.h>
+   3:task.c        **** 
+   4:task.c        **** #include "../kernel_0_1/TaskManager.h"
+   5:task.c        **** #include "../kernel_0_1/ResourceManager.h"
+   6:task.c        **** 
+   7:task.c        **** #include "../kernel_0_1/include/typedef.h"
+   8:task.c        **** #include "../kernel_0_1/include/global.h"
+   9:task.c        **** 
+  10:task.c        **** #include "task.h"
+  11:task.c        **** #include "resource.h" 
+  12:task.c        **** 
+  13:task.c        **** void (*start_task[MAX_TASK])(void) = { task0, task1};
+  14:task.c        **** 
+  15:task.c        **** void delay(ULONG delay)
+  16:task.c        **** {
+  87               		.stabn 68,0,16,.LM1-delay
+  88               	.LM1:
+  89               	/* prologue: frame size=4 */
+  90 0000 CF93      		push r28
+  91 0002 DF93      		push r29
+  92 0004 CDB7      		in r28,__SP_L__
+  93 0006 DEB7      		in r29,__SP_H__
+  94 0008 2497      		sbiw r28,4
+  95 000a 0FB6      		in __tmp_reg__,__SREG__
+  96 000c F894      		cli
+  97 000e DEBF      		out __SP_H__,r29
+  98 0010 0FBE      		out __SREG__,__tmp_reg__
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 3
+
+
+  99 0012 CDBF      		out __SP_L__,r28
+ 100               	/* prologue end (size=10) */
+ 101 0014 6983      		std Y+1,r22
+ 102 0016 7A83      		std Y+2,r23
+ 103 0018 8B83      		std Y+3,r24
+ 104 001a 9C83      		std Y+4,r25
+  17:task.c        ****    while( delay--) {
+ 105               		.stabn 68,0,17,.LM2-delay
+ 106               	.LM2:
+ 107               	.L4:
+ 108 001c 8981      		ldd r24,Y+1
+ 109 001e 9A81      		ldd r25,Y+2
+ 110 0020 AB81      		ldd r26,Y+3
+ 111 0022 BC81      		ldd r27,Y+4
+ 112 0024 0197      		sbiw r24,1
+ 113 0026 A109      		sbc r26,__zero_reg__
+ 114 0028 B109      		sbc r27,__zero_reg__
+ 115 002a 8983      		std Y+1,r24
+ 116 002c 9A83      		std Y+2,r25
+ 117 002e AB83      		std Y+3,r26
+ 118 0030 BC83      		std Y+4,r27
+ 119 0032 8F3F      		cpi r24,lo8(-1)
+ 120 0034 2FEF      		ldi r18,hi8(-1)
+ 121 0036 9207      		cpc r25,r18
+ 122 0038 2FEF      		ldi r18,hlo8(-1)
+ 123 003a A207      		cpc r26,r18
+ 124 003c 2FEF      		ldi r18,hhi8(-1)
+ 125 003e B207      		cpc r27,r18
+ 126 0040 09F4      		brne .L6
+ 127 0042 02C0      		rjmp .L3
+ 128               	.L6:
+  18:task.c        ****       asm volatile ( "nop"::);
+ 129               		.stabn 68,0,18,.LM3-delay
+ 130               	.LM3:
+ 131               	/* #APP */
+ 132 0044 0000      		nop
+ 133               	/* #NOAPP */
+ 134 0046 EACF      		rjmp .L4
+  19:task.c        ****    }
+  20:task.c        **** }
+ 135               		.stabn 68,0,20,.LM4-delay
+ 136               	.LM4:
+ 137               	.L3:
+ 138               	/* epilogue: frame size=4 */
+ 139 0048 2496      		adiw r28,4
+ 140 004a 0FB6      		in __tmp_reg__,__SREG__
+ 141 004c F894      		cli
+ 142 004e DEBF      		out __SP_H__,r29
+ 143 0050 0FBE      		out __SREG__,__tmp_reg__
+ 144 0052 CDBF      		out __SP_L__,r28
+ 145 0054 DF91      		pop r29
+ 146 0056 CF91      		pop r28
+ 147 0058 0895      		ret
+ 148               	/* epilogue end (size=9) */
+ 149               	/* function delay size 46 (27) */
+ 150               		.size	delay, .-delay
+ 151               	.Lscope0:
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 4
+
+
+ 152               		.stabs	"",36,0,0,.Lscope0-delay
+ 153               		.stabs	"task0:F(0,20)",36,0,23,task0
+ 154               	.global	task0
+ 155               		.type	task0, @function
+ 156               	task0:
+  21:task.c        **** 
+  22:task.c        **** void task0(void)
+  23:task.c        **** {
+ 157               		.stabn 68,0,23,.LM5-task0
+ 158               	.LM5:
+ 159               	/* prologue: frame size=0 */
+ 160 005a CF93      		push r28
+ 161 005c DF93      		push r29
+ 162 005e CDB7      		in r28,__SP_L__
+ 163 0060 DEB7      		in r29,__SP_H__
+ 164               	/* prologue end (size=4) */
+  24:task.c        ****    sei();
+ 165               		.stabn 68,0,24,.LM6-task0
+ 166               	.LM6:
+ 167               	/* #APP */
+ 168 0062 7894      		sei
+  25:task.c        **** 
+  26:task.c        ****    PORTB ^= 0x40;
+ 169               		.stabn 68,0,26,.LM7-task0
+ 170               	.LM7:
+ 171               	/* #NOAPP */
+ 172 0064 9091 3800 		lds r25,56
+ 173 0068 80E4      		ldi r24,lo8(64)
+ 174 006a 8927      		eor r24,r25
+ 175 006c 8093 3800 		sts 56,r24
+  27:task.c        ****    delay(90000);
+ 176               		.stabn 68,0,27,.LM8-task0
+ 177               	.LM8:
+ 178 0070 60E9      		ldi r22,lo8(90000)
+ 179 0072 7FE5      		ldi r23,hi8(90000)
+ 180 0074 81E0      		ldi r24,hlo8(90000)
+ 181 0076 90E0      		ldi r25,hhi8(90000)
+ 182 0078 0E94 0000 		call delay
+  28:task.c        **** 
+  29:task.c        ****    lock(RESOURCE0);
+ 183               		.stabn 68,0,29,.LM9-task0
+ 184               	.LM9:
+ 185 007c 80E0      		ldi r24,lo8(0)
+ 186 007e 0E94 0000 		call lock
+  30:task.c        ****    release(TASK1V);
+ 187               		.stabn 68,0,30,.LM10-task0
+ 188               	.LM10:
+ 189 0082 8091 0000 		lds r24,bit_vect+2
+ 190 0086 0E94 0000 		call release
+  31:task.c        **** 
+  32:task.c        ****    PORTB ^= 0x40;
+ 191               		.stabn 68,0,32,.LM11-task0
+ 192               	.LM11:
+ 193 008a 9091 3800 		lds r25,56
+ 194 008e 80E4      		ldi r24,lo8(64)
+ 195 0090 8927      		eor r24,r25
+ 196 0092 8093 3800 		sts 56,r24
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 5
+
+
+  33:task.c        ****    delay(90000);
+ 197               		.stabn 68,0,33,.LM12-task0
+ 198               	.LM12:
+ 199 0096 60E9      		ldi r22,lo8(90000)
+ 200 0098 7FE5      		ldi r23,hi8(90000)
+ 201 009a 81E0      		ldi r24,hlo8(90000)
+ 202 009c 90E0      		ldi r25,hhi8(90000)
+ 203 009e 0E94 0000 		call delay
+  34:task.c        **** 
+  35:task.c        ****    unlock(RESOURCE0);
+ 204               		.stabn 68,0,35,.LM13-task0
+ 205               	.LM13:
+ 206 00a2 80E0      		ldi r24,lo8(0)
+ 207 00a4 0E94 0000 		call unlock
+  36:task.c        **** 
+  37:task.c        ****    PORTB ^= 0x40;
+ 208               		.stabn 68,0,37,.LM14-task0
+ 209               	.LM14:
+ 210 00a8 9091 3800 		lds r25,56
+ 211 00ac 80E4      		ldi r24,lo8(64)
+ 212 00ae 8927      		eor r24,r25
+ 213 00b0 8093 3800 		sts 56,r24
+  38:task.c        ****    delay(90000);
+ 214               		.stabn 68,0,38,.LM15-task0
+ 215               	.LM15:
+ 216 00b4 60E9      		ldi r22,lo8(90000)
+ 217 00b6 7FE5      		ldi r23,hi8(90000)
+ 218 00b8 81E0      		ldi r24,hlo8(90000)
+ 219 00ba 90E0      		ldi r25,hhi8(90000)
+ 220 00bc 0E94 0000 		call delay
+  39:task.c        **** 
+  40:task.c        ****    taskExit();  
+ 221               		.stabn 68,0,40,.LM16-task0
+ 222               	.LM16:
+ 223 00c0 0E94 0000 		call taskExit
+  41:task.c        **** }
+ 224               		.stabn 68,0,41,.LM17-task0
+ 225               	.LM17:
+ 226               	/* epilogue: frame size=0 */
+ 227 00c4 DF91      		pop r29
+ 228 00c6 CF91      		pop r28
+ 229 00c8 0895      		ret
+ 230               	/* epilogue end (size=3) */
+ 231               	/* function task0 size 57 (50) */
+ 232               		.size	task0, .-task0
+ 233               	.Lscope1:
+ 234               		.stabs	"",36,0,0,.Lscope1-task0
+ 235               		.stabs	"task1:F(0,20)",36,0,44,task1
+ 236               	.global	task1
+ 237               		.type	task1, @function
+ 238               	task1:
+  42:task.c        **** 
+  43:task.c        **** void task1(void)
+  44:task.c        **** {
+ 239               		.stabn 68,0,44,.LM18-task1
+ 240               	.LM18:
+ 241               	/* prologue: frame size=0 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 6
+
+
+ 242 00ca CF93      		push r28
+ 243 00cc DF93      		push r29
+ 244 00ce CDB7      		in r28,__SP_L__
+ 245 00d0 DEB7      		in r29,__SP_H__
+ 246               	/* prologue end (size=4) */
+  45:task.c        ****    sei();
+ 247               		.stabn 68,0,45,.LM19-task1
+ 248               	.LM19:
+ 249               	/* #APP */
+ 250 00d2 7894      		sei
+  46:task.c        **** 
+  47:task.c        ****    PORTB ^= 0x80;  
+ 251               		.stabn 68,0,47,.LM20-task1
+ 252               	.LM20:
+ 253               	/* #NOAPP */
+ 254 00d4 9091 3800 		lds r25,56
+ 255 00d8 80E8      		ldi r24,lo8(-128)
+ 256 00da 8927      		eor r24,r25
+ 257 00dc 8093 3800 		sts 56,r24
+  48:task.c        ****    delay(50000);
+ 258               		.stabn 68,0,48,.LM21-task1
+ 259               	.LM21:
+ 260 00e0 60E5      		ldi r22,lo8(50000)
+ 261 00e2 73EC      		ldi r23,hi8(50000)
+ 262 00e4 80E0      		ldi r24,hlo8(50000)
+ 263 00e6 90E0      		ldi r25,hhi8(50000)
+ 264 00e8 0E94 0000 		call delay
+  49:task.c        **** 
+  50:task.c        ****    lock(RESOURCE1);
+ 265               		.stabn 68,0,50,.LM22-task1
+ 266               	.LM22:
+ 267 00ec 81E0      		ldi r24,lo8(1)
+ 268 00ee 0E94 0000 		call lock
+  51:task.c        **** 
+  52:task.c        ****    PORTB ^= 0x80;  
+ 269               		.stabn 68,0,52,.LM23-task1
+ 270               	.LM23:
+ 271 00f2 9091 3800 		lds r25,56
+ 272 00f6 80E8      		ldi r24,lo8(-128)
+ 273 00f8 8927      		eor r24,r25
+ 274 00fa 8093 3800 		sts 56,r24
+  53:task.c        ****    delay(50000);
+ 275               		.stabn 68,0,53,.LM24-task1
+ 276               	.LM24:
+ 277 00fe 60E5      		ldi r22,lo8(50000)
+ 278 0100 73EC      		ldi r23,hi8(50000)
+ 279 0102 80E0      		ldi r24,hlo8(50000)
+ 280 0104 90E0      		ldi r25,hhi8(50000)
+ 281 0106 0E94 0000 		call delay
+  54:task.c        **** 
+  55:task.c        ****    unlock(RESOURCE1);
+ 282               		.stabn 68,0,55,.LM25-task1
+ 283               	.LM25:
+ 284 010a 81E0      		ldi r24,lo8(1)
+ 285 010c 0E94 0000 		call unlock
+  56:task.c        **** 
+  57:task.c        ****    PORTB ^= 0x80;  
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 7
+
+
+ 286               		.stabn 68,0,57,.LM26-task1
+ 287               	.LM26:
+ 288 0110 9091 3800 		lds r25,56
+ 289 0114 80E8      		ldi r24,lo8(-128)
+ 290 0116 8927      		eor r24,r25
+ 291 0118 8093 3800 		sts 56,r24
+  58:task.c        ****    delay(50000);
+ 292               		.stabn 68,0,58,.LM27-task1
+ 293               	.LM27:
+ 294 011c 60E5      		ldi r22,lo8(50000)
+ 295 011e 73EC      		ldi r23,hi8(50000)
+ 296 0120 80E0      		ldi r24,hlo8(50000)
+ 297 0122 90E0      		ldi r25,hhi8(50000)
+ 298 0124 0E94 0000 		call delay
+  59:task.c        **** 
+  60:task.c        ****    taskExit();  
+ 299               		.stabn 68,0,60,.LM28-task1
+ 300               	.LM28:
+ 301 0128 0E94 0000 		call taskExit
+  61:task.c        **** }
+ 302               		.stabn 68,0,61,.LM29-task1
+ 303               	.LM29:
+ 304               	/* epilogue: frame size=0 */
+ 305 012c DF91      		pop r29
+ 306 012e CF91      		pop r28
+ 307 0130 0895      		ret
+ 308               	/* epilogue end (size=3) */
+ 309               	/* function task1 size 53 (46) */
+ 310               		.size	task1, .-task1
+ 311               	.Lscope2:
+ 312               		.stabs	"",36,0,0,.Lscope2-task1
+ 313               		.comm PI_Stack,2,1
+ 314               		.stabs	"RCB:G(1,1)=ar(1,2)=r(1,2);0000000000000;0000000177777;;0;1;(7,10)",32,0,11,0
+ 315               		.stabs	"PI_Stack:G(1,3)=ar(1,2);0;1;(7,1)",32,0,20,0
+ 316               		.stabs	"start_task:G(1,4)=ar(1,2);0;1;(1,5)=*(1,6)=f(0,20)",32,0,13,0
+ 317               		.text
+ 318               		.stabs "",100,0,0,Letext
+ 319               	Letext:
+ 320               	/* File "task.c": code  156 = 0x009c ( 123), prologues  18, epilogues  15 */
+GAS LISTING C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 task.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s:71     .data:00000000 RCB
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s:78     .data:00000002 start_task
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s:156    .text:0000005a task0
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s:238    .text:000000ca task1
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s:86     .text:00000000 delay
+                            *COM*:00000002 PI_Stack
+C:\DOCUME~1\goban01\LOCALS~1\Temp/ccoBaaaa.s:319    .text:00000132 Letext
+                            *ABS*:00000000 *ABS*
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+lock
+bit_vect
+release
+unlock
+taskExit
